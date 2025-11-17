@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Frontend as Frontend (Jedai)
+    participant Backend as Backend (API)
+    participant DB as Banco de Dados
+
+    Frontend->>+Backend: POST /sinkt/update
+    Note right of Frontend: Payload:<br/>{<br/>  "user_id": "aluno_A",<br/>  "concept_id": "K01",<br/>  "result": 1<br/>}
+
+    Backend->>+DB: Consultar p_atual(user_id, concept_id)
+    DB-->>-Backend: Retorna p_atual = 0.5
+
+    Note left of Backend: Calcula p_novo:<br/>p_novo = 0.5 + 0.3 * (1 - 0.5)<br/>p_novo = 0.65
+
+    Backend->>+DB: Atualizar p(user_id, concept_id) = 0.65
+    DB-->>-Backend: Confirmação de escrita
+
+    Backend-->>-Frontend: Resposta:<br/>{ "status": "success",<br/>  "new_p": 0.65 }
