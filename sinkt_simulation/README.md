@@ -22,7 +22,6 @@ sinkt_simulation/
 ├── Simulacao_SINKT_Alunos_Conceitos.xlsx       # Planilha Excel com dados e resultados
 ├── simulacao_sinkt.py                           # Script Python da simulação
 ├── analise_resultados.md                        # Análise interpretativa dos resultados
-├── proposta_integracao.md                       # Proposta de integração SINKT ↔ Jedai
 ├── faq_tecnica.md                               # FAQ técnica sobre o modelo
 ├── notas_requisitos.md                          # Notas sobre requisitos e documentação
 │
@@ -63,7 +62,6 @@ Nove visualizações foram geradas para análise:
 ### 3. Documentação
 
 -   **`analise_resultados.md`:** Interpretação detalhada dos resultados, identificando quem aprendeu mais rápido, quem teve regressão e quais conceitos foram dominados.
--   **`proposta_integracao.md`:** Especificação técnica de como integrar o modelo SINKT com a plataforma Jedai, incluindo exemplo de endpoint REST e código Python.
 -   **`faq_tecnica.md`:** Perguntas e respostas sobre o funcionamento do modelo, cálculo de pᵢ e lógica probabilística.
 
 ## Resultados Principais
@@ -117,17 +115,6 @@ A execução irá:
 3.  Gerar 9 visualizações na pasta `graficos/`.
 4.  Exibir estatísticas gerais no terminal.
 
-## Integração com Jedai
-
-A proposta de integração técnica está detalhada no arquivo `proposta_integracao.md`. O fluxo básico é:
-
-1.  Evento `quiz.completed` é disparado no frontend Jedai.
-2.  Requisição POST é enviada para `/sinkt/update` com `{ user_id, concept_id, result }`.
-3.  Backend calcula o novo pᵢ e atualiza o banco de dados.
-4.  Resposta confirma a atualização e retorna o novo estado de conhecimento.
-
-Um exemplo de implementação em Python/Flask está incluído na proposta.
-
 ## Validação dos Resultados
 
 Os resultados foram validados através de:
@@ -139,7 +126,7 @@ Os resultados foram validados através de:
 
 ## Contato e Suporte
 
-Para dúvidas técnicas sobre a simulação ou a integração, consulte a FAQ técnica (`faq_tecnica.md`) ou entre em contato através da plataforma Jedai.
+Para dúvidas técnicas sobre a simulação, consulte a FAQ técnica (`faq_tecnica.md`).
 
 ---
 

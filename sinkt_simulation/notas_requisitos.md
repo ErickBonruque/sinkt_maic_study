@@ -13,13 +13,7 @@
 
 **NOTA IMPORTANTE**: O paper SINKT não apresenta as fórmulas de atualização mencionadas no requisito (pᵢ₊₁ = pᵢ + α(1 − pᵢ) para acerto). Essas fórmulas são do modelo **BKT (Bayesian Knowledge Tracing)** clássico.
 
-### 2. Resumo Executivo Jedai-MAIC-SINKT
-- Documento técnico sobre integração Jedai com SINKT e MAIC
-- Foco em interoperabilidade com LMS
-- Padrões: SCORM, xAPI
-- Fluxos de integração e endpoints
-
-### 3. MAIC.pdf
+### 2. MAIC.pdf
 - Ainda não analisado em detalhes
 
 ## Requisitos da Atividade
@@ -48,11 +42,6 @@
 - Identificar quem aprendeu mais rápido
 - Identificar quem teve regressão
 - Identificar quais conceitos foram dominados
-
-### Integração Técnica
-- Exemplo de evento: `quiz.completed`
-- Endpoint: `/sinkt/update`
-- Payload: `{ user_id, concept_id, result }`
 
 ## Esclarecimento Conceitual
 
