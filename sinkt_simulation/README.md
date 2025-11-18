@@ -104,8 +104,8 @@ pip3 install numpy pandas matplotlib seaborn openpyxl
 ### Execução
 
 ```bash
-cd /home/ubuntu/sinkt_simulation
-python3.11 simulacao_sinkt.py
+cd /home/bonru/4linux/sinkt_maic_study/sinkt_simulation
+python3 simulacao_sinkt.py
 ```
 
 A execução irá:

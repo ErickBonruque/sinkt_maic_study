@@ -12,14 +12,14 @@ Os dados brutos e os cálculos detalhados estão disponíveis na planilha `Simul
 
 A simulação revela uma tendência geral de aprendizado positiva em todo o grupo. A probabilidade média de domínio, considerando todos os alunos e conceitos, evoluiu de **0.313** no início para **0.723** ao final das 10 interações. A taxa de acerto geral foi de **51.5%**, indicando que a simulação apresentou um nível de desafio considerável, com uma mistura de acertos e erros que permitiu a aplicação efetiva das fórmulas de atualização de probabilidade.
 
-![Evolução da Taxa de Acerto Geral](/home/ubuntu/sinkt_simulation/graficos/taxa_acerto_evolucao.png)
+![Evolução da Taxa de Acerto Geral](./graficos/taxa_acerto_evolucao.png)
 *Gráfico 1: A linha de tendência ascendente confirma que, à medida que as interações progridem, os alunos, em média, acertam mais, refletindo o aumento do domínio.* 
 
 ## 3. Análise Individual dos Alunos
 
 O desempenho dos alunos variou significativamente, refletindo seus perfis de conhecimento inicial e suas trajetórias de aprendizado.
 
-![Comparação do Domínio Inicial vs. Final](/home/ubuntu/sinkt_simulation/graficos/comparacao_inicial_final.png)
+![Comparação do Domínio Inicial vs. Final](./graficos/comparacao_inicial_final.png)
 *Gráfico 2: Comparação da probabilidade média de domínio inicial e final para cada aluno.*
 
 | Aluno | P Inicial (Médio) | P Final (Médio) | Ganho de Domínio | Análise Qualitativa |
@@ -35,14 +35,14 @@ O desempenho dos alunos variou significativamente, refletindo seus perfis de con
 - **Aprendizado Rápido:** Os alunos **A** e **C** foram os que aprenderam mais rápido, com os maiores ganhos de domínio.
 - **Regressão:** O **Aluno E** exemplifica a regressão. No conceito **K04** e **K06**, sua probabilidade de domínio terminou em valores muito baixos (0.079 e 0.068, respectivamente), indicando que os erros consecutivos nessas áreas impactaram negativamente seu conhecimento estimado. Isso é visível em seu gráfico de evolução individual, onde as linhas para esses conceitos caem drasticamente.
 
-![Evolução do Domínio - Aluno E](/home/ubuntu/sinkt_simulation/graficos/evolucao_aluno_E.png)
+![Evolução do Domínio - Aluno E](./graficos/evolucao_aluno_E.png)
 *Gráfico 3: Trajetória de aprendizado do Aluno E, destacando as quedas acentuadas nos conceitos K04 (azul escuro) e K06 (vermelho).* 
 
 ## 4. Análise por Conceito
 
 A análise por conceito permite identificar quais foram mais facilmente dominados e quais apresentaram maior dificuldade para o grupo.
 
-![Evolução Média do Domínio por Conceito](/home/ubuntu/sinkt_simulation/graficos/evolucao_media_conceitos.png)
+![Evolução Média do Domínio por Conceito](./graficos/evolucao_media_conceitos.png)
 *Gráfico 4: Evolução da probabilidade média de domínio para cada um dos 8 conceitos.*
 
 ### Nível de Domínio Final por Conceito:
@@ -52,7 +52,7 @@ A análise por conceito permite identificar quais foram mais facilmente dominado
 
 O heatmap de domínio final ilustra claramente essa distribuição:
 
-![Heatmap de Domínio Final](/home/ubuntu/sinkt_simulation/graficos/heatmap_dominio_final.png)
+![Heatmap de Domínio Final](./graficos/heatmap_dominio_final.png)
 *Gráfico 5: Matriz de probabilidade de domínio final. Verde escuro indica alto domínio (>0.9), enquanto vermelho/laranja indica baixo domínio (<0.4).*
 
 - **Observações do Heatmap:**
