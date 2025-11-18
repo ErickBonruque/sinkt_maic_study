@@ -2,7 +2,6 @@
 Simulação do Modelo SINKT - Evolução de Domínio de Conceitos
 Baseado nas fórmulas de BKT (Bayesian Knowledge Tracing)
 
-Autor: Sistema de Simulação
 Data: 2025-11-16
 """
 
