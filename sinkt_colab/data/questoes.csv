@@ -1,0 +1,16 @@
+questao_id,conceito_id,enunciado,dificuldade
+Q001,variaveis_tipos,Qual é o tipo de dado da variável x = 10?,facil
+Q002,variaveis_tipos,Qual código converte o número 42 para string?,facil
+Q003,variaveis_tipos,"O que acontece ao executar: nome = ""Ana""; idade = 25; print(nome + idade)?",medio
+Q004,operadores,Qual é o resultado de 10 // 3 em Python?,facil
+Q005,operadores,Qual é o resultado de 5 > 3 and 2 < 1?,medio
+Q006,operadores,O que retorna not (10 == 10 or 5 > 7)?,medio
+Q007,condicionais,"Qual será a saída de: x=15; if x>10: print(""A"") elif x>5: print(""B"")?",facil
+Q008,condicionais,Qual código verifica se um número é par?,facil
+Q009,condicionais,"Condicionais aninhadas: nota=7; if nota>=7: if nota>=9: print(""A"") else: print(""B"")",medio
+Q010,loops,"Quantas vezes executa: for i in range(5): print(i)?",facil
+Q011,loops,"O que imprime: for i in range(2, 6): print(i)?",medio
+Q012,loops,O que faz o break em um loop?,facil
+Q013,funcoes,"Qual a saída de: def soma(a,b): return a+b; print(soma(3,5))?",facil
+Q014,funcoes,O que acontece se uma função não tem return?,medio
+Q015,funcoes,"Parâmetro padrão: def multiplicar(x, y=2): return x*y; print(multiplicar(5))?",medio

@@ -1,0 +1,6 @@
+conceito_id,nome,descricao,nivel
+variaveis_tipos,Variáveis e Tipos de Dados,"Declaração de variáveis, tipos básicos (int, float, str, bool)",1
+operadores,Operadores Aritméticos e Lógicos,"Operações matemáticas, comparação, lógicos",1
+condicionais,Estruturas Condicionais (if/elif/else),"Tomada de decisões com if, elif, else",2
+loops,Estruturas de Repetição (for/while),"Loops for e while, range(), break, continue",2
+funcoes,Funções,"Definição de funções, parâmetros, return, escopo",3
