@@ -1,3 +1,932 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+# File Summary
+
+## Purpose
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+## File Format
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A header with the file path (## File: path/to/file)
+  b. The full contents of the file in a code block
+
+## Usage Guidelines
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+## Notes
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+# Directory Structure
+```
+data/
+  conceitos.csv
+  grafo_prerequisitos.csv
+  questoes.csv
+conceitos_questoes.py
+prompts.json
+README_FULL.md
+README.md
+SINKT_Base_Individual_v2_Relatorio.md
+SINKT_Base_Individual_v2.ipynb
+SINKT_CONTEXT.md
+```
+
+# Files
+
+## File: data/conceitos.csv
+````
+conceito_id,nome,descricao,nivel
+variaveis_tipos,Variáveis e Tipos de Dados,"Declaração de variáveis, tipos básicos (int, float, str, bool)",1
+operadores,Operadores Aritméticos e Lógicos,"Operações matemáticas, comparação, lógicos",1
+condicionais,Estruturas Condicionais (if/elif/else),"Tomada de decisões com if, elif, else",2
+loops,Estruturas de Repetição (for/while),"Loops for e while, range(), break, continue",2
+funcoes,Funções,"Definição de funções, parâmetros, return, escopo",3
+````
+
+## File: data/grafo_prerequisitos.csv
+````
+conceito_origem,conceito_destino
+variaveis_tipos,operadores
+variaveis_tipos,condicionais
+operadores,condicionais
+variaveis_tipos,loops
+operadores,loops
+condicionais,funcoes
+loops,funcoes
+````
+
+## File: data/questoes.csv
+````
+questao_id,conceito_id,enunciado,dificuldade
+Q001,variaveis_tipos,Qual é o tipo de dado da variável x = 10?,facil
+Q002,variaveis_tipos,Qual código converte o número 42 para string?,facil
+Q003,variaveis_tipos,"O que acontece ao executar: nome = ""Ana""; idade = 25; print(nome + idade)?",medio
+Q004,operadores,Qual é o resultado de 10 // 3 em Python?,facil
+Q005,operadores,Qual é o resultado de 5 > 3 and 2 < 1?,medio
+Q006,operadores,O que retorna not (10 == 10 or 5 > 7)?,medio
+Q007,condicionais,"Qual será a saída de: x=15; if x>10: print(""A"") elif x>5: print(""B"")?",facil
+Q008,condicionais,Qual código verifica se um número é par?,facil
+Q009,condicionais,"Condicionais aninhadas: nota=7; if nota>=7: if nota>=9: print(""A"") else: print(""B"")",medio
+Q010,loops,"Quantas vezes executa: for i in range(5): print(i)?",facil
+Q011,loops,"O que imprime: for i in range(2, 6): print(i)?",medio
+Q012,loops,O que faz o break em um loop?,facil
+Q013,funcoes,"Qual a saída de: def soma(a,b): return a+b; print(soma(3,5))?",facil
+Q014,funcoes,O que acontece se uma função não tem return?,medio
+Q015,funcoes,"Parâmetro padrão: def multiplicar(x, y=2): return x*y; print(multiplicar(5))?",medio
+````
+
+## File: conceitos_questoes.py
+````python
+# -*- coding: utf-8 -*-
+"""
+Conceitos e Questões Reais de Programação Python
+Para o projeto SINKT Base Individual
+"""
+
+# ============================================================================
+# CONCEITOS DE PROGRAMAÇÃO PYTHON
+# ============================================================================
+
+CONCEITOS = {
+    'variaveis_tipos': {
+        'nome': 'Variáveis e Tipos de Dados',
+        'descricao': 'Declaração de variáveis, tipos básicos (int, float, str, bool)',
+        'nivel': 1,
+        'prerequisitos': []
+    },
+    'operadores': {
+        'nome': 'Operadores Aritméticos e Lógicos',
+        'descricao': 'Operações matemáticas (+, -, *, /), comparação (==, !=, <, >), lógicos (and, or, not)',
+        'nivel': 1,
+        'prerequisitos': ['variaveis_tipos']
+    },
+    'condicionais': {
+        'nome': 'Estruturas Condicionais (if/elif/else)',
+        'descricao': 'Tomada de decisões com if, elif, else',
+        'nivel': 2,
+        'prerequisitos': ['variaveis_tipos', 'operadores']
+    },
+    'loops': {
+        'nome': 'Estruturas de Repetição (for/while)',
+        'descricao': 'Loops for e while, range(), break, continue',
+        'nivel': 2,
+        'prerequisitos': ['variaveis_tipos', 'operadores']
+    },
+    'funcoes': {
+        'nome': 'Funções',
+        'descricao': 'Definição de funções, parâmetros, return, escopo',
+        'nivel': 3,
+        'prerequisitos': ['condicionais', 'loops']
+    }
+}
+
+# ============================================================================
+# QUESTÕES REAIS POR CONCEITO
+# ============================================================================
+
+QUESTOES = {
+    # ========== VARIÁVEIS E TIPOS DE DADOS ==========
+    'Q001': {
+        'conceito': 'variaveis_tipos',
+        'enunciado': 'Qual é o tipo de dado da variável `x = 10`?',
+        'opcoes': ['A) str', 'B) int', 'C) float', 'D) bool'],
+        'resposta_correta': 'B',
+        'dificuldade': 'facil'
+    },
+    'Q002': {
+        'conceito': 'variaveis_tipos',
+        'enunciado': 'Qual código converte o número 42 para string?',
+        'opcoes': ['A) int(42)', 'B) str(42)', 'C) float(42)', 'D) bool(42)'],
+        'resposta_correta': 'B',
+        'dificuldade': 'facil'
+    },
+    'Q003': {
+        'conceito': 'variaveis_tipos',
+        'enunciado': 'O que acontece ao executar: `nome = "Ana"; idade = 25; print(nome + idade)`?',
+        'opcoes': [
+            'A) Imprime "Ana25"',
+            'B) Imprime 25',
+            'C) Gera erro (TypeError)',
+            'D) Imprime "Ana 25"'
+        ],
+        'resposta_correta': 'C',
+        'dificuldade': 'medio'
+    },
+    
+    # ========== OPERADORES ==========
+    'Q004': {
+        'conceito': 'operadores',
+        'enunciado': 'Qual é o resultado de `10 // 3` em Python?',
+        'opcoes': ['A) 3.33', 'B) 3', 'C) 4', 'D) 3.0'],
+        'resposta_correta': 'B',
+        'dificuldade': 'facil'
+    },
+    'Q005': {
+        'conceito': 'operadores',
+        'enunciado': 'Qual é o resultado de `5 > 3 and 2 < 1`?',
+        'opcoes': ['A) True', 'B) False', 'C) Erro', 'D) None'],
+        'resposta_correta': 'B',
+        'dificuldade': 'medio'
+    },
+    'Q006': {
+        'conceito': 'operadores',
+        'enunciado': 'O que retorna `not (10 == 10 or 5 > 7)`?',
+        'opcoes': ['A) True', 'B) False', 'C) None', 'D) Erro'],
+        'resposta_correta': 'B',
+        'dificuldade': 'medio'
+    },
+    
+    # ========== CONDICIONAIS ==========
+    'Q007': {
+        'conceito': 'condicionais',
+        'enunciado': 'Qual será a saída do código?\n```python\nx = 15\nif x > 10:\n    print("A")\nelif x > 5:\n    print("B")\nelse:\n    print("C")\n```',
+        'opcoes': ['A) A', 'B) B', 'C) C', 'D) AB'],
+        'resposta_correta': 'A',
+        'dificuldade': 'facil'
+    },
+    'Q008': {
+        'conceito': 'condicionais',
+        'enunciado': 'Qual código verifica se um número é par?',
+        'opcoes': [
+            'A) if num % 2 == 0:',
+            'B) if num / 2 == 0:',
+            'C) if num % 2 == 1:',
+            'D) if num // 2 == 0:'
+        ],
+        'resposta_correta': 'A',
+        'dificuldade': 'facil'
+    },
+    'Q009': {
+        'conceito': 'condicionais',
+        'enunciado': 'O que imprime o código?\n```python\nnota = 7\nif nota >= 7:\n    if nota >= 9:\n        print("A")\n    else:\n        print("B")\nelse:\n    print("C")\n```',
+        'opcoes': ['A) A', 'B) B', 'C) C', 'D) Nada'],
+        'resposta_correta': 'B',
+        'dificuldade': 'medio'
+    },
+    
+    # ========== LOOPS ==========
+    'Q010': {
+        'conceito': 'loops',
+        'enunciado': 'Quantas vezes o loop executa?\n```python\nfor i in range(5):\n    print(i)\n```',
+        'opcoes': ['A) 4 vezes', 'B) 5 vezes', 'C) 6 vezes', 'D) Infinitas'],
+        'resposta_correta': 'B',
+        'dificuldade': 'facil'
+    },
+    'Q011': {
+        'conceito': 'loops',
+        'enunciado': 'O que imprime o código?\n```python\nfor i in range(2, 6):\n    print(i, end=" ")\n```',
+        'opcoes': ['A) 2 3 4 5', 'B) 2 3 4 5 6', 'C) 0 1 2 3 4 5', 'D) 1 2 3 4 5'],
+        'resposta_correta': 'A',
+        'dificuldade': 'medio'
+    },
+    'Q012': {
+        'conceito': 'loops',
+        'enunciado': 'O que faz o `break` em um loop?',
+        'opcoes': [
+            'A) Pula para a próxima iteração',
+            'B) Interrompe o loop completamente',
+            'C) Reinicia o loop',
+            'D) Não faz nada'
+        ],
+        'resposta_correta': 'B',
+        'dificuldade': 'facil'
+    },
+    
+    # ========== FUNÇÕES ==========
+    'Q013': {
+        'conceito': 'funcoes',
+        'enunciado': 'Qual é a saída do código?\n```python\ndef soma(a, b):\n    return a + b\nresultado = soma(3, 5)\nprint(resultado)\n```',
+        'opcoes': ['A) 8', 'B) 35', 'C) None', 'D) Erro'],
+        'resposta_correta': 'A',
+        'dificuldade': 'facil'
+    },
+    'Q014': {
+        'conceito': 'funcoes',
+        'enunciado': 'O que acontece se uma função não tem `return`?',
+        'opcoes': [
+            'A) Retorna 0',
+            'B) Retorna None',
+            'C) Gera erro',
+            'D) Retorna True'
+        ],
+        'resposta_correta': 'B',
+        'dificuldade': 'medio'
+    },
+    'Q015': {
+        'conceito': 'funcoes',
+        'enunciado': 'Qual é a saída?\n```python\ndef multiplicar(x, y=2):\n    return x * y\nprint(multiplicar(5))\n```',
+        'opcoes': ['A) 5', 'B) 10', 'C) 7', 'D) Erro'],
+        'resposta_correta': 'B',
+        'dificuldade': 'medio'
+    }
+}
+
+# ============================================================================
+# GRAFO DE PRÉ-REQUISITOS
+# ============================================================================
+
+GRAFO_PREREQUISITOS = [
+    ('variaveis_tipos', 'operadores'),
+    ('variaveis_tipos', 'condicionais'),
+    ('operadores', 'condicionais'),
+    ('variaveis_tipos', 'loops'),
+    ('operadores', 'loops'),
+    ('condicionais', 'funcoes'),
+    ('loops', 'funcoes')
+]
+
+# ============================================================================
+# MAPEAMENTO QUESTÃO -> CONCEITO
+# ============================================================================
+
+def get_questao_conceito_map():
+    """Retorna mapeamento de questão para conceito"""
+    return {q_id: q_data['conceito'] for q_id, q_data in QUESTOES.items()}
+
+def get_conceitos_list():
+    """Retorna lista de IDs de conceitos"""
+    return list(CONCEITOS.keys())
+
+def get_questoes_list():
+    """Retorna lista de IDs de questões"""
+    return list(QUESTOES.keys())
+
+def get_questoes_por_conceito(conceito_id):
+    """Retorna lista de questões de um conceito específico"""
+    return [q_id for q_id, q_data in QUESTOES.items() if q_data['conceito'] == conceito_id]
+````
+
+## File: prompts.json
+````json
+{
+  "sinkt": {
+    "concept_to_related_concepts": {
+      "description": "Prompt oficial usado para gerar relações conceito → conceito no SINKT",
+      "prompt": "Learning order relation refers to relationships that establish a sequential and logical flow for mastering various concepts in a subject. For example, in the subject of mathematics, a student needs to understand the concept of 'integers' before moving on to learn about 'fractions'. Now, a student is learning the concept \"{{TARGET_CONCEPT}}\", which concepts should logically precede this concept to ensure a proper understanding? The candidate concepts are {{CONCEPT_LIST}}. Please choose from the list."
+    },
+    "question_to_concepts": {
+      "description": "Prompt inferido para rotular questões com conceitos",
+      "prompt": "Given the following question:\n\"{{QUESTION_TEXT}}\"\nAnd the list of available concepts:\n{{CONCEPT_LIST}}\nIdentify which concepts this question belongs to. Choose only from the list and output exactly the selected concepts."
+    },
+    "concept_to_questions": {
+      "description": "Prompt inferido para gerar relação conceito → questões",
+      "prompt": "Given the concept \"{{CONCEPT}}\" and the following list of questions:\n{{QUESTION_LIST}}\nSelect all questions that directly require mastery of this concept. Choose only from the list and output exactly the selected questions."
+    }
+  },
+  "maic": {
+    "extract_slide_elements": {
+      "description": "Prompt do MAIC para extrair conteúdo bruto do slide",
+      "prompt": "You are an educational content extractor. Given the following slide image or text, extract: all textual content, all visual instructional objects, headings, bullet points, definitions, and key concepts. Output only structured data."
+    },
+    "generate_slide_description": {
+      "description": "Prompt do MAIC para gerar descrição estruturada do slide",
+      "prompt": "Rewrite the content of this slide in clear and structured educational prose. Identify and list all key concepts explicitly mentioned or implied in the slide."
+    },
+    "generate_knowledge_units": {
+      "description": "Prompt do MAIC para gerar árvore de conhecimento (conceitos hierárquicos)",
+      "prompt": "Given the slide text and description, extract all underlying concepts and organize them into a hierarchical knowledge tree. Include parent → child relationships. Output only the concept tree structure."
+    },
+    "generate_question_for_concepts": {
+      "description": "Prompt do MAIC para criar questões associadas a conceitos",
+      "prompt": "Generate a question that tests understanding of the following concepts: {{CONCEPT_LIST}}. Ensure the question aligns with the content provided and evaluates conceptual understanding."
+    }
+  }
+}
+````
+
+## File: README_FULL.md
+````markdown
+# SINKT Base Individual - Projeto Completo (Dataset Realista)
+
+**Autor:** Erick (Time de Dados - 4Linux)  
+**Data:** Novembro de 2025  
+**Versão:** 2.0 - Com conceitos e questões reais de Python
+
+---
+
+## Objetivo
+
+Garantir que cada integrante dos times 4Linux, CEIA–LLM e CEIA–Dados consiga reproduzir individualmente um pipeline funcional do SINKT com **dados realistas**, passando por todas as etapas desde a construção do dataset até a interpretação dos resultados.
+
+## Resultados Esperados
+
+Ao final deste projeto, você será capaz de:
+
+✅ Criar e executar seu próprio experimento do SINKT no Google Colab com **dados reais**  
+✅ Explicar como a GRU aprende com sequências de acertos/erros em **questões verdadeiras de Python**  
+✅ Demonstrar predições reais e gráficos interpretáveis  
+✅ Entender o fluxo completo: curso → grafo → embeddings → GRU → domínio do aluno → predição  
+✅ Relacionar o experimento ao futuro microserviço Jedai_SINKT
+
+---
+
+## Novidades da Versão 2.0
+
+### Dataset Realista
+
+Ao contrário da versão anterior (com conceitos K1-K5 e questões Q1-Q10), esta versão usa:
+
+#### Conceitos Reais de Python:
+1. **Variáveis e Tipos de Dados** - int, float, str, bool
+2. **Operadores Aritméticos e Lógicos** - +, -, *, /, ==, !=, and, or, not
+3. **Estruturas Condicionais** - if/elif/else
+4. **Estruturas de Repetição** - for/while, range(), break, continue
+5. **Funções** - def, parâmetros, return, escopo
+
+#### Questões Verdadeiras:
+- **15 questões reais** com enunciados completos
+- **3 questões por conceito**
+- **Exemplos:**
+  - Q001: "Qual é o tipo de dado da variável `x = 10`?"
+  - Q010: "Quantas vezes executa: `for i in range(5): print(i)`?"
+  - Q013: "Qual a saída de: `def soma(a,b): return a+b; print(soma(3,5))`?"
+
+
+---
+
+## Estrutura do Projeto
+
+```
+sinkt_colab/
+│
+├── README.md                          # Este arquivo
+├── SINKT_Base_Individual_v2.ipynb     # Notebook principal (Google Colab)
+│
+    ├── grafo_conceitual_python.png
+    ├── loss_curve_realista.png
+    ├── predicoes_analise_realista.png
+    └── embeddings_similaridade_python.png
+```
+
+---
+
+## Como Usar
+
+### Opção 1: Google Colab (Recomendado)
+
+1. **Abrir no Google Colab:**
+   - Faça upload do arquivo `SINKT_Base_Individual_v2.ipynb` no Google Drive
+   - Abra com Google Colab
+   - Ou acesse diretamente: [Link do Colab](#) (se disponível)
+
+2. **Executar células sequencialmente:**
+   - Clique em "Runtime" → "Run all" para executar tudo de uma vez
+   - Ou execute célula por célula para acompanhar cada etapa
+
+3. **Tempo estimado:**
+   - Execução completa: ~5-10 minutos
+   - Treinamento da GRU: ~2-3 minutos (5 epochs)
+
+### Opção 2: Ambiente Local
+
+```bash
+# 1. Criar ambiente virtual
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# ou
+venv\Scripts\activate  # Windows
+
+# 2. Instalar dependências
+pip install torch networkx matplotlib pandas numpy scikit-learn jupyter
+
+# 3. Iniciar Jupyter
+jupyter notebook SINKT_Base_Individual_v2.ipynb
+```
+
+---
+
+## O que o Notebook Contém
+
+### 1. Conceitos e Questões Reais (Seção 2)
+- **Carregamento de dados dos CSVs** (`data/conceitos.csv`, `data/questoes.csv`, `data/grafo_prerequisitos.csv`)
+- **5 conceitos** de programação Python
+- **15 questões** verdadeiras com enunciados completos
+- **Dificuldades:** fácil, médio
+- **Mapeamento** questão → conceito
+
+### 2. Dataset Realista (Seção 3)
+- **10 alunos** (Aluno_1 a Aluno_10)
+- **~50 tentativas** simuladas
+- **Proficiência variável** por aluno (0.3 a 0.9)
+- **Probabilidade de acerto** baseada em proficiência × dificuldade
+- Colunas: `aluno`, `questao_id`, `questao_texto`, `conceito_id`, `conceito_nome`, `dificuldade`, `acerto`
+
+
+### 4. Embeddings (Seção 5)
+- Vetores de **8 dimensões** para cada conceito
+- Entrada da GRU = embedding do conceito + flag de acerto anterior
+
+### 5. Implementação da GRU (Seção 7)
+- `hidden_size = 16`
+- `num_layers = 1`
+- `epochs = 5` (mais epochs para melhor aprendizado)
+- Loss: Binary Cross Entropy (BCEWithLogitsLoss)
+- Otimizador: Adam
+
+### 6. Predições (Seção 9)
+- Seleciona aluno específico (Aluno_1)
+- Alimenta sequência de tentativas na GRU
+- Prevê probabilidade de acerto para cada questão
+- Exibe resultados com questões reais e conceitos
+
+### 7. Mini-Relatório Individual (Seção 11)
+- O que entendi sobre o funcionamento da GRU **com dados reais**
+- Como ela aprende com a sequência de acertos/erros **em questões de Python**
+- O que ainda ficou com dúvida
+- Qual parte foi mais fácil / mais difícil
+- Como o grafo conceitual influenciou as predições
+- **Integração detalhada com Jedai-SINKT** (arquitetura + exemplos práticos)
+
+---
+
+## Visualizações Geradas
+
+O notebook gera automaticamente as seguintes visualizações na pasta `outputs/`:
+
+1. **`outputs/grafo_conceitual_python.png`** - Estrutura de pré-requisitos com nomes completos
+2. **`outputs/loss_curve_realista.png`** - Curva de aprendizado (train vs test loss)
+3. **`outputs/predicoes_analise_realista.png`** - Análise de predições vs realidade com conceitos reais
+4. **`outputs/embeddings_similaridade_python.png`** - Matriz de similaridade entre conceitos de Python
+
+---
+
+## Integração com Jedai-SINKT
+
+### Exemplo de Fluxo Completo
+
+```
+1. Aluno responde questão no Jedai:
+   - Questão: Q010 ("Quantas vezes executa: for i in range(5)?")
+   - Conceito: "Estruturas de Repetição (for/while)"
+   - Resultado: Acerto (1)
+
+2. Jedai envia para Jedai_SINKT:
+   POST /sinkt/update
+   {
+     "user_id": "Aluno_1",
+     "question_id": "Q010",
+     "concept_id": "loops",
+     "result": 1
+   }
+
+3. Backend Jedai_SINKT:
+   - Recupera histórico: [variaveis_tipos:1, operadores:1, condicionais:0, loops:1]
+   - Prepara entrada GRU: embeddings + sequência
+   - Executa predição: p_dominio_loops = 0.68
+
+4. Retorna para Jedai:
+   {
+     "p_dominio": 0.68,
+     "conceito": "loops",
+     "conceito_nome": "Estruturas de Repetição (for/while)",
+     "proxima_acao": "continuar_pratica",
+     "sugestao_questao": "Q011",
+     "prerequisitos_ok": true,
+     "pode_avancar_para": ["funcoes"]
+   }
+
+5. Jedai decide:
+   - Como p = 0.68 (entre 0.4 e 0.8), continua praticando "Loops"
+   - Apresenta Q011 ("O que imprime: for i in range(2, 6)?")
+   - Se p subir para > 0.8, sugere avançar para "Funções"
+   - Se p cair para < 0.4, aciona MAIC para intervenção
+```
+
+### Componentes do Microserviço
+
+1. **Modelo GRU treinado** (arquivo .pth)
+2. **Banco de conceitos e questões** (conceitos_questoes.py)
+3. **Grafo conceitual** (estrutura de pré-requisitos)
+4. **Embeddings dos conceitos**
+5. **API REST** (Flask/FastAPI)
+6. **Banco de dados** (histórico de tentativas)
+
+### Endpoints Propostos
+
+- `POST /sinkt/update` - Atualiza histórico e retorna predição
+- `GET /sinkt/dominio/{user_id}` - Retorna p_dominio de todos os conceitos
+- `GET /sinkt/pode_acessar/{user_id}/{concept_id}` - Valida pré-requisitos
+- `GET /sinkt/explain/{user_id}/{concept_id}` - Explica a predição
+- `GET /sinkt/grafo` - Retorna estrutura do grafo conceitual
+- `GET /sinkt/questoes/{concept_id}` - Lista questões de um conceito
+
+---
+
+## Ideias para Melhorias Futuras
+
+### 1. Banco de Questões Expandido
+- Adicionar 100+ questões de Python
+- Incluir mais conceitos (Listas, Dicionários, Classes, Exceções)
+- Categorizar por dificuldade (fácil, médio, difícil, expert)
+
+### 2. Validação de Pré-requisitos
+- Bloquear acesso a "Funções" se p("Loops") < 0.6
+- Sugerir revisão de pré-requisitos antes de avançar
+
+### 3. Sugestão Inteligente de Questões
+- Se p = 0.3 (baixo), sugerir questões fáceis
+- Se p = 0.7 (médio), sugerir questões médias
+- Se p = 0.9 (alto), sugerir questões difíceis ou avançar
+
+### 4. Dashboard para Professores
+- Visualizar p_dominio de todos os alunos em tempo real
+- Identificar conceitos com baixo domínio geral
+- Alertar sobre alunos em dificuldade
+
+### 5. Integração com MAIC
+- Se p < 0.4 em "Loops", ativar agentes pedagógicos
+- Agente Tutor: perguntas socráticas
+- Agente Conselho: estratégias de estudo
+- Agente Amigo: suporte emocional
+
+### 6. Explicabilidade
+- Mostrar quais tentativas anteriores influenciaram a predição
+- Sugerir conceitos pré-requisitos para revisão
+- Visualizar trajetória de aprendizado
+
+---
+
+## Perguntas Frequentes
+
+### P: Qual a diferença da versão 1.0 para a 2.0?
+
+**R:** A versão 2.0 usa **conceitos e questões reais de Python** em vez de dados numéricos abstratos (K1-K5, Q1-Q10). Isso torna o modelo mais interpretável e próximo de um cenário real de ensino.
+
+### P: Posso adicionar mais conceitos e questões?
+
+**R:** Sim! Edite o arquivo `conceitos_questoes.py` para adicionar novos conceitos (ex: Listas, Dicionários) e questões. Lembre-se de atualizar o grafo de pré-requisitos.
+
+### P: Como o modelo sabe que "Funções" depende de "Loops"?
+
+**R:** Nesta implementação, o grafo é usado apenas para visualização e validação. A GRU aprende relações implícitas através dos dados. Em versões futuras, uma GNN pode usar o grafo explicitamente.
+
+### P: Minha acurácia está baixa (<50%). É normal?
+
+**R:** Com apenas 5 epochs e poucos dados, é normal. Tente aumentar `NUM_EPOCHS` para 10-20 e verificar se o loss está diminuindo.
+
+### P: Como interpretar a matriz de similaridade dos embeddings?
+
+**R:** Valores próximos de 1 indicam que dois conceitos são "similares" na visão do modelo. Isso pode significar que são frequentemente acertados/errados juntos, ou que têm pré-requisitos comuns.
+
+---
+
+## Checklist de Validação
+
+Ao final da execução, você deve ser capaz de responder:
+
+- [ ] O que é o estado oculto da GRU e como ele funciona?
+- [ ] Como a GRU usa o acerto anterior para fazer predições?
+- [ ] Por que embeddings são importantes?
+- [ ] Como o grafo conceitual representa a estrutura de conhecimento de Python?
+- [ ] Qual a diferença entre loss de treino e teste?
+- [ ] Como interpretar a probabilidade de domínio (p)?
+- [ ] Onde o SINKT se encaixa na arquitetura Jedai + MAIC?
+- [ ] Como o modelo lida com questões de diferentes dificuldades?
+- [ ] Por que usar dados reais é melhor que dados numéricos abstratos?
+
+---
+
+## Próximos Passos
+
+1. **Experimentar com dados reais:**
+   - Substituir dataset simulado por dados de alunos reais
+   - Avaliar performance em cenários reais
+
+2. **Implementar GNN:**
+   - Integrar Graph Neural Networks
+   - Usar estrutura do grafo nas predições
+
+3. **Desenvolver API:**
+   - Criar microserviço Jedai_SINKT
+   - Implementar endpoints REST
+
+4. **Integrar com MAIC:**
+   - Conectar predições do SINKT com intervenções do MAIC
+   - Criar fluxo completo de personalização
+
+5. **Expandir banco de questões:**
+   - Adicionar mais conceitos de Python
+   - Incluir questões de outras linguagens (JavaScript, Java, etc.)
+
+---
+
+## Referências
+
+1. **SINKT Paper:** "Structure-Aware Inductive Knowledge Tracing"
+2. **BKT:** Bayesian Knowledge Tracing (modelo base)
+3. **GRU:** "Learning Phrase Representations using RNN Encoder-Decoder" (Cho et al., 2014)
+4. **PyTorch Documentation:** https://pytorch.org/docs/
+5. **Python Official Tutorial:** https://docs.python.org/3/tutorial/
+
+---
+
+## Changelog
+
+- ✅ Refatoração: dados movidos para arquivos CSV (`data/conceitos.csv`, `data/questoes.csv`, `data/grafo_prerequisitos.csv`)
+- ✅ Organização: outputs salvos em pasta dedicada (`outputs/`)
+- ✅ Limpeza: todos os emojis removidos do notebook
+- ✅ Estrutura mais limpa e profissional
+
+### Versão 2.0 (Novembro 2025)
+- ✅ Substituição de dados numéricos por conceitos reais de Python
+- ✅ Criação de 15 questões verdadeiras com enunciados completos
+- ✅ Grafo de pré-requisitos bem definido (7 relações)
+- ✅ Visualizações atualizadas com nomes completos dos conceitos
+- ✅ Mini-relatório expandido com exemplos práticos de integração
+- ✅ Documentação completa atualizada
+
+### Versão 1.0 (Novembro 2025)
+- ✅ Implementação inicial com dados numéricos (K1-K5, Q1-Q10)
+- ✅ Pipeline completo: dataset → grafo → embeddings → GRU → predições
+- ✅ Visualizações básicas
+- ✅ Mini-relatório inicial
+
+---
+
+**Desenvolvido por:** Erick (Time de Dados - 4Linux)  
+**Novembro de 2025**
+````
+
+## File: README.md
+````markdown
+# SINKT Base Individual - Projeto Completo (Dataset Realista)
+
+#### Conceitos Reais de Python:
+1. **Variáveis e Tipos de Dados** - int, float, str, bool
+2. **Operadores Aritméticos e Lógicos** - +, -, *, /, ==, !=, and, or, not
+3. **Estruturas Condicionais** - if/elif/else
+4. **Estruturas de Repetição** - for/while, range(), break, continue
+5. **Funções** - def, parâmetros, return, escopo
+
+#### Questões Verdadeiras:
+- **15 questões reais** com enunciados completos
+- **3 questões por conceito**
+- **Exemplos:**
+  - Q001: "Qual é o tipo de dado da variável `x = 10`?"
+  - Q010: "Quantas vezes executa: `for i in range(5): print(i)`?"
+  - Q013: "Qual a saída de: `def soma(a,b): return a+b; print(soma(3,5))`?"
+
+
+---
+
+## Estrutura do Projeto
+
+```
+sinkt_colab/
+│
+├── README.md                          # Este arquivo
+├── SINKT_Base_Individual_v2.ipynb     # Notebook principal (Google Colab)
+│
+    ├── grafo_conceitual_python.png
+    ├── loss_curve_realista.png
+    ├── predicoes_analise_realista.png
+    └── embeddings_similaridade_python.png
+```
+
+---
+
+## Como Usar
+
+```bash
+# 1. Criar ambiente virtual
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# ou
+venv\Scripts\activate  # Windows
+
+# 2. Instalar dependências
+pip install torch networkx matplotlib pandas numpy scikit-learn jupyter
+
+# 3. Iniciar Jupyter
+jupyter notebook SINKT_Base_Individual_v2.ipynb
+```
+
+---
+
+## O que o Notebook Contém
+
+### 1. Conceitos e Questões Reais (Seção 2)
+- **Carregamento de dados dos CSVs** (`data/conceitos.csv`, `data/questoes.csv`, `data/grafo_prerequisitos.csv`)
+- **5 conceitos** de programação Python
+- **15 questões** verdadeiras com enunciados completos
+- **Dificuldades:** fácil, médio
+- **Mapeamento** questão → conceito
+
+### 2. Dataset Realista (Seção 3)
+- **10 alunos** (Aluno_1 a Aluno_10)
+- **~50 tentativas** simuladas
+- **Proficiência variável** por aluno (0.3 a 0.9)
+- **Probabilidade de acerto** baseada em proficiência × dificuldade
+- Colunas: `aluno`, `questao_id`, `questao_texto`, `conceito_id`, `conceito_nome`, `dificuldade`, `acerto`
+
+
+### 4. Embeddings (Seção 5)
+- Vetores de **8 dimensões** para cada conceito
+- Entrada da GRU = embedding do conceito + flag de acerto anterior
+
+### 5. Implementação da GRU (Seção 7)
+- `hidden_size = 16`
+- `num_layers = 1`
+- `epochs = 5` (mais epochs para melhor aprendizado)
+- Loss: Binary Cross Entropy (BCEWithLogitsLoss)
+- Otimizador: Adam
+
+### 6. Predições (Seção 9)
+- Seleciona aluno específico (Aluno_1)
+- Alimenta sequência de tentativas na GRU
+- Prevê probabilidade de acerto para cada questão
+- Exibe resultados com questões reais e conceitos
+
+### 7. Mini-Relatório Individual (Seção 11)
+- O que entendi sobre o funcionamento da GRU **com dados reais**
+- Como ela aprende com a sequência de acertos/erros **em questões de Python**
+- O que ainda ficou com dúvida
+- Qual parte foi mais fácil / mais difícil
+- Como o grafo conceitual influenciou as predições
+- **Integração detalhada com Jedai-SINKT** (arquitetura + exemplos práticos)
+
+---
+
+## Visualizações Geradas
+
+O notebook gera automaticamente as seguintes visualizações na pasta `outputs/`:
+
+1. **`outputs/grafo_conceitual_python.png`** - Estrutura de pré-requisitos com nomes completos
+2. **`outputs/loss_curve_realista.png`** - Curva de aprendizado (train vs test loss)
+3. **`outputs/predicoes_analise_realista.png`** - Análise de predições vs realidade com conceitos reais
+4. **`outputs/embeddings_similaridade_python.png`** - Matriz de similaridade entre conceitos de Python
+````
+
+## File: SINKT_Base_Individual_v2_Relatorio.md
+````markdown
+## 1. Objetivo
+
+Este documento descreve o processo e os resultados obtidos no notebook `SINKT_Base_Individual_v2.ipynb`. O objetivo foi implementar um pipeline completo de Knowledge Tracing (Rastreamento de Conhecimento) utilizando uma rede neural recorrente (GRU) aplicada a um dataset realista de questoes de programacao em Python.
+
+## 2. Passo a Passo Realizado
+
+### 2.1. Instalacao e Configuracao
+
+O ambiente foi preparado com a instalacao das bibliotecas necessarias:
+- **PyTorch**: Para construcao e treinamento da rede neural.
+- **NetworkX**: Para criacao e manipulacao de grafos conceituais.
+- **Matplotlib/Pandas/NumPy**: Para manipulacao de dados e visualizacao.
+- **Scikit-learn**: Para divisao de dados e metricas.
+
+Foram configuradas sementes aleatorias (seeds) para garantir a reprodutibilidade dos resultados.
+
+### 2.2. Definicao de Conceitos e Questoes Reais
+
+Ao inves de dados sinteticos abstratos, foram utilizados conceitos e questoes reais de Python:
+
+*   **Conceitos Abordados (5 no total):**
+    1.  Variaveis e Tipos de Dados
+    2.  Operadores Aritmeticos e Logicos
+    3.  Estruturas Condicionais (if/elif/else)
+    4.  Estruturas de Repeticao (for/while)
+    5.  Funcoes
+
+*   **Questoes:**
+    *   Foram criadas 15 questoes reais com enunciados e niveis de dificuldade (facil, medio, dificil).
+    *   Cada conceito possui 3 questoes associadas.
+
+### 2.3. Criacao do Dataset Realista
+
+Foi simulado um dataset comportamental de alunos:
+*   **Participantes:** 10 alunos simulados (Aluno_1 a Aluno_10).
+*   **Metodologia de Simulacao:**
+    *   Cada aluno recebeu um nivel de proficiencia geral aleatorio.
+    *   A probabilidade de acerto foi calculada combinando a proficiencia do aluno com a dificuldade da questao.
+    *   Foram geradas 50 tentativas no total (5 questoes por aluno).
+*   **Estatisticas do Dataset Gerado:**
+    *   Taxa de acerto geral: 38.00%
+    *   Conceito com maior taxa de acerto: Estruturas Condicionais (53.8%)
+    *   Conceito com menor taxa de acerto: Variaveis e Tipos de Dados (20.0%)
+
+
+### 2.5. Implementacao de Embeddings e Modelo
+
+*   **Embeddings:** Cada conceito foi mapeado para um vetor denso de 8 dimensoes.
+*   **Modelo GRU (Gated Recurrent Unit):**
+    *   Entrada: Embedding do conceito atual + Resultado da tentativa anterior (acerto/erro).
+    *   Camada Oculta: 16 unidades.
+    *   Saida: Probabilidade de acerto na proxima questao.
+    *   Total de parametros: 1,353.
+
+### 2.6. Treinamento
+
+*   **Divisao dos Dados:** 80% para treino (40 amostras) e 20% para teste (10 amostras).
+*   **Configuracao:**
+    *   Funcao de Perda: BCEWithLogitsLoss.
+    *   Otimizador: Adam (Learning Rate = 0.001).
+    *   Epocas: 5.
+*   **Curva de Aprendizado:** Monitoramento da reducao da perda (Loss) tanto no treino quanto no teste.
+
+### 2.7. Predicoes e Analise
+
+O modelo foi utilizado para prever o desempenho de um aluno especifico ("Aluno_1") em suas tentativas. As predicoes (probabilidade de acerto) foram comparadas com os acertos reais.
+
+---
+
+## 3. Resultados Obtidos
+
+### 3.1. Desempenho do Modelo
+*   O modelo convergiu durante as 5 epocas de treinamento.
+*   **Train Loss Final:** ~0.7068
+*   **Test Loss Final:** ~0.7166
+*   A acuracia nas predicoes para o aluno de teste foi de 40.00% (dado o pequeno volume de dados, isso e esperado, servindo como prova de conceito).
+
+### 3.2. Analises Visuais Geradas
+O notebook gerou tres visualizacoes principais salvas na pasta `outputs`:
+1.  **grafo_conceitual_python.png**: Visualizacao da estrutura de pre-requisitos.
+2.  **loss_curve_realista.png**: Grafico da evolucao da perda durante o treinamento.
+3.  **predicoes_analise_realista.png**: Comparacao entre a probabilidade predita pelo modelo e o resultado real do aluno, alem do desempenho medio por conceito.
+4.  **embeddings_similaridade_python.png**: Matriz de similaridade (cosseno) entre os conceitos aprendidos pelo modelo.
+
+---
+
+## 4. Mini-Relatorio Individual e Conclusoes
+
+### 4.1. Entendimento da GRU
+A GRU demonstrou capacidade de processar sequencias mantendo um estado oculto historico. Ela consegue inferir padroes como "sucesso em conceitos basicos aumenta a probabilidade de sucesso em conceitos dependentes" e ajusta suas predicoes baseada no historico imediato de acertos e erros.
+
+### 4.2. Aprendizados com o Dataset Realista
+*   **Padroes de Proficiencia:** O modelo capturou que alunos proficientes em temas base tendem a ir bem nos avancados.
+*   **Dificuldade:** A dificuldade intrinseca das questoes (facil/medio/dificil) foi assimilada atraves das estatisticas de acerto.
+*   **Dependencia Temporal:** A ordem das tentativas influencia a confianca do modelo.
+
+### 4.3. Integracao com o Projeto Jedai - SINKT
+O experimento valida o fluxo proposto para o sistema Jedai:
+1.  O aluno responde no Jedai.
+2.  O SINKT recebe o dado e atualiza o modelo.
+3.  O modelo retorna a probabilidade de dominio e sugestoes.
+4.  O Jedai adapta o conteudo ou aciona agentes (MAIC) para intervencao.
+
+### 4.4. Proximos Passos Sugeridos
+*   Expandir o banco de questoes para cobrir mais topicos e aumentar o volume de dados.
+*   Implementar validacao explicita de pre-requisitos usando o grafo.
+*   Criar dashboards para professores visualizarem o progresso da turma.
+*   Integrar a saida do modelo com os agentes pedagogicos para feedbacks personalizados.
+````
+
+## File: SINKT_Base_Individual_v2.ipynb
+````
 {
  "cells": [
   {
@@ -38,18 +967,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 47,
    "metadata": {},
    "outputs": [],
    "source": [
     "# Instalação de dependências\n",
-    "!pip install torch networkx matplotlib pandas numpy scikit-learn python-dotenv -q\n",
+    "!pip install torch networkx matplotlib pandas numpy scikit-learn -q\n",
     "!pip install -q -U google-generativeai"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 48,
    "metadata": {},
    "outputs": [
     {
@@ -77,23 +1006,14 @@
     "import warnings\n",
     "import time\n",
     "import re\n",
-    "import os\n",
-    "from dotenv import load_dotenv\n",
-    "\n",
     "warnings.filterwarnings('ignore')\n",
-    "\n",
-    "# Carregar variáveis de ambiente\n",
-    "load_dotenv()\n",
     "\n",
     "# Configurações\n",
     "np.random.seed(42)\n",
     "torch.manual_seed(42)\n",
     "\n",
     "# --- CONFIGURAÇÃO LLM (GEMINI) ---\n",
-    "GOOGLE_API_KEY = os.getenv(\"GOOGLE_API_KEY\")\n",
-    "if not GOOGLE_API_KEY:\n",
-    "    raise ValueError(\"A variável de ambiente GOOGLE_API_KEY não foi definida. Verifique o arquivo .env\")\n",
-    "\n",
+    "GOOGLE_API_KEY = \"AIzaSyCZCCrSC50slZjsfRpil6r66AJepaaBit4\" \n",
     "genai.configure(api_key=GOOGLE_API_KEY)\n",
     "\n",
     "# Carregar prompts\n",
@@ -833,7 +1753,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 57,
    "metadata": {},
    "outputs": [
     {
@@ -851,15 +1771,8 @@
    ],
    "source": [
     "# Configuração do Gemini\n",
-    "# A chave já foi carregada anteriormente, mas garantimos o carregamento caso a célula seja executada isoladamente\n",
-    "if not os.getenv(\"GOOGLE_API_KEY\"):\n",
-    "    load_dotenv()\n",
-    "\n",
-    "GOOGLE_API_KEY = os.getenv(\"GOOGLE_API_KEY\")\n",
-    "if not GOOGLE_API_KEY:\n",
-    "     print(\"AVISO: GOOGLE_API_KEY não encontrada. Verifique o arquivo .env\")\n",
-    "else:\n",
-    "    genai.configure(api_key=GOOGLE_API_KEY)\n",
+    "GOOGLE_API_KEY = \"AIzaSyCZCCrSC50slZjsfRpil6r66AJepaaBit4\" # Chave fornecida\n",
+    "genai.configure(api_key=GOOGLE_API_KEY)\n",
     "\n",
     "# Carregar prompts\n",
     "with open('prompts.json', 'r') as f:\n",
@@ -1919,3 +2832,100 @@
  "nbformat": 4,
  "nbformat_minor": 4
 }
+````
+
+## File: SINKT_CONTEXT.md
+````markdown
+# SINKT (Structure-Aware Inductive Knowledge Tracing) - AI Global Context
+
+## 1. Identidade e Propósito
+Este documento serve como a "memória central" e contexto técnico para uma IA assistente de desenvolvimento. O objetivo é permitir a implementação, refatoração e expansão do projeto **SINKT**, um sistema de Rastreamento de Conhecimento (Knowledge Tracing) focado em educação, especificamente programado para o domínio de Python (no estado atual), mas arquitetado para ser agnóstico ao domínio.
+
+**Sua Missão:** Auxiliar na transição de um protótipo em Notebook (Jupyter) para um microserviço robusto (API REST), mantendo a fidelidade teórica ao artigo original do SINKT e respeitando a implementação prática atual.
+
+---
+
+## 2. Fundamentação Teórica (Resumo do Artigo SINKT)
+
+O SINKT (*Structure-Aware Inductive Knowledge Tracing*) resolve dois problemas principais do Knowledge Tracing tradicional (como DKT ou BKT):
+1.  **Cold Start/Indutivo:** Modelos tradicionais usam IDs fixos. O SINKT usa **conteúdo semântico** (texto das questões/conceitos) e **grafos**, permitindo prever o desempenho em questões *novas* (que nunca foram vistas no treino).
+2.  **Estrutura do Conhecimento:** Incorpora explicitamente as relações entre conceitos (pré-requisitos, similaridade) através de um grafo heterogêneo.
+
+### Arquitetura Teórica (Paper):
+1.  **Gerador de Grafo (LLM):** Usa LLMs para criar arestas *Conceito-Conceito*, *Conceito-Questão* e *Questão-Conceito*.
+2.  **Textual Information Encoder:** Usa modelos como BERT ou Vicuna para gerar embeddings semânticos dos textos.
+3.  **Structural Information Encoder (SIEnc):** Usa Graph Attention Networks (GAT) para propagar informação no grafo.
+4.  **Student State Encoder (GRU):** Uma rede neural recorrente que processa a sequência temporal de tentativas do aluno.
+
+---
+
+## 3. Estado Atual da Implementação (Codebase v2.0)
+
+Atualmente, o projeto é um protótipo funcional em Python (PyTorch) focado no ensino de programação Python. Diferente do artigo completo, a implementação atual simplifica o *Structural Encoder*, focando na GRU e embeddings estáticos, mas prepara o terreno para a GNN.
+
+### Domínio de Dados (Python Programming)
+O sistema opera com 5 conceitos hierárquicos e 15 questões reais:
+1.  **Variáveis e Tipos** (Nível 1)
+2.  **Operadores** (Nível 1) -> Depende de Variáveis
+3.  **Condicionais** (Nível 2) -> Depende de 1 e 2
+4.  **Loops** (Nível 2) -> Depende de 1 e 2
+5.  **Funções** (Nível 3) -> Depende de 3 e 4
+
+
+### Modelo Atual (PyTorch)
+* **Entrada:** `Embedding(Conceito) + Resultado_Anterior (0 ou 1)`.
+* **Core:** `GRU (Hidden Size=16, Layers=1)`.
+* **Saída:** Probabilidade (Sigmoid) de acerto na próxima questão.
+* **Status:** O modelo aprende padrões sequenciais e proficiência latente, mas ainda não utiliza GNNs (Graph Neural Networks) para processar o grafo explicitamente durante o forward pass.
+
+---
+
+## 4. Arquitetura Alvo: Microserviço Jedai_SINKT
+
+O objetivo imediato é transformar o notebook em uma API que se comunica com o ecossistema "Jedai" (Plataforma de Ensino) e "MAIC" (Agentes Pedagógicos).
+
+### Fluxo de Dados da API
+1.  **Input (Request):** O aluno responde uma questão no frontend.
+    * Payload: `{ "user_id": "Aluno_1", "question_id": "Q010", "concept_id": "loops", "result": 1 }`
+2.  **Processamento SINKT:**
+    * Carrega o histórico do aluno (banco de dados ou memória).
+    * Gera o vetor de estado oculto atualizado via GRU.
+    * Calcula a probabilidade de domínio atual ($p$) para o conceito trabalhado e próximos conceitos.
+3.  **Lógica de Negócio (Pedagogia):**
+    * Se $p < 0.4$: Acionar intervenção (MAIC).
+    * Se $0.4 \le p \le 0.8$: Continuar prática no mesmo conceito.
+    * Se $p > 0.8$: Sugerir avanço para próximo nó do grafo.
+4.  **Output (Response):**
+    * JSON contendo: Probabilidade de domínio, Próxima Ação Sugerida, Validação de Pré-requisitos.
+
+---
+
+## 5. Prompts e Uso de LLM (Integração)
+
+O arquivo `prompts.json` define como as LLMs auxiliam o SINKT na fase de **Indução** (adicionar novos conteúdos sem re-treinar a rede neural do zero).
+
+1.  **`concept_to_related_concepts`:** Define a topologia do grafo (pré-requisitos) quando um novo conceito é criado.
+2.  **`question_to_concepts`:** Classifica uma nova questão automaticamente para vinculá-la a um nó do grafo.
+3.  **`generate_question_for_concepts`:** (MAIC) Gera questões sintéticas para preencher lacunas de dados no grafo.
+
+**Regra de Ouro:** O SINKT usa LLMs para *estruturar os dados* (grafo e texto), mas usa a Rede Neural (GRU/GNN) para *prever o desempenho* (velocidade e precisão).
+
+---
+
+## 6. Diretrizes para Implementação da API
+
+Ao gerar código ou sugerir arquitetura para este contexto, siga estas regras:
+
+1.  **Modularidade:** Separe a lógica do modelo (`model.py`), o carregamento de dados (`data_loader.py`) e as rotas da API (`main.py` / `routes.py`).
+2.  **Persistência:** O estado oculto ($h_t$) da GRU precisa ser persistido por aluno. Inicialmente, pode ser em memória ou arquivo, mas planeje para Redis/Postgres.
+3.  **Embeddings:** Os embeddings treinados no notebook devem ser salvos (`state_dict`) e carregados na inicialização da API. Não treine o modelo a cada request.
+4.  **Grafo:** O grafo (NetworkX) deve ser carregado na memória para verificar pré-requisitos rapidamente (ex: "Aluno pode acessar Funções?").
+5.  **Type Hinting:** Use Pydantic para validação de dados de entrada/saída da API.
+
+## 7. Terminologia Chave
+* **KC (Knowledge Component):** Sinônimo de Conceito ou Habilidade.
+* **KT (Knowledge Tracing):** A tarefa de modelar o conhecimento do aluno ao longo do tempo.
+* **Inductive:** Capacidade de lidar com itens não vistos no treino.
+* **Transductive:** Limitação de lidar apenas com itens fixos (IDs conhecidos).
+* **Cold Start:** Problema de não ter dados históricos sobre um novo aluno ou nova questão.
+````
