@@ -1,0 +1,34 @@
+{
+  "sinkt": {
+    "concept_to_related_concepts": {
+      "description": "Prompt oficial usado para gerar relações conceito → conceito no SINKT",
+      "prompt": "Learning order relation refers to relationships that establish a sequential and logical flow for mastering various concepts in a subject. For example, in the subject of mathematics, a student needs to understand the concept of 'integers' before moving on to learn about 'fractions'. Now, a student is learning the concept \"{{TARGET_CONCEPT}}\", which concepts should logically precede this concept to ensure a proper understanding? The candidate concepts are {{CONCEPT_LIST}}. Please choose from the list."
+    },
+    "question_to_concepts": {
+      "description": "Prompt inferido para rotular questões com conceitos",
+      "prompt": "Given the following question:\n\"{{QUESTION_TEXT}}\"\nAnd the list of available concepts:\n{{CONCEPT_LIST}}\nIdentify which concepts this question belongs to. Choose only from the list and output exactly the selected concepts."
+    },
+    "concept_to_questions": {
+      "description": "Prompt inferido para gerar relação conceito → questões",
+      "prompt": "Given the concept \"{{CONCEPT}}\" and the following list of questions:\n{{QUESTION_LIST}}\nSelect all questions that directly require mastery of this concept. Choose only from the list and output exactly the selected questions."
+    }
+  },
+  "maic": {
+    "extract_slide_elements": {
+      "description": "Prompt do MAIC para extrair conteúdo bruto do slide",
+      "prompt": "You are an educational content extractor. Given the following slide image or text, extract: all textual content, all visual instructional objects, headings, bullet points, definitions, and key concepts. Output only structured data."
+    },
+    "generate_slide_description": {
+      "description": "Prompt do MAIC para gerar descrição estruturada do slide",
+      "prompt": "Rewrite the content of this slide in clear and structured educational prose. Identify and list all key concepts explicitly mentioned or implied in the slide."
+    },
+    "generate_knowledge_units": {
+      "description": "Prompt do MAIC para gerar árvore de conhecimento (conceitos hierárquicos)",
+      "prompt": "Given the slide text and description, extract all underlying concepts and organize them into a hierarchical knowledge tree. Include parent → child relationships. Output only the concept tree structure."
+    },
+    "generate_question_for_concepts": {
+      "description": "Prompt do MAIC para criar questões associadas a conceitos",
+      "prompt": "Generate a question that tests understanding of the following concepts: {{CONCEPT_LIST}}. Ensure the question aligns with the content provided and evaluates conceptual understanding."
+    }
+  }
+}
