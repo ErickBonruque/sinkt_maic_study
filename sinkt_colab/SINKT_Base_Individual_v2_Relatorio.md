@@ -42,12 +42,6 @@ Foi simulado um dataset comportamental de alunos:
     *   Conceito com maior taxa de acerto: Estruturas Condicionais (53.8%)
     *   Conceito com menor taxa de acerto: Variaveis e Tipos de Dados (20.0%)
 
-### 2.4. Grafo Conceitual
-
-Foi estruturado um grafo direcionado representando os pre-requisitos de aprendizado:
-*   **Nos:** Os 5 conceitos de Python.
-*   **Arestas:** Relacoes de dependencia (ex: "Variaveis" e pre-requisito para "Condicionais").
-*   **Visualizacao:** O grafo foi plotado e salvo, mostrando claramente a hierarquia do conteudo.
 
 ### 2.5. Implementacao de Embeddings e Modelo
 

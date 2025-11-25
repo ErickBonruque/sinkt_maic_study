@@ -15,16 +15,6 @@
   - Q010: "Quantas vezes executa: `for i in range(5): print(i)`?"
   - Q013: "Qual a saída de: `def soma(a,b): return a+b; print(soma(3,5))`?"
 
-#### Grafo de Pré-requisitos Bem Definido:
-```
-variaveis_tipos → operadores
-variaveis_tipos → condicionais
-operadores → condicionais
-variaveis_tipos → loops
-operadores → loops
-condicionais → funcoes
-loops → funcoes
-```
 
 ---
 
@@ -36,12 +26,6 @@ sinkt_colab/
 ├── README.md                          # Este arquivo
 ├── SINKT_Base_Individual_v2.ipynb     # Notebook principal (Google Colab)
 │
-├── data/                              # Dados de entrada (CSVs)
-│   ├── conceitos.csv                  # Conceitos de Python
-│   ├── questoes.csv                   # Questões reais
-│   └── grafo_prerequisitos.csv        # Relações de pré-requisitos
-│
-└── outputs/                           # Saídas do notebook (gráficos)
     ├── grafo_conceitual_python.png
     ├── loss_curve_realista.png
     ├── predicoes_analise_realista.png
@@ -84,11 +68,6 @@ jupyter notebook SINKT_Base_Individual_v2.ipynb
 - **Probabilidade de acerto** baseada em proficiência × dificuldade
 - Colunas: `aluno`, `questao_id`, `questao_texto`, `conceito_id`, `conceito_nome`, `dificuldade`, `acerto`
 
-### 3. Grafo Conceitual (Seção 4)
-- **5 nós** (conceitos de Python)
-- **7 arestas** de pré-requisito
-- Visualização com nomes completos dos conceitos
-- Exporta imagem como `grafo_conceitual_python.png`
 
 ### 4. Embeddings (Seção 5)
 - Vetores de **8 dimensões** para cada conceito
