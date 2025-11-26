@@ -94,15 +94,7 @@ A GRU demonstrou capacidade de processar sequencias mantendo um estado oculto hi
 *   **Dificuldade:** A dificuldade intrinseca das questoes (facil/medio/dificil) foi assimilada atraves das estatisticas de acerto.
 *   **Dependencia Temporal:** A ordem das tentativas influencia a confianca do modelo.
 
-### 4.3. Integracao com o Projeto Jedai - SINKT
-O experimento valida o fluxo proposto para o sistema Jedai:
-1.  O aluno responde no Jedai.
-2.  O SINKT recebe o dado e atualiza o modelo.
-3.  O modelo retorna a probabilidade de dominio e sugestoes.
-4.  O Jedai adapta o conteudo ou aciona agentes (MAIC) para intervencao.
-
-### 4.4. Proximos Passos Sugeridos
+### 4.3. Proximos Passos Sugeridos
 *   Expandir o banco de questoes para cobrir mais topicos e aumentar o volume de dados.
 *   Implementar validacao explicita de pre-requisitos usando o grafo.
-*   Criar dashboards para professores visualizarem o progresso da turma.
 *   Integrar a saida do modelo com os agentes pedagogicos para feedbacks personalizados.
