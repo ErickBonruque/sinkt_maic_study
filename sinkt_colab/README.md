@@ -51,6 +51,14 @@ jupyter notebook SINKT_Base_Individual_v2.ipynb
 - **Probabilidade de acerto** baseada em proficiência × dificuldade
 - Colunas: `aluno`, `questao_id`, `questao_texto`, `conceito_id`, `conceito_nome`, `dificuldade`, `acerto`
 
+### 3. Integração com Gemini AI (Fase Indutiva - Seção 4)
+- **Modelo:** `gemini-2.0-flash` via `google-generativeai`.
+- **Geração de Grafo:** O grafo de pré-requisitos é construído dinamicamente pela IA.
+  - Prompt: `concept_to_related_concepts`.
+  - Identifica dependências lógicas entre os conceitos (ex: Loops dependem de Condicionais).
+- **Classificação de Questões:** Teste de capacidade da IA de mapear novas questões para os conceitos existentes.
+  - Prompt: `question_to_concepts`.
+  - Exemplo validado com questão inédita envolvendo loops e condicionais.
 
 ### 4. Embeddings (Seção 5)
 - Vetores de **8 dimensões** para cada conceito
