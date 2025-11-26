@@ -42,6 +42,20 @@ Foi simulado um dataset comportamental de alunos:
     *   Conceito com maior taxa de acerto: Estruturas Condicionais (53.8%)
     *   Conceito com menor taxa de acerto: Variaveis e Tipos de Dados (20.0%)
 
+### 2.4. Integração com LLM (Gemini 2.0 Flash)
+
+Foram realizados testes específicos utilizando a API do Google Gemini (`gemini-2.0-flash`) para validar a capacidade "Indutiva" do SINKT (Structure-Aware Inductive Knowledge Tracing), focada em cenários de *Cold Start*:
+
+1.  **Geração Dinâmica do Grafo de Pré-requisitos (Topologia):**
+    *   O grafo de pré-requisitos não foi carregado de um arquivo estático, mas sim gerado dinamicamente pela LLM.
+    *   O modelo analisou cada conceito e, através do prompt `concept_to_related_concepts`, identificou as dependências lógicas.
+    *   **Resultado:** A IA construiu corretamente a hierarquia, identificando por exemplo que "Estruturas de Repetição" dependem de "Variáveis", "Operadores" e "Condicionais".
+
+2.  **Classificação Automática de Questões:**
+    *   Foi testada a capacidade da LLM de classificar uma nova questão que não existia no dataset.
+    *   **Questão Teste:** "Escreva um código que use um loop 'for' para somar apenas os números pares de uma lista de inteiros."
+    *   **Prompt:** `question_to_concepts`.
+    *   **Resultado:** A LLM identificou corretamente os conceitos envolvidos: *Variáveis e Tipos de Dados*, *Operadores Aritméticos*, *Estruturas Condicionais* e *Estruturas de Repetição*.
 
 ### 2.5. Implementacao de Embeddings e Modelo
 
@@ -76,8 +90,8 @@ O modelo foi utilizado para prever o desempenho de um aluno especifico ("Aluno_1
 *   A acuracia nas predicoes para o aluno de teste foi de 40.00% (dado o pequeno volume de dados, isso e esperado, servindo como prova de conceito).
 
 ### 3.2. Analises Visuais Geradas
-O notebook gerou tres visualizacoes principais salvas na pasta `outputs`:
-1.  **grafo_conceitual_python.png**: Visualizacao da estrutura de pre-requisitos.
+O notebook gerou quatro visualizacoes principais salvas na pasta `outputs`:
+1.  **grafo_dependencia_ia.png**: Visualizacao da estrutura de pre-requisitos gerada dinamicamente pela IA.
 2.  **loss_curve_realista.png**: Grafico da evolucao da perda durante o treinamento.
 3.  **predicoes_analise_realista.png**: Comparacao entre a probabilidade predita pelo modelo e o resultado real do aluno, alem do desempenho medio por conceito.
 4.  **embeddings_similaridade_python.png**: Matriz de similaridade (cosseno) entre os conceitos aprendidos pelo modelo.
