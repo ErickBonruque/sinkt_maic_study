@@ -15,23 +15,6 @@
   - Q010: "Quantas vezes executa: `for i in range(5): print(i)`?"
   - Q013: "Qual a saída de: `def soma(a,b): return a+b; print(soma(3,5))`?"
 
-
----
-
-## Estrutura do Projeto
-
-```
-sinkt_colab/
-│
-├── README.md                          # Este arquivo
-├── SINKT_Base_Individual_v2.ipynb     # Notebook principal (Google Colab)
-│
-    ├── grafo_conceitual_python.png
-    ├── loss_curve_realista.png
-    ├── predicoes_analise_realista.png
-    └── embeddings_similaridade_python.png
-```
-
 ---
 
 ## Como Usar
