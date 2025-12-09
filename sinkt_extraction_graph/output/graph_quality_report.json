@@ -1,20 +1,18 @@
 {
-    "metrics": {
-        "total_nodes": 0,
-        "total_edges": 0,
-        "density": 0,
-        "connected_components": 0,
-        "orphans_count": 0,
-        "roots_count": 0,
-        "leaves_count": 0
-    },
-    "anomalies": {
-        "self_loops": [],
-        "cycles_in_dependencies": []
-    },
-    "lists": {
-        "orphans": [],
-        "roots": [],
-        "leaves": []
-    }
+  "generated_at": "2025-12-09T19:18:10.414124",
+  "nodes": 305,
+  "edges": 2042,
+  "orphans": 0,
+  "density": 0.044047,
+  "audit_trail": [
+    "[2025-12-09T19:18:10.316608] Estado inicial carregado.",
+    "[2025-12-09T19:18:10.316689] Mesa redonda iniciada com 8 agentes.",
+    "[2025-12-09T19:18:10.317124] Cleaner consolidou conceitos em 254 nós únicos.",
+    "[2025-12-09T19:18:10.317266] Terminologista aplicou tipagem canônica e fallback.",
+    "[2025-12-09T19:18:10.318143] Relações normalizadas e deduplicadas.",
+    "[2025-12-09T19:18:10.389366] Linker Léxico adicionou 1551 relações para aumentar densidade.",
+    "[2025-12-09T19:18:10.391530] Estruturador conectou conceitos às âncoras de capítulo.",
+    "[2025-12-09T19:18:10.412217] Resgate reduziu órfãos com 21 novas relações.",
+    "[2025-12-09T19:18:10.413050] Auditoria final aplicada: relações e conceitos sincronizados."
+  ]
 }
