@@ -1,0 +1,2187 @@
+{
+    "metadata": {
+        "pipeline": "SINKT v2 (Extraction -> Densification -> Council Validation)",
+        "model": "GPT-4o",
+        "nodes": 226,
+        "edges": 174,
+        "density": 0.0034218289085545723
+    },
+    "concepts": [
+        {
+            "nome": "$PATH",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A variável de ambiente $PATH contém uma lista de diretórios onde o sistema busca executáveis. Permite que comandos sejam executados sem a necessidade de especificar o caminho absoluto."
+        },
+        {
+            "nome": "--help",
+            "tipo": "COMANDO",
+            "definicao": "O parâmetro --help é utilizado em comandos externos para fornecer uma consulta rápida sobre os parâmetros e opções disponíveis para aquele comando específico."
+        },
+        {
+            "nome": "-?",
+            "tipo": "COMANDO",
+            "definicao": "Exibe uma lista de ajuda sobre o comando apropos e suas opções."
+        },
+        {
+            "nome": "-a",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção exige que todas as palavras-chave fornecidas correspondam, não retornando resultados se qualquer uma das palavras-chave não tiver correspondência."
+        },
+        {
+            "nome": "-amin",
+            "tipo": "COMANDO",
+            "definicao": "A opção -amin busca arquivos que foram acessados há um número específico de minutos, permitindo a busca por arquivos acessados em um intervalo de tempo."
+        },
+        {
+            "nome": "-atime",
+            "tipo": "COMANDO",
+            "definicao": "A opção -atime permite buscar arquivos que foram acessados há um número específico de dias, com a possibilidade de buscar em um intervalo de tempo."
+        },
+        {
+            "nome": "-b",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção é utilizada para restringir a pesquisa apenas aos binários, permitindo que o usuário encontre rapidamente o executável de um comando específico."
+        },
+        {
+            "nome": "-C",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção permite que o usuário utilize um arquivo de configuração específico em vez do padrão (/manpath) para a pesquisa."
+        },
+        {
+            "nome": "-d",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção emite mensagens de depuração, retornando informações sobre diretórios man, caminho global e avisos relacionados aos comandos encontrados pela palavra-chave."
+        },
+        {
+            "nome": "-e",
+            "tipo": "COMANDO",
+            "definicao": "Permite que o comando apropos busque correspondências exatas para a palavra-chave fornecida, retornando apenas comandos cuja descrição corresponda exatamente à palavra-chave."
+        },
+        {
+            "nome": "-f",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção finaliza a lista de diretórios e sinaliza o início dos nomes dos arquivos, sendo necessária quando as opções -B, -M ou -S são utilizadas."
+        },
+        {
+            "nome": "-h",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção exibe a ajuda do comando whereis e encerra a execução, fornecendo informações sobre como usar o comando."
+        },
+        {
+            "nome": "-l",
+            "tipo": "COMANDO",
+            "definicao": "O parâmetro '-l' do comando 'ls' exibe a listagem de arquivos e diretórios em um formato detalhado, incluindo informações sobre permissões, dono, grupo, tamanho e data de criação."
+        },
+        {
+            "nome": "-M",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção altera ou limita os locais onde o whereis procura por seções manuais, permitindo que o usuário especifique um diretório específico para a busca de documentação."
+        },
+        {
+            "nome": "-maxdepth",
+            "tipo": "COMANDO",
+            "definicao": "A opção -maxdepth limita a profundidade da busca na árvore de diretórios, permitindo que a busca ocorra apenas no diretório especificado e não em seus subdiretórios."
+        },
+        {
+            "nome": "-name",
+            "tipo": "COMANDO",
+            "definicao": "A opção -name permite que o comando find busque arquivos e diretórios que correspondam a um nome específico, utilizando expressões."
+        },
+        {
+            "nome": "-p",
+            "tipo": "COMANDO",
+            "definicao": "O parâmetro '-p' do comando 'mkdir' permite a criação de diretórios de forma recursiva, criando todos os diretórios pai necessários em uma única operação."
+        },
+        {
+            "nome": "-perm",
+            "tipo": "COMANDO",
+            "definicao": "A opção -perm busca arquivos que possuem modos de permissão específicos, podendo ser definidos em formato numérico ou literal."
+        },
+        {
+            "nome": "-r",
+            "tipo": "COMANDO",
+            "definicao": "Interpreta cada palavra-chave como uma expressão regular (regex), permitindo comparações mais flexíveis com o nome e a descrição das páginas."
+        },
+        {
+            "nome": "-S",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção altera ou limita os locais onde o whereis procura por fontes, permitindo que o usuário especifique um diretório específico para a busca de arquivos de origem."
+        },
+        {
+            "nome": "-size",
+            "tipo": "COMANDO",
+            "definicao": "A opção -size permite buscar arquivos com um tamanho específico, podendo utilizar sufixos para especificar unidades como kilobytes, megabytes ou gigabytes."
+        },
+        {
+            "nome": "-type",
+            "tipo": "COMANDO",
+            "definicao": "A opção -type permite especificar o tipo de arquivo a ser buscado, como diretórios, arquivos regulares, links simbólicos, entre outros."
+        },
+        {
+            "nome": "-u",
+            "tipo": "COMANDO",
+            "definicao": "Esta opção pesquisa entradas incomuns, identificando arquivos que não possuem documentação ou binários correspondentes no sistema."
+        },
+        {
+            "nome": "-uid",
+            "tipo": "COMANDO",
+            "definicao": "A opção -uid busca arquivos que pertencem a um usuário específico, identificado pelo seu UID (User ID)."
+        },
+        {
+            "nome": "-user",
+            "tipo": "COMANDO",
+            "definicao": "A opção -user permite buscar arquivos que pertencem a um usuário específico, identificado pelo seu nome."
+        },
+        {
+            "nome": "-v",
+            "tipo": "COMANDO",
+            "definicao": "Usada para imprimir mensagens de aviso detalhadas durante a execução do comando apropos."
+        },
+        {
+            "nome": "-w",
+            "tipo": "COMANDO",
+            "definicao": "Usada quando as palavras-chave contêm curingas, permitindo que o apropos busque correspondências no nome da página e na descrição."
+        },
+        {
+            "nome": ".bash_history",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo responsável por armazenar o histórico de comandos executados pelo usuário, permitindo acesso fácil a comandos previamente utilizados."
+        },
+        {
+            "nome": "/",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O diretório raiz é o ponto de partida da hierarquia de diretórios no sistema Linux, representado por uma barra (/). Todos os outros diretórios e arquivos estão organizados sob ele."
+        },
+        {
+            "nome": "/bin",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O diretório /bin contém executáveis essenciais que são necessários para o funcionamento básico do sistema, incluindo comandos que podem ser utilizados por todos os usuários."
+        },
+        {
+            "nome": "/boot",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena arquivos estáticos necessários para a inicialização do sistema e o gerenciador de boot."
+        },
+        {
+            "nome": "/dev",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que contém arquivos de dispositivos, permitindo a comunicação do GNU/Linux com periféricos através de links especiais."
+        },
+        {
+            "nome": "/etc",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena arquivos de configuração do sistema e de programas, incluindo scripts de inicialização e configurações de usuários."
+        },
+        {
+            "nome": "/etc/environment",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo utilizado por sistemas Debian para definir variáveis de ambiente, que são exportadas automaticamente na inicialização do sistema, substituindo o /etc/profile em algumas distribuições."
+        },
+        {
+            "nome": "/etc/issue",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo que exibe uma mensagem antes do login do usuário, podendo ser utilizado para informações ou avisos."
+        },
+        {
+            "nome": "/etc/issue.net",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo que permite visualizar mensagens durante logins remotos, útil para comunicação com usuários que acessam o sistema via rede."
+        },
+        {
+            "nome": "/etc/motd",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo que exibe uma mensagem após o login do usuário, geralmente utilizado para informações importantes ou avisos."
+        },
+        {
+            "nome": "/etc/passwd",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo que contém informações sobre os usuários do sistema, incluindo suas senhas e dados de conta."
+        },
+        {
+            "nome": "/etc/profile",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo executado automaticamente no momento do login, responsável por definir variáveis de ambiente e armazenar comandos a serem executados quando o usuário efetua o login no sistema."
+        },
+        {
+            "nome": "/home",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O diretório /home é onde os diretórios pessoais dos usuários são armazenados. Cada usuário tem um subdiretório dentro de /home que contém seus arquivos e configurações pessoais."
+        },
+        {
+            "nome": "/lib",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que contém bibliotecas essenciais do sistema e módulos do kernel, que são funções utilizadas por vários programas."
+        },
+        {
+            "nome": "/lost+found",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena arquivos recuperados pelo sistema após falhas ou erros."
+        },
+        {
+            "nome": "/media",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Ponto de montagem para dispositivos removíveis, como HDs externos, CDs, DVDs e pendrives."
+        },
+        {
+            "nome": "/mnt",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Ponto de montagem para sistemas de arquivos temporários, utilizado para compartilhamentos de arquivos entre diferentes sistemas."
+        },
+        {
+            "nome": "/opt",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena pacotes de software adicionais, geralmente de natureza proprietária."
+        },
+        {
+            "nome": "/proc",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório virtual mantido pelo kernel que armazena informações dinâmicas sobre o sistema operacional, como processos e estatísticas."
+        },
+        {
+            "nome": "/proc/cpuinfo",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O arquivo /proc/cpuinfo contém informações detalhadas sobre a CPU do sistema, incluindo o número de núcleos, modelo e características do processador."
+        },
+        {
+            "nome": "/root",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório pessoal do super usuário root, que possui permissões administrativas no sistema."
+        },
+        {
+            "nome": "/run",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que contém informações sobre o sistema em execução desde o último boot, como usuários logados e processos ativos."
+        },
+        {
+            "nome": "/sbin",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que contém comandos binários essenciais administrativos, utilizados principalmente pelo usuário root."
+        },
+        {
+            "nome": "/srv",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que contém dados providos por serviços de rede do sistema, como servidores web e FTP."
+        },
+        {
+            "nome": "/sys",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório virtual que armazena informações sobre dispositivos conectados ao sistema e permite modificações nos mesmos."
+        },
+        {
+            "nome": "/tmp",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena arquivos temporários que são limpos durante a inicialização do sistema."
+        },
+        {
+            "nome": "/usr",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O diretório /usr é utilizado para armazenar programas e arquivos de dados que são compartilhados entre os usuários do sistema. Ele contém subdiretórios como /usr/bin e /usr/lib."
+        },
+        {
+            "nome": "/usr/share/doc",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório padrão no GNU/Linux onde são armazenados os documentos de How-to’s, permitindo que os usuários consultem informações específicas sobre a configuração de softwares."
+        },
+        {
+            "nome": "/usr/share/man/",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório onde os manuais do sistema estão armazenados, organizados por níveis e idiomas."
+        },
+        {
+            "nome": "/var",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Diretório que armazena dados variáveis, como arquivos de log e dados em filas, que podem mudar com frequência."
+        },
+        {
+            "nome": "alias",
+            "tipo": "COMANDO",
+            "definicao": "Uma forma de atribuir um nome curto a um comando longo, permitindo que o usuário execute comandos com parâmetros específicos de maneira mais rápida e conveniente."
+        },
+        {
+            "nome": "aliases",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Apelidos atribuídos a comandos, permitindo a execução de comandos complexos com um termo mais simples."
+        },
+        {
+            "nome": "Android",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um sistema operacional baseado no Linux, amplamente utilizado em dispositivos móveis, que oferece uma plataforma para aplicativos e serviços do Google."
+        },
+        {
+            "nome": "Apache HTTP Server",
+            "tipo": "REDE",
+            "definicao": "Servidor HTTP de código aberto que utiliza uma arquitetura modular, permitindo a personalização através de módulos."
+        },
+        {
+            "nome": "Apache Tomcat",
+            "tipo": "REDE",
+            "definicao": "Container de servlets para aplicações Java, implementando tecnologias como Java Servlet e JSP."
+        },
+        {
+            "nome": "apropos",
+            "tipo": "COMANDO",
+            "definicao": "O comando apropos é utilizado para buscar na página de manual do Linux comandos relacionados a uma palavra-chave fornecida pelo usuário, facilitando a localização de comandos quando o usuário não se lembra do nome exato."
+        },
+        {
+            "nome": "Arch Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição rolling release que oferece acesso imediato às últimas atualizações, focada em usuários avançados e personalização."
+        },
+        {
+            "nome": "Audacity",
+            "tipo": "FERRAMENTA",
+            "definicao": "Software livre para edição de áudio digital, popular entre podcasters, disponível em várias plataformas."
+        },
+        {
+            "nome": "AWS",
+            "tipo": "REDE",
+            "definicao": "Amazon Web Services (AWS) é uma plataforma de computação em nuvem que oferece uma variedade de serviços, muitos dos quais são executados em distribuições Linux."
+        },
+        {
+            "nome": "Azure",
+            "tipo": "REDE",
+            "definicao": "Azure é a plataforma de computação em nuvem da Microsoft, que oferece máquinas virtuais baseadas em Linux."
+        },
+        {
+            "nome": "Bash",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Bash (Bourne Again SHell) é um interpretador de comandos amplamente utilizado em sistemas Unix-like, que oferece recursos avançados de scripting e automação, facilitando a interação do usuário com o sistema."
+        },
+        {
+            "nome": "Big Data",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Big Data refere-se ao conjunto de tecnologias e práticas para lidar com grandes volumes de dados, frequentemente utilizando sistemas operacionais Linux para processamento e análise."
+        },
+        {
+            "nome": "BIND",
+            "tipo": "REDE",
+            "definicao": "Servidor DNS amplamente utilizado em sistemas Unix, considerado um padrão para resolução de nomes na Internet."
+        },
+        {
+            "nome": "Blender",
+            "tipo": "FERRAMENTA",
+            "definicao": "Programa de código aberto para modelagem, animação e edição de vídeo, disponível em várias plataformas."
+        },
+        {
+            "nome": "BSD",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A Berkley Software Distribution License é uma licença permissiva que permite a redistribuição e modificação de software, com poucas restrições."
+        },
+        {
+            "nome": "Buffer",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um buffer é uma região de memória temporária utilizada para armazenar dados enquanto eles são transferidos entre dois locais, ajudando a gerenciar a diferença de taxa entre a entrada e a saída de dados."
+        },
+        {
+            "nome": "caminho absoluto",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um caminho absoluto é a representação completa de um diretório ou arquivo, começando sempre pela raiz (/). Ele fornece a localização exata na hierarquia de diretórios, independentemente do diretório atual."
+        },
+        {
+            "nome": "caminho relativo",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um caminho relativo é a representação de um diretório ou arquivo em relação ao diretório atual. Ele não começa com a raiz e depende da localização atual do usuário na estrutura de diretórios."
+        },
+        {
+            "nome": "case-sensitive",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Refere-se à distinção entre letras maiúsculas e minúsculas em nomes de arquivos e comandos, o que é uma característica fundamental dos sistemas Unix-like."
+        },
+        {
+            "nome": "cat",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para visualizar o conteúdo de arquivos, podendo exibir texto diretamente no terminal."
+        },
+        {
+            "nome": "catman",
+            "tipo": "COMANDO",
+            "definicao": "O comando catman é utilizado para construir o banco de dados que permite ao comando apropos e whatis localizar as man pages, sendo executado pelo administrador do sistema."
+        },
+        {
+            "nome": "CC",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Creative Commons é um conjunto de licenças que permite que autores compartilhem suas obras com diferentes níveis de permissão, promovendo a liberdade de uso e distribuição."
+        },
+        {
+            "nome": "cd",
+            "tipo": "COMANDO",
+            "definicao": "O comando cd (change directory) é utilizado para mudar o diretório atual de trabalho do usuário. Permite navegar pela estrutura de diretórios do sistema."
+        },
+        {
+            "nome": "CentOS",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição Linux de classe corporativa derivada do Red Hat Enterprise Linux, conhecida por sua estabilidade e suporte a longo prazo, embora tenha mudado para um modelo de lançamento contínuo."
+        },
+        {
+            "nome": "chsh",
+            "tipo": "COMANDO",
+            "definicao": "O comando chsh é utilizado para alterar o shell atual do usuário, permitindo especificar um novo shell com a opção -s ou --shell, seguido do caminho do shell desejado."
+        },
+        {
+            "nome": "cp",
+            "tipo": "COMANDO",
+            "definicao": "O comando 'cp' é utilizado para copiar arquivos e diretórios, com a opção '-R' necessária para cópias recursivas de diretórios."
+        },
+        {
+            "nome": "csh",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "O csh é preferido por alguns programadores e possui uma sintaxe semelhante à linguagem de programação C, facilitando a transição para aqueles familiarizados com essa linguagem."
+        },
+        {
+            "nome": "Debian",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma das maiores distribuições Linux, conhecida por seu sistema de pacotes DEB e por ser a base para muitas outras distribuições, desenvolvida de forma aberta desde 1993."
+        },
+        {
+            "nome": "Deepin",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Deepin é uma distribuição Linux que se destaca pela sua interface gráfica intuitiva e recursos voltados para a experiência do usuário."
+        },
+        {
+            "nome": "Distribuições GNU/Linux",
+            "tipo": "FERRAMENTA",
+            "definicao": "Pacotes que incluem um kernel Linux e uma seleção de aplicativos, otimizados para um tipo específico de uso ou grupo de usuários, facilitando a instalação e uso do sistema."
+        },
+        {
+            "nome": "Distribuições Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Distribuições Linux são versões do sistema operacional Linux que incluem o kernel Linux e uma variedade de software adicional, adaptadas para diferentes necessidades e níveis de dificuldade, como Debian, Slackware, Red Hat e SUSE."
+        },
+        {
+            "nome": "Divisão em camadas",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Estrutura do sistema operacional onde diferentes componentes operam em camadas, permitindo flexibilidade na execução de tarefas."
+        },
+        {
+            "nome": "DM",
+            "tipo": "FERRAMENTA",
+            "definicao": "Gerencia logins na interface gráfica e seleciona o tipo de ambiente gráfico que será executado."
+        },
+        {
+            "nome": "echo",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para imprimir texto na tela ou redirecionar a saída para um arquivo, sendo útil para inspecionar variáveis de ambiente."
+        },
+        {
+            "nome": "Elementary OS",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Elementary OS é uma distribuição Linux conhecida por sua interface amigável e design estético, voltada para usuários comuns."
+        },
+        {
+            "nome": "export",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para definir variáveis de ambiente, tornando-as disponíveis para subprocessos e outros ambientes."
+        },
+        {
+            "nome": "fc",
+            "tipo": "COMANDO",
+            "definicao": "Comando que permite encontrar e corrigir comandos previamente digitados, facilitando a edição e reexecução de comandos do histórico."
+        },
+        {
+            "nome": "Fedora",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Fedora é uma distribuição Linux que serve como um campo de testes para novas tecnologias, frequentemente utilizada por desenvolvedores e entusiastas."
+        },
+        {
+            "nome": "FHS",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "O Filesystem Hierarchy Standard (FHS) é um padrão que define a estrutura e a organização dos diretórios em sistemas operacionais baseados em Unix, incluindo o Linux. Ele estabelece convenções sobre onde os arquivos e diretórios devem ser localizados, facilitando a navegação e a gestão do sistema."
+        },
+        {
+            "nome": "FIFO",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "FIFO (First In, First Out) é uma estrutura de dados que permite a implementação de filas de espera, onde os elementos são processados na ordem em que foram adicionados."
+        },
+        {
+            "nome": "file",
+            "tipo": "COMANDO",
+            "definicao": "O comando file é utilizado para determinar o tipo de um arquivo, analisando seu conteúdo e retornando informações sobre o formato e a natureza do arquivo, o que é essencial para a identificação de arquivos em um sistema."
+        },
+        {
+            "nome": "find",
+            "tipo": "COMANDO",
+            "definicao": "O comando find é utilizado para localizar arquivos e diretórios com base em critérios específicos, como proprietário, grupo, permissões, tamanho e tipo de arquivo, facilitando a busca e a gestão de arquivos no sistema."
+        },
+        {
+            "nome": "Firefox",
+            "tipo": "FERRAMENTA",
+            "definicao": "Navegador web de código aberto, multiplataforma, amplamente utilizado, que oferece uma experiência consistente em diferentes sistemas operacionais."
+        },
+        {
+            "nome": "FSSTND",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Filesystem Standard (FSSTND) foi o primeiro esforço para padronização da estrutura de diretórios em sistemas GNU/Linux, lançado em 1994."
+        },
+        {
+            "nome": "GCC",
+            "tipo": "FERRAMENTA",
+            "definicao": "O GCC (GNU Compiler Collection) é um conjunto de compiladores desenvolvidos pelo projeto GNU, que permite a compilação de programas em diversas linguagens de programação."
+        },
+        {
+            "nome": "GCP",
+            "tipo": "REDE",
+            "definicao": "Google Cloud Platform (GCP) é uma plataforma de computação em nuvem que fornece serviços de infraestrutura e aplicações, com suporte a distribuições Linux."
+        },
+        {
+            "nome": "Gentoo",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição altamente personalizável que permite ao usuário otimizar o sistema para suas necessidades específicas, utilizando o sistema de pacotes Portage."
+        },
+        {
+            "nome": "Gerenciadores de Janelas",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Programas que gerenciam a aparência e a localização das janelas em um ambiente gráfico no Linux."
+        },
+        {
+            "nome": "GFDL",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A GNU Free Documentation License é uma licença que permite a distribuição e modificação de documentos, garantindo que o conteúdo permaneça livre."
+        },
+        {
+            "nome": "GIMP",
+            "tipo": "FERRAMENTA",
+            "definicao": "Programa de código aberto para criação e edição de imagens, considerado uma alternativa ao Adobe Photoshop."
+        },
+        {
+            "nome": "GNU",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "O projeto GNU, idealizado por Richard Stallman, visa criar um sistema operacional livre que siga os padrões do Unix, permitindo liberdade ao código-fonte e ao uso do software."
+        },
+        {
+            "nome": "GNU/Hurd",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "O GNU/Hurd é o kernel desenvolvido como parte do projeto GNU, mas não alcançou a estabilidade necessária para ser considerado um kernel maduro."
+        },
+        {
+            "nome": "GNU/Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "GNU/Linux é um sistema operacional de código aberto que combina o núcleo Linux com ferramentas e bibliotecas do projeto GNU, permitindo a criação de um ambiente de computação robusto e flexível."
+        },
+        {
+            "nome": "GPL",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A GPL (General Public License) é uma licença de software livre que garante aos usuários a liberdade de usar, estudar, modificar e redistribuir software, promovendo a colaboração e a transparência no desenvolvimento de software."
+        },
+        {
+            "nome": "GPLv1",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A primeira versão da General Public License, lançada em janeiro de 1989, que foi rapidamente substituída pela GPLv2 devido a correções de vulnerabilidades."
+        },
+        {
+            "nome": "GPLv2",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A segunda versão da General Public License, lançada em junho de 1991, que corrigiu vulnerabilidades da versão anterior e se tornou amplamente utilizada."
+        },
+        {
+            "nome": "GPLv3",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A terceira versão da General Public License, lançada em junho de 2007, que permanece como referência atual para a proteção do software livre."
+        },
+        {
+            "nome": "Hadoop",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Framework de software para processamento de grandes volumes de dados em clusters, inspirado no MapReduce."
+        },
+        {
+            "nome": "halt",
+            "tipo": "COMANDO",
+            "definicao": "Comando que encerra todos os processos e desliga o sistema imediatamente, sem a opção de especificar um tempo."
+        },
+        {
+            "nome": "Hardware",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Compreende os dispositivos físicos do sistema disponíveis para uso, como CD-ROM, teclado e monitor."
+        },
+        {
+            "nome": "hexdump",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para visualizar o conteúdo de arquivos em formatos como hexadecimal, octal e ASCII."
+        },
+        {
+            "nome": "HISTFILE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Variável que armazena o nome do arquivo utilizado para armazenar o histórico de comandos."
+        },
+        {
+            "nome": "history",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para exibir o histórico de comandos executados, permitindo ao usuário reutilizar comandos anteriores sem necessidade de reescrevê-los."
+        },
+        {
+            "nome": "HISTSIZE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Variável que armazena o número máximo de comandos que o arquivo de histórico suportará."
+        },
+        {
+            "nome": "HOME",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Identifica o diretório do usuário atual, sendo fundamental para navegação e operações de arquivos no sistema."
+        },
+        {
+            "nome": "HOSTTYPE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Faz referência à plataforma de hardware que está sendo utilizada, útil para scripts que dependem do tipo de sistema."
+        },
+        {
+            "nome": "ifconfig",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para configurar interfaces de rede, permitindo visualizar e modificar configurações de rede."
+        },
+        {
+            "nome": "ImageMagick",
+            "tipo": "FERRAMENTA",
+            "definicao": "Ferramenta de linha de comando para conversão e edição de arquivos de imagem, incluindo a criação de PDFs."
+        },
+        {
+            "nome": "info",
+            "tipo": "COMANDO",
+            "definicao": "O comando info é utilizado para acessar as info pages, que são páginas de documentação interativas que permitem navegação entre seções, semelhante a um sistema de hipertexto."
+        },
+        {
+            "nome": "init",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para inicializar o sistema e gerenciar processos durante o boot."
+        },
+        {
+            "nome": "Inkscape",
+            "tipo": "FERRAMENTA",
+            "definicao": "Editor de gráficos vetoriais de código aberto que utiliza o formato SVG e permite a criação de imagens escaláveis."
+        },
+        {
+            "nome": "iptables",
+            "tipo": "REDE",
+            "definicao": "Um software de filtragem de pacotes que permite configurar regras de firewall no Linux. O diretório /usr/share/doc/iptables contém documentos de How-to’s relacionados à configuração deste firewall."
+        },
+        {
+            "nome": "Java",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Linguagem de programação orientada a objetos que é compilada para bytecode, executado em uma máquina virtual."
+        },
+        {
+            "nome": "K3B",
+            "tipo": "FERRAMENTA",
+            "definicao": "Interface gráfica para gravação de CDs e DVDs em sistemas Unix, utilizando ferramentas como cdrecord e growisofs."
+        },
+        {
+            "nome": "Kdenlive",
+            "tipo": "FERRAMENTA",
+            "definicao": "Editor de vídeo não linear de código aberto que permite a edição de vídeos de forma intuitiva e é parte do projeto KDE."
+        },
+        {
+            "nome": "Kernel",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "O kernel é a parte central de um sistema operacional que gerencia o hardware e os recursos do sistema, atuando como um intermediário entre o hardware e os aplicativos, permitindo que eles se comuniquem de forma eficiente."
+        },
+        {
+            "nome": "Kernel Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Mediador entre as camadas superiores e o hardware, sendo a parte central do sistema operacional que gerencia recursos e processos."
+        },
+        {
+            "nome": "Knoppix",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição que pode ser executada a partir de um CD ou DVD, ideal para recuperação de sistemas e demonstrações, com suporte a hardware variado."
+        },
+        {
+            "nome": "ksh",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "O ksh é uma evolução do Bourne Shell, mantendo a compatibilidade com todos os comandos do Bourne Shell e oferecendo mais opções e funcionalidades."
+        },
+        {
+            "nome": "Kubernetes",
+            "tipo": "FERRAMENTA",
+            "definicao": "Sistema de orquestração de contêineres que automatiza a implantação e gestão de aplicações em contêineres."
+        },
+        {
+            "nome": "less",
+            "tipo": "COMANDO",
+            "definicao": "Comando semelhante ao more, mas com funcionalidades adicionais, como rolar a tela para cima e para os lados."
+        },
+        {
+            "nome": "LibreOffice",
+            "tipo": "FERRAMENTA",
+            "definicao": "Conjunto de aplicativos de escritório de código aberto que suporta diversos formatos de arquivo, incluindo o OpenDocument."
+        },
+        {
+            "nome": "Lighttpd",
+            "tipo": "REDE",
+            "definicao": "Servidor web otimizado para ambientes de alta performance, projetado para lidar com muitas conexões simultâneas."
+        },
+        {
+            "nome": "Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "O Linux é um kernel criado por Linus Torvalds em 1991, que pode ser combinado com as ferramentas do projeto GNU para formar um sistema operacional completo, conhecido como GNU/Linux."
+        },
+        {
+            "nome": "Linux Mint",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição derivada do Ubuntu, focada em ser amigável ao usuário, com suporte a multimídia e uma interface gráfica moderna."
+        },
+        {
+            "nome": "Linux Standard Base",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um conjunto de especificações que visa a padronização do sistema operacional Linux, garantindo a compatibilidade entre diferentes distribuições."
+        },
+        {
+            "nome": "locate",
+            "tipo": "COMANDO",
+            "definicao": "O comando locate é utilizado para buscar arquivos rapidamente em um sistema, utilizando uma base de dados previamente gerada pelo comando updatedb, o que torna a busca mais eficiente em comparação com outros métodos."
+        },
+        {
+            "nome": "LOGNAME",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Sinônimo da variável USER, que também armazena o nome da conta do usuário."
+        },
+        {
+            "nome": "logout",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para encerrar uma sessão de usuário no terminal, desconectando o usuário do sistema."
+        },
+        {
+            "nome": "ls",
+            "tipo": "COMANDO",
+            "definicao": "O comando 'ls' é utilizado para listar arquivos e diretórios em um sistema de arquivos, permitindo visualizar detalhes como permissões, dono, grupo, tamanho e data de criação."
+        },
+        {
+            "nome": "MAIL",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Informa como o correio eletrônico está definido, permitindo que usuários acessem suas mensagens de e-mail."
+        },
+        {
+            "nome": "makewhatis",
+            "tipo": "COMANDO",
+            "definicao": "O comando makewhatis é uma alternativa ao catman, utilizado para construir o banco de dados das man pages, permitindo que os comandos apropos e whatis funcionem corretamente."
+        },
+        {
+            "nome": "man",
+            "tipo": "COMANDO",
+            "definicao": "O comando man é utilizado para acessar as páginas de manual de outros comandos e programas, e a opção -f permite buscar a descrição de um comando específico de forma semelhante ao whatis."
+        },
+        {
+            "nome": "man -k",
+            "tipo": "COMANDO",
+            "definicao": "Uma forma alternativa de buscar comandos relacionados a uma palavra-chave, semelhante ao apropos, mas utilizando o comando man com a opção -k."
+        },
+        {
+            "nome": "man <nivel> intro",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para visualizar a introdução de um nível específico de manuais, fornecendo uma visão geral do que está contido nesse nível."
+        },
+        {
+            "nome": "Manjaro Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição derivada do Arch Linux, projetada para ser amigável ao usuário, com uma instalação gráfica e ferramentas de fácil uso."
+        },
+        {
+            "nome": "Manjaro OS",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Manjaro OS é uma distribuição Linux baseada no Arch Linux, que oferece uma experiência de usuário simplificada e acessível."
+        },
+        {
+            "nome": "MariaDB",
+            "tipo": "FERRAMENTA",
+            "definicao": "Banco de dados relacional de código aberto, criado como uma bifurcação do MySQL, focado em manter a liberdade de código."
+        },
+        {
+            "nome": "Minix",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Minix é um sistema operacional Unix-like desenvolvido por Andrew Tanenbaum, que serviu como base para o desenvolvimento do Linux por Linus Torvalds."
+        },
+        {
+            "nome": "mkdir",
+            "tipo": "COMANDO",
+            "definicao": "O comando mkdir é utilizado para criar novos diretórios no sistema de arquivos. O parâmetro -p permite a criação de diretórios pai, evitando erros caso o diretório já exista."
+        },
+        {
+            "nome": "more",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para visualizar o conteúdo de arquivos de texto, permitindo a navegação página a página."
+        },
+        {
+            "nome": "mv",
+            "tipo": "COMANDO",
+            "definicao": "O comando 'mv' é utilizado para mover ou renomear arquivos e diretórios no sistema de arquivos."
+        },
+        {
+            "nome": "MX Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "MX Linux é uma distribuição Linux que combina a simplicidade e a eficiência, sendo popular entre usuários que buscam uma experiência leve."
+        },
+        {
+            "nome": "NGINX",
+            "tipo": "REDE",
+            "definicao": "Servidor HTTP leve e proxy reverso, conhecido por sua eficiência em lidar com conexões simultâneas."
+        },
+        {
+            "nome": "Node.js",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Ambiente de execução JavaScript assíncrono que permite a criação de aplicações escaláveis no lado do servidor."
+        },
+        {
+            "nome": "OCI",
+            "tipo": "REDE",
+            "definicao": "Oracle Cloud Infrastructure (OCI) é uma plataforma de computação em nuvem que oferece serviços de infraestrutura, com suporte a sistemas operacionais Linux."
+        },
+        {
+            "nome": "od",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para visualizar o conteúdo de arquivos em diferentes formatos, como hexadecimal e ASCII, útil para programadores."
+        },
+        {
+            "nome": "OpenSUSE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição livre patrocinada pela Novell, que visa disseminar o uso do Linux e oferece ferramentas de instalação como o YaST."
+        },
+        {
+            "nome": "OPL",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A Open Publication License é uma licença que permite a distribuição e modificação de publicações, promovendo a liberdade de acesso ao conteúdo."
+        },
+        {
+            "nome": "Oracle Linux",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição Linux empacotada pela Oracle, baseada no Red Hat Enterprise Linux, que oferece inovações como Ksplice e DTrace para gerenciamento de sistemas."
+        },
+        {
+            "nome": "OSTYPE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Define o tipo de sistema operacional em uso, útil para scripts que precisam se adaptar a diferentes ambientes."
+        },
+        {
+            "nome": "passwd",
+            "tipo": "COMANDO",
+            "definicao": "O comando passwd é utilizado para adicionar ou modificar a senha de um usuário no sistema GNU/Linux."
+        },
+        {
+            "nome": "PATH",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Determina quais diretórios devem ser pesquisados para encontrar comandos executáveis, essencial para a execução de programas."
+        },
+        {
+            "nome": "PHP",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Linguagem de script interpretada, originalmente desenvolvida para criar conteúdo dinâmico na web."
+        },
+        {
+            "nome": "Pop!_OS",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Pop!_OS é uma distribuição Linux desenvolvida pela System76, focada em desenvolvedores e criadores de conteúdo, com uma interface amigável."
+        },
+        {
+            "nome": "Postfix",
+            "tipo": "REDE",
+            "definicao": "MTA de código aberto que encaminha e entrega e-mails, projetado como uma alternativa segura ao Sendmail."
+        },
+        {
+            "nome": "PostgreSQL",
+            "tipo": "FERRAMENTA",
+            "definicao": "Sistema de banco de dados relacional de código aberto, conhecido por sua robustez e extensibilidade."
+        },
+        {
+            "nome": "poweroff",
+            "tipo": "COMANDO",
+            "definicao": "Comando que desliga o sistema de forma simples e direta, semelhante ao halt."
+        },
+        {
+            "nome": "PS1",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Representa o prompt de comando principal, permitindo personalizar a aparência do prompt no terminal."
+        },
+        {
+            "nome": "PS2",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Representa o prompt de comando estendido, utilizado quando um comando é continuado em uma nova linha."
+        },
+        {
+            "nome": "Pseudoterminal",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Terminal virtual que depende da execução do ambiente gráfico, emulando um terminal no ambiente gráfico."
+        },
+        {
+            "nome": "pwconv",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para criar o arquivo /etc/shadow a partir do arquivo /etc/passwd, protegendo as senhas dos usuários."
+        },
+        {
+            "nome": "pwd",
+            "tipo": "COMANDO",
+            "definicao": "O comando pwd (print working directory) exibe o caminho absoluto do diretório atual em que o usuário está trabalhando, ajudando a identificar a localização na estrutura de diretórios."
+        },
+        {
+            "nome": "pwunconv",
+            "tipo": "COMANDO",
+            "definicao": "Comando que executa a operação inversa do pwconv, movendo as senhas criptografadas de volta para o arquivo /etc/passwd."
+        },
+        {
+            "nome": "Python",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Linguagem de programação de alto nível, interpretada e orientada a objetos, conhecida por sua simplicidade e legibilidade."
+        },
+        {
+            "nome": "Raspbian",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição baseada no Debian, otimizada para o hardware Raspberry Pi, que inclui uma vasta gama de pacotes para desenvolvimento e aprendizado."
+        },
+        {
+            "nome": "reboot",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para reiniciar o sistema, podendo ser usado de forma simples ou com a opção de especificar um tempo."
+        },
+        {
+            "nome": "Red Hat",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma das distribuições Linux mais populares, conhecida por seu programa de certificação que inclui exames práticos e conteúdo baseado na versão mais recente do Red Hat Enterprise Linux."
+        },
+        {
+            "nome": "rm",
+            "tipo": "COMANDO",
+            "definicao": "O comando rm é utilizado para remover arquivos e diretórios. Os parâmetros -i, -r e -f oferecem opções para confirmação, remoção recursiva e forçada, respectivamente, permitindo um controle mais preciso sobre a exclusão de dados."
+        },
+        {
+            "nome": "rmdir",
+            "tipo": "COMANDO",
+            "definicao": "O comando 'rmdir' é utilizado para remover diretórios vazios do sistema de arquivos."
+        },
+        {
+            "nome": "root",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "O usuário root é o administrador do sistema Linux, que possui permissões para executar comandos que afetam todo o sistema, incluindo a construção do banco de dados para as man pages."
+        },
+        {
+            "nome": "sh",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Desenvolvido por Stephen Bourne, o sh é o shell original, simples e com poucas ferramentas, ainda utilizado em sistemas UNIX e ambientes relacionados ao UNIX."
+        },
+        {
+            "nome": "shell",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "O shell é a interface principal de interação do usuário com o sistema GNU/Linux, permitindo acesso ao sistema operacional tanto em modo gráfico quanto em modo texto. Ele pode ser personalizado para atender às necessidades do usuário, definindo idiomas padrão e automatizando processos."
+        },
+        {
+            "nome": "shutdown",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para desligar ou reiniciar o sistema de forma segura, permitindo especificar o tempo para a operação."
+        },
+        {
+            "nome": "Sistema Operacional",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Camada que auxilia e hospeda todos os aplicativos das camadas superiores, permitindo a execução de programas e serviços."
+        },
+        {
+            "nome": "Slackware",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A primeira distribuição GNU/Linux a ser disponibilizada publicamente, conhecida por sua simplicidade e por ser uma das mais antigas, mantendo compatibilidade com sistemas x86."
+        },
+        {
+            "nome": "Software Livre",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Software Livre refere-se a um modelo de licenciamento que permite aos usuários executar, estudar, modificar e distribuir o software, promovendo a colaboração e a transparência no desenvolvimento de software."
+        },
+        {
+            "nome": "source",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para recarregar configurações de arquivos de perfil, permitindo que alterações em variáveis de ambiente sejam aplicadas imediatamente."
+        },
+        {
+            "nome": "SPL",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "A Sun Public License é uma licença que permite a distribuição e modificação de software, promovendo a liberdade de uso e colaboração."
+        },
+        {
+            "nome": "Squid",
+            "tipo": "REDE",
+            "definicao": "Servidor proxy que melhora a eficiência de rede através do cache de requisições frequentes."
+        },
+        {
+            "nome": "su",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para trocar de usuário no sistema, permitindo acesso a contas com diferentes permissões."
+        },
+        {
+            "nome": "sudo",
+            "tipo": "COMANDO",
+            "definicao": "Comando que permite a um usuário comum executar comandos com privilégios de superusuário, garantindo segurança no sistema."
+        },
+        {
+            "nome": "SUSE",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição corporativa que oferece soluções para servidores e desktops, conhecida por sua compatibilidade e suporte técnico."
+        },
+        {
+            "nome": "tcsh",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Versão melhorada do csh, o tcsh interpreta linguagens de comando e pode ser usado como um shell de login interativo ou como processador de comandos de shell scripts, sendo completamente compatível com o csh."
+        },
+        {
+            "nome": "TERM",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Define o tipo de terminal em uso, essencial para a configuração de interfaces e comportamentos de terminal."
+        },
+        {
+            "nome": "Terminal virtual em modo texto",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Permite que usuários se conectem simultaneamente ao sistema sem a necessidade de um ambiente gráfico, sendo prático e rápido."
+        },
+        {
+            "nome": "Thunderbird",
+            "tipo": "FERRAMENTA",
+            "definicao": "Aplicativo de e-mail de código aberto que suporta múltiplos protocolos e permite extensões para personalização."
+        },
+        {
+            "nome": "touch",
+            "tipo": "COMANDO",
+            "definicao": "O comando touch é utilizado para criar um arquivo vazio ou para atualizar a data de acesso e modificação de um arquivo ou diretório existente. É uma ferramenta útil para manipulação de arquivos sem a necessidade de edição."
+        },
+        {
+            "nome": "ttyn",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "Terminais virtuais que interpretam comandos introduzidos por um usuário e os convertem para uma linguagem que o computador entende."
+        },
+        {
+            "nome": "type",
+            "tipo": "COMANDO",
+            "definicao": "O comando type determina o tipo de um comando, informando se é um comando do UNIX, um comando interno, um alias, uma palavra-chave do shell ou uma função de shell definida."
+        },
+        {
+            "nome": "Ubuntu",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Uma distribuição baseada no Debian, conhecida por sua facilidade de uso e suporte a longo prazo, amplamente utilizada em desktops e servidores."
+        },
+        {
+            "nome": "unalias",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para remover um alias previamente definido, permitindo que o usuário retorne ao uso do comando original."
+        },
+        {
+            "nome": "uname",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para exibir informações sobre o sistema, incluindo a versão do kernel."
+        },
+        {
+            "nome": "Unix-like",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Unix-like refere-se a sistemas operacionais que seguem os padrões do Unix, oferecendo características como suporte a multiusuário e multitarefa."
+        },
+        {
+            "nome": "unset",
+            "tipo": "COMANDO",
+            "definicao": "Comando utilizado para excluir variáveis, afetando apenas a sessão atual se a variável for global."
+        },
+        {
+            "nome": "updatedb",
+            "tipo": "COMANDO",
+            "definicao": "O comando updatedb é utilizado para criar ou atualizar a base de dados que o comando locate utiliza para realizar buscas rápidas de arquivos, garantindo que as informações estejam sempre atualizadas."
+        },
+        {
+            "nome": "USER",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Predefine o nome da conta do usuário, sendo útil para personalização de scripts e comandos."
+        },
+        {
+            "nome": "VirtualBox",
+            "tipo": "FERRAMENTA",
+            "definicao": "Aplicativo que permite a criação e execução de máquinas virtuais, possibilitando a instalação de diferentes sistemas operacionais em um único hardware."
+        },
+        {
+            "nome": "VLC",
+            "tipo": "FERRAMENTA",
+            "definicao": "Reprodutor de mídia de código aberto que suporta uma ampla gama de formatos de áudio e vídeo, além de streaming."
+        },
+        {
+            "nome": "whatis",
+            "tipo": "COMANDO",
+            "definicao": "O comando whatis é utilizado para buscar informações específicas sobre um comando ou programa, retornando apenas a descrição do manual que corresponde exatamente ao nome pesquisado."
+        },
+        {
+            "nome": "whereis",
+            "tipo": "COMANDO",
+            "definicao": "O comando whereis é utilizado para localizar a localização do binário de um comando, seu arquivo de configuração e as páginas de manuais associadas, proporcionando resultados mais precisos e rápidos em comparação com o comando find."
+        },
+        {
+            "nome": "which",
+            "tipo": "COMANDO",
+            "definicao": "O comando which é utilizado para localizar a localização do binário de um comando específico no sistema, retornando o caminho absoluto do executável associado ao comando fornecido."
+        },
+        {
+            "nome": "whoami",
+            "tipo": "COMANDO",
+            "definicao": "Comando que exibe o nome do usuário atualmente logado no sistema, útil para verificar a identidade do usuário."
+        },
+        {
+            "nome": "xargs",
+            "tipo": "COMANDO",
+            "definicao": "O comando xargs é utilizado para construir listas de argumentos a partir da entrada padrão e passá-las para outros comandos, permitindo a execução de operações em massa de forma eficiente."
+        },
+        {
+            "nome": "xman",
+            "tipo": "FERRAMENTA",
+            "definicao": "Xman é um front-end para o comando man que facilita a consulta das man pages, proporcionando uma interface gráfica para a visualização da documentação de comandos e programas."
+        },
+        {
+            "nome": "yelp",
+            "tipo": "FERRAMENTA",
+            "definicao": "Yelp é uma ferramenta gráfica desenvolvida para a visualização de manuais de aplicativos gráficos do GNOME, facilitando o acesso à documentação de forma visual e interativa."
+        },
+        {
+            "nome": "Yocto",
+            "tipo": "CONCEITO_TEORICO",
+            "definicao": "Um projeto de código aberto que ajuda a criar distribuições personalizadas do Linux para sistemas embarcados e IoT, facilitando o desenvolvimento de software."
+        },
+        {
+            "nome": "zsh",
+            "tipo": "SHELL_SCRIPT",
+            "definicao": "O zsh é um shell interativo que combina várias funções úteis do bash, ksh e tcsh, além de ser uma linguagem de script eficiente, proporcionando uma experiência de uso rica e flexível."
+        },
+        {
+            "nome": "~/.bashrc",
+            "tipo": "SISTEMA_ARQUIVOS",
+            "definicao": "Arquivo executado por shells invocados em sessões já iniciadas, semelhante ao ~/.bash_profile, utilizado para personalizações do ambiente do usuário."
+        }
+    ],
+    "relations": [
+        {
+            "source": "$PATH",
+            "target": "ls",
+            "type": "USE",
+            "reason": "Professor: aprender ls não depende de PATH, mas o comportamento do comando ls é afetado pelo PATH; não é pré‑requisito pedagógico direto. Engenheiro: tecnicamente PATH é uma variável de ambiente usada pelo shell para localizar executáveis como ls, logo o shell/ls usam PATH, não o contrário. Otimizador: uma relação funcional é suficiente, sem extrapolar para pré‑requisito. Cético: ambos são conceitos válidos (variável de ambiente e comando). Topólogo: direção atual ($PATH -> ls) sugere que PATH depende de ls, o que é tecnicamente incorreto; inverter evita distorção conceitual e não cria ciclo conhecido. Terminologista: o tipo correto é USE, pois ls é uma ferramenta cujo funcionamento usa PATH. Reparador: propõe inverter para 'ls USE $PATH'. Juiz: consenso em refatorar para 'ls USE $PATH' com direção invertida."
+        },
+        {
+            "source": "$PATH",
+            "target": "PATH",
+            "type": "IS_A",
+            "reason": "Cético nota que $PATH representa a variável de ambiente concreta, enquanto PATH é o conceito geral. Terminologista considera que a relação mais precisa é taxonômica: a variável $PATH é uma instância/especialização do conceito PATH. RELATED_TO é fraco demais; Reparador sugere IS_A. Não há impacto topológico. JUIZ refatora para IS_A mantendo direção."
+        },
+        {
+            "source": "-l",
+            "target": "ls",
+            "type": "USE",
+            "reason": "Professor: pedagogicamente o comando ls é o conceito principal e -l é uma opção dele, então faz mais sentido ensinar ls antes e depois apresentar -l; Engenheiro: tecnicamente ls utiliza a flag -l (list long format), não o inverso; Otimizador: inverter evita ter várias flags independentes apontando para comandos, mantendo comando como nó central; Cético: -l isolado é ambíguo, mas no contexto de ls é uma opção, logo a relação deve ser comando -> flag; Topólogo: inverter remove a sensação de que a flag controla o comando como entidade superior; Terminologista: tipo correto é USE (ls USE -l); Reparador: propõe inverter a direção e corrigir tipo; Juiz: REFACTOR para ls -> -l com tipo USE (direction REVERSE)."
+        },
+        {
+            "source": "-p",
+            "target": "mkdir",
+            "type": "USE",
+            "reason": "Professor e Terminologista ressaltam que -p é uma opção de mkdir, não um pré-requisito de aprendizado isolado. A direção também está invertida: mkdir é o comando que oferece/usa a opção -p. Engenheiro sugere modelar como mkdir USE -p (flag como recurso funcional). Topólogo não vê problema em USE. JUIZ refatora para mkdir USE -p com direção invertida e tipo USE."
+        },
+        {
+            "source": ".bash_history",
+            "target": "HISTFILE",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar .bash_history é útil saber que a variável HISTFILE controla o arquivo usado, mas não é pré-requisito rígido. Engenheiro: em Bash, HISTFILE define o caminho do arquivo de histórico (por padrão ~/.bash_history); o arquivo e a variável estão ligados, mas um não é parte do outro em sentido estrito. Otimizador: não há redundância clara com outras arestas. Cético: conceito correto. Topólogo: RELATED_TO mantém DAG seguro. Terminologista: uso de USE é inadequado pois .bash_history não \"usa\" HISTFILE; Bash usa HISTFILE para apontar para o arquivo. Reparador: reclassificar para RELATED_TO sem inverter direção. Juiz: consenso por REFACTOR para RELATED_TO."
+        },
+        {
+            "source": ".bash_history",
+            "target": "HISTSIZE",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao entender .bash_history, faz sentido abordar HISTSIZE como configuração complementar, mas não como dependência. Engenheiro: HISTSIZE é variável que limita o número de linhas mantidas no histórico; é configuração do mecanismo de histórico, não do arquivo em si. Otimizador: relação é útil mas fraca como dependência. Cético: tecnicamente correto. Topólogo: RELATED_TO não causa ciclos. Terminologista: .bash_history não \"usa\" HISTSIZE; o shell usa HISTSIZE ao gerenciar o histórico. Reparador: trocar tipo para RELATED_TO mantendo direção. Juiz: REFACTOR para RELATED_TO com alta confiança."
+        },
+        {
+            "source": ".bash_history",
+            "target": "history",
+            "type": "PART_OF",
+            "reason": "Professor: o conceito geral é 'history do shell'; .bash_history é uma implementação/armazenamento específico. Engenheiro: .bash_history é o arquivo onde o Bash persiste o histórico; ele é componente do mecanismo de histórico, não o inverso. Terminologista: history é o todo funcional, .bash_history é PART_OF esse sistema. Topólogo: inverter para '.bash_history PART_OF history' manteria o arquivo como parte do conceito; como a seta dada era .bash_history IS_A history, o Reparador propõe inverter e trocar tipo para PART_OF. Juiz: REFACTOR para PART_OF com direção REVERSE (history como todo, .bash_history parte)."
+        },
+        {
+            "source": "/bin",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: entender FHS inclui conhecer diretórios padrão como /bin; composição ajuda pedagogicamente. Engenheiro: na especificação FHS, /bin é um dos diretórios padronizados, portanto é componente do esquema. Otimizador: relação direta PART_OF é útil e não redundante em relação às demais; é um dos vários componentes. Cético: ambos conceitos são reais e bem definidos. Topólogo: FHS é mais geral e /bin mais específico; PART_OF flui corretamente do específico para o todo, sem ciclos. Terminologista: PART_OF é o tipo correto para diretórios definidos por um padrão. Reparador: nada a corrigir. Juiz: manter como PART_OF com alta confiança."
+        },
+        {
+            "source": "/boot",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: compreender o layout de discos Linux segundo o FHS exige saber que /boot faz parte desse esquema. Engenheiro: /boot é diretório padrão definido pelo FHS para arquivos de boot. Otimizador: relação é necessária para cobrir os componentes principais do FHS. Cético: conceitos válidos. Topólogo: direção e tipo PART_OF preservam a estrutura DAG. Terminologista: PART_OF é semanticamente correto. Reparador: nada a mudar. Juiz: KEEP."
+        },
+        {
+            "source": "/dev",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: aprender FHS inclui o papel de /dev no sistema de arquivos. Engenheiro: /dev é explicitamente normatizado pelo FHS como diretório para arquivos de dispositivo. Otimizador: faz parte do conjunto mínimo de diretórios principais do FHS. Cético: sem inconsistências conceituais. Topólogo: relação PART_OF específica->todo é bem formada. Terminologista: PART_OF é o tipo adequado. Reparador: nenhuma alteração. Juiz: manter."
+        },
+        {
+            "source": "/etc",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: /etc é fundamental na explicação do FHS como diretório de configuração. Engenheiro: /etc está formalmente descrito no FHS. Otimizador: componente essencial, não redundante. Cético: conceitos corretos. Topólogo: PART_OF mantém hierarquia correta. Terminologista: uso de PART_OF é apropriado. Reparador: nenhum ajuste. Juiz: KEEP."
+        },
+        {
+            "source": "/etc/environment",
+            "target": "/etc/profile",
+            "type": "PREREQUISITE",
+            "reason": "Engenheiro: /etc/environment define variáveis globais em nível de sistema, enquanto /etc/profile é script de shell lido depois; a compreensão do ambiente global precede o entendimento de perfis de shell. Embora a relação técnica entre arquivos varie por distro, Professor argumentou que como sequência pedagógica, /etc/environment vem antes. RELATED_TO é vago; Terminologista preferiu PREREQUISITE conceitual. Juiz: ' /etc/environment PREREQUISITE /etc/profile '."
+        },
+        {
+            "source": "/etc/issue",
+            "target": "/etc/motd",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar mensagens de login do sistema, é pedagógico relacionar /etc/issue (mensagem de pre-login / getty) e /etc/motd (message of the day pós-login). Engenheiro: são arquivos de configuração distintos, ambos de mensagens de sistema, sem relação de dependência ou composição. Otimizador: não cria redundância óbvia. Cético: conceitos reais. Topólogo: direção não cria ciclos. Terminologista: tipo correto é RELATED_TO, não um genérico RELATED. Reparador: apenas normalizar o tipo para RELATED_TO. Juiz: REFACTOR com mudança de tipo."
+        },
+        {
+            "source": "/etc/issue",
+            "target": "/etc/issue.net",
+            "type": "RELATED_TO",
+            "reason": "Ambos são arquivos de banner de login relacionados; em muitos sistemas /etc/issue.net é baseado em /etc/issue, mas essa relação varia. Professor vê valor pedagógico em ligá-los sem impor hierarquia rígida. Engenheiro aceita RELATED_TO como relação fraca mas verdadeira na prática. Não há melhor tipo canônico sem assumir detalhes específicos. Aresta mantida como RELATED_TO, de forma conservadora."
+        },
+        {
+            "source": "/etc/issue.net",
+            "target": "/etc/issue",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar banners de login, é útil saber que /etc/issue.net é variante usada por alguns serviços (como telnet/SSH) em relação a /etc/issue. Engenheiro: ambos são arquivos de texto distintos, sem relação de parte/todo ou tipo; apenas propósito similar. Otimizador: não há cadeia redundante problemática. Cético: fato válido. Topólogo: RELATED_TO mantém DAG. Terminologista: normalizar de RELATED para RELATED_TO. Reparador: manter direção e trocar para RELATED_TO. Juiz: REFACTOR aceito."
+        },
+        {
+            "source": "/etc/profile",
+            "target": "~/.bashrc",
+            "type": "PREREQUISITE",
+            "reason": "Debate sobre 'RELATED' ser fraco demais: Professor argumentou que pedagogicamente entender /etc/profile ajuda a entender ~/.bashrc, pois o primeiro é lido antes em shells de login e frequentemente chama o segundo ou define o ambiente base. Cético lembrou que nem sempre há chamada direta, mas a ordem de processamento é fixa. Terminologista sugeriu PREREQUISITE conceitual. Juiz: refatorar para ' /etc/profile PREREQUISITE ~/.bashrc ' para refletir ordem e fluxo de configuração, mantendo direção."
+        },
+        {
+            "source": "/home",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: explicar FHS para usuários envolve destacar /home como local dos diretórios pessoais. Engenheiro: /home é definido pelo FHS. Otimizador: componente essencial da visão de usuário, não redundante. Cético: nada fictício. Topólogo: PART_OF com direção específica->todo é correta. Terminologista: tipo adequado. Reparador: sem correções. Juiz: KEEP."
+        },
+        {
+            "source": "/lib",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: explicar FHS implica apresentar /lib como diretório para bibliotecas essenciais. Engenheiro: FHS define /lib e variantes. Otimizador: é um dos componentes centrais do FHS; não há excesso. Cético: nós válidos. Topólogo: tipo PART_OF está correto e não cria ciclos. Terminologista: classificação adequada. Reparador: nada a refatorar. Juiz: KEEP."
+        },
+        {
+            "source": "/media",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: na visão moderna do FHS, /media aparece como ponto de montagem para mídias removíveis; útil no ensino do layout. Engenheiro: FHS especifica /media como diretório padrão. Otimizador: necessário para cobrir diretórios de montagem da norma. Cético: nada de fictício. Topólogo: PART_OF é compatível com a hierarquia. Terminologista: tipo correto. Reparador: sem mudanças. Juiz: KEEP."
+        },
+        {
+            "source": "/mnt",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: FHS inclui /mnt como ponto de montagem temporário; faz parte da narrativa sobre diretórios de montagem. Engenheiro: /mnt é diretório documentado no FHS. Otimizador: componente distinto de /media, portanto não redundante. Cético: termos corretos. Topólogo: relação PART_OF é apropriada. Terminologista: classificação adequada. Reparador: nada a corrigir. Juiz: KEEP."
+        },
+        {
+            "source": "/opt",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: /opt aparece no FHS como local para softwares adicionais; relevante no ensino de organização. Engenheiro: FHS descreve /opt. Otimizador: outro componente especializado do padrão; não redundante. Cético: conceitos consistentes. Topólogo: PART_OF mantém a hierarquia. Terminologista: tipo adequado. Reparador: sem alterações. Juiz: KEEP."
+        },
+        {
+            "source": "/proc",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Mesmo raciocínio de /usr: /proc é um diretório virtual definido pelo FHS. A relação PART_OF captura bem que /proc integra a hierarquia especificada pelo FHS. Não há conflitos terminológicos nem topológicos. Aresta mantida."
+        },
+        {
+            "source": "/root",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: no contexto FHS, /root é o diretório home do superusuário; útil para diferenciar de /home. Engenheiro: embora alguns detalhes variem entre distribuições, FHS reconhece /root como diretório do usuário root. Otimizador: complementa /home sem redundância. Cético: conceito real e bem estabelecido. Topólogo: PART_OF mantém uma composição coerente sem ciclos. Terminologista: PART_OF é adequado (diretório específico como parte do esquema FHS). Reparador: nada a ajustar. Juiz: KEEP."
+        },
+        {
+            "source": "/sbin",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: compor o mapa mental do FHS exige conhecer /sbin como diretório de binários administrativos; relação composicional é didática. Engenheiro: /sbin é explicitamente definido no FHS. Otimizador: é uma das várias PART_OF necessárias para cobrir o padrão; não é redundante em excesso. Cético: termos corretos. Topólogo: estrutura geral (FHS) contendo diretório específico é coerente e acíclica. Terminologista: PART_OF é a escolha adequada. Reparador: sem ajustes. Juiz: manter PART_OF."
+        },
+        {
+            "source": "/srv",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao explicar FHS, /srv é citado como diretório para dados de serviços; importante para visão de servidor. Engenheiro: /srv está incluído no FHS moderno. Otimizador: componente distinto, não redundante com outros diretórios. Cético: nós válidos. Topólogo: PART_OF é coerente com FHS como todo. Terminologista: classificação correta. Reparador: nada a mudar. Juiz: KEEP."
+        },
+        {
+            "source": "/sys",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "/sys também é um diretório padronizado pelo FHS em sistemas modernos. Professor considera útil pedagogicamente, Engenheiro valida tecnicamente, Topólogo não encontra ciclos. Mantida como PART_OF FHS."
+        },
+        {
+            "source": "/tmp",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "/tmp é parte da hierarquia de diretórios definida no FHS. A relação PART_OF é tecnicamente correta e útil para ensino de layout de sistema de arquivos. Nenhum especialista aponta problema, então a aresta é mantida."
+        },
+        {
+            "source": "/usr",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor e Engenheiro concordam que /usr é um diretório padrão definido pela Filesystem Hierarchy Standard; modelar como PART_OF FHS é uma boa aproximação didática de ‘faz parte do conjunto de diretórios padronizados’. Topólogo não vê risco de ciclo e Otimizador não identifica redundância evidente. JUIZ mantém a aresta como está."
+        },
+        {
+            "source": "/usr/share/doc",
+            "target": "iptables",
+            "type": "USE",
+            "reason": "Professor: aprender iptables é um pré‑requisito melhor para explorar sua documentação em /usr/share/doc, não o inverso; o diretório não é parte do iptables conceitual que se ensina, é apenas um local típico de docs. Engenheiro: em muitos sistemas, a documentação de iptables reside sob /usr/share/doc/iptables, então iptables (ou o administrador que o usa) utiliza esses arquivos; /usr/share/doc em si não é componente específico de iptables. Otimizador: uma relação de uso entre a ferramenta e sua documentação é suficiente; evitar tratar o diretório genérico como parte do software específico. Cético: '/usr/share/doc' é um diretório padrão de docs do sistema, não um módulo de iptables. Topólogo: 'A PART_OF B' na direção dada (/usr/share/doc -> iptables) é errada e tenderia a criar hierarquias confusas entre diretórios e pacotes. Terminologista: o tipo adequado é USE: iptables (ou o usuário de iptables) usa a documentação armazenada em /usr/share/doc. Reparador: inverte para 'iptables USE /usr/share/doc'. Juiz: refatorar invertendo direção e trocando para USE."
+        },
+        {
+            "source": "/var",
+            "target": "FHS",
+            "type": "RELATED_TO",
+            "reason": "Professor: /var é diretório central no FHS para dados variáveis; essencial no entendimento do padrão. Engenheiro: FHS especifica /var e seus subdiretórios. Otimizador: parte do núcleo de diretórios obrigatórios; não é redundante. Cético: conceitos sólidos. Topólogo: PART_OF está topologicamente correto. Terminologista: uso adequado do tipo. Reparador: nenhum ajuste. Juiz: KEEP."
+        },
+        {
+            "source": "Android",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Professor: é útil que o aluno veja Android como uma plataforma baseada em Linux, embora tecnicamente seja um sistema operacional móvel construído sobre o kernel Linux. Engenheiro: Android usa o kernel Linux; tratá-lo como um tipo específico de sistema baseado em Linux cabe em uma taxonomia prática. Otimizador: diferencia Android de demais sistemas Linux (ex: distros tradicionais). Cético: formalmente seria \"Android USES Linux kernel\", mas na prática é aceito dizer que Android é um sistema Linux-based; IS_A é uma simplificação pedagógica. Topólogo: Android como nó mais específico sob Linux mantém DAG. Terminologista: IS_A é tolerável aqui para fins educacionais. Reparador: mantém direção, ajustando o tipo para IS_A. Juiz: refatorar tipo para IS_A, direção FORWARD."
+        },
+        {
+            "source": "Apache Tomcat",
+            "target": "Java",
+            "type": "RELATED_TO",
+            "reason": "Professor: relação é pedagógica, pois Tomcat é um servidor de aplicações Java e o aluno precisa associar a tecnologia à linguagem. Engenheiro: tecnicamente correto, Tomcat é implementado em Java e executa aplicações Java. Otimizador: não há outra aresta mais específica envolvendo Tomcat ou Java, então não há redundância. Cético: nenhum erro conceitual detectado. Topólogo: relação é lateral, não cria ciclos óbvios em taxonomias ou pré-requisitos. Terminologista: não é PREREQUISITE forte nem PART_OF/IS_A/USE no contexto genérico do grafo; RELATED_TO é aceitável. Reparador: não há ganho em inverter (Java RELATED_TO Apache Tomcat é igualmente válido, mas direção atual é aceitável como \"tecnologia\" -> \"ecosistema\"). Juiz: manter como RELATED_TO, direção direta é suficiente."
+        },
+        {
+            "source": "apropos",
+            "target": "man",
+            "type": "USE",
+            "reason": "Professor: semelhante a whatis, apropos é ferramenta de busca por palavras‑chave em man. Engenheiro: apropos consulta o banco de dados man-db e depende dele. Terminologista: USE é adequado para essa relação ferramenta‑recurso. Topólogo: coerente com a aresta whatis->man. Reparador: troca RELATED/USE ambíguo para USE claro. Juiz: REFACTOR para USE."
+        },
+        {
+            "source": "apropos",
+            "target": "-d",
+            "type": "USE",
+            "reason": "Engenheiro confirma que '-d' é uma opção do comando apropos. Terminologista lembra que no grafo opções são tratadas como recursos sintáticos usados por comandos, logo USE é adequado. Professor considera isso útil para ensino de opções. Todos concordam que a direção está correta (comando usa a opção). JUIZ mantém direção e refatora apenas para consolidar o tipo USE."
+        },
+        {
+            "source": "apropos",
+            "target": "-v",
+            "type": "USE",
+            "reason": "Mesma análise que para '-d': '-v' é uma opção do comando apropos. É uma relação funcional, comando apropos USA a opção -v. Didático e tecnicamente correto, sem risco topológico. JUIZ refatora o tipo para USE mantendo a direção."
+        },
+        {
+            "source": "apropos",
+            "target": "-e",
+            "type": "USE",
+            "reason": "'-e' é outra opção válida de apropos. Engenheiro valida a opção; Terminologista classifica como recurso da ferramenta, logo USE. Topólogo não vê problemas. JUIZ mantém direção e apenas padroniza o tipo como USE."
+        },
+        {
+            "source": "apropos",
+            "target": "-w",
+            "type": "USE",
+            "reason": "Opção '-w' é parte da interface de linha de comando de apropos. Todas as personas convergem que é uma relação de uso (comando usa a opção/flag). Nenhum ajuste de direção necessário. JUIZ refatora o tipo para USE."
+        },
+        {
+            "source": "apropos",
+            "target": "-a",
+            "type": "USE",
+            "reason": "Engenheiro confirma '-a' como opção de apropos. Professor vê valor em conectar comandos às suas flags. Terminologista aplica padrão: comando USE opção. JUIZ mantém direção e apenas formaliza o tipo USE."
+        },
+        {
+            "source": "apropos",
+            "target": "-l",
+            "type": "USE",
+            "reason": "Opção '-l' também faz parte da sintaxe de apropos. O comando utiliza essa flag para alterar seu comportamento, caracterizando bem a relação USE. Não há riscos de ciclo ou confusão taxonômica. JUIZ refatora o tipo mantendo a direção."
+        },
+        {
+            "source": "apropos",
+            "target": "-C",
+            "type": "USE",
+            "reason": "Engenheiro reconhece '-C' como opção válida de apropos. Como nos demais casos, comando apropos USA essa opção. Terminologista insiste em consistência tipológica, logo USE. JUIZ valida a refatoração sem mudar direção."
+        },
+        {
+            "source": "apropos",
+            "target": "-M",
+            "type": "USE",
+            "reason": "'-M' é uma opção que especifica o caminho de bancos de dados de páginas para apropos. Isso reforça a natureza funcional da relação: apropos USA a opção -M. Todas as personas concordam quanto ao tipo USE e direção atual. JUIZ refatora para USE mantendo a seta."
+        },
+        {
+            "source": "apropos",
+            "target": "-?",
+            "type": "USE",
+            "reason": "Professor: vê que apropos usa a opção -? para exibir ajuda; é funcional, não pré-requisito. Engenheiro: tecnicamente, -? é uma opção/switch comum em muitas ferramentas, e aqui atua como parâmetro de apropos. Terminologista: o tipo certo é USE (comando usa a opção). Topólogo: não cria ciclos. JUIZ: manter a aresta, refatorando para USE com mesma direção."
+        },
+        {
+            "source": "apropos",
+            "target": "man -k",
+            "type": "RELATED_TO",
+            "reason": "Professor: apropos e man -k são essencialmente o mesmo uso, conceitos equivalentes; não é composição nem pré-requisito. Engenheiro: em sistemas tradicionais, apropos é equivalente a man -k. Terminologista: a melhor semântica é RELATED_TO forte (equivalência funcional). Cético: não há evidência de relação de uso direta entre o binário apropos e man -k, apenas equivalência de função. JUIZ: trocar tipo para RELATED_TO."
+        },
+        {
+            "source": "apropos",
+            "target": "whatis",
+            "type": "RELATED_TO",
+            "reason": "Professor: apropos faz busca por palavras‑chave em descrições de man; whatis mostra descrições mais diretas. São comandos irmãos conceitualmente. Engenheiro: ambos consultam a base de dados whatis/man, mas um não usa o outro diretamente. Terminologista: o laço é de proximidade semântica, não de uso, logo RELATED_TO. JUIZ: corrigir o tipo para RELATED_TO mantendo direção apropos→whatis."
+        },
+        {
+            "source": "AWS",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: é útil mostrar que provedores de nuvem usam Linux como base para muitas workloads. Engenheiro: AWS oferece inúmeros serviços e instâncias baseados em Linux e utiliza Linux internamente em larga escala. Otimizador: não há outra aresta que cubra diretamente essa relação de uso. Cético: embora AWS também use outros sistemas, dizer que AWS USE Linux é tecnicamente verdadeiro. Topólogo: não há risco de ciclo. Terminologista: USE é o tipo mais adequado. Reparador: nada a corrigir. Juiz: manter a aresta."
+        },
+        {
+            "source": "Azure",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: ajuda a fixar que mesmo um provedor historicamente associado ao Windows usa Linux intensamente. Engenheiro: Azure oferece VMs Linux e diversos serviços sobre Linux. Otimizador: consistente com as outras clouds; não redundante em excesso. Cético: embora Azure também use Windows, afirmar que ele USE Linux é correto. Topólogo: não há ciclo. Terminologista: USE é adequado. Reparador: nada a corrigir. Juiz: manter a aresta."
+        },
+        {
+            "source": "Bash",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: exemplifica uma shell específica (Bash) como tipo de shell. Engenheiro: Bash é um interpretador de comandos do tipo Unix shell. Cético: factual. Topólogo: taxonomia clara: Bash IS_A shell; não cria ciclos. Terminologista: IS_A é o tipo adequado e já está correto. Reparador: nada a ajustar. Juiz: KEEP."
+        },
+        {
+            "source": "Bash",
+            "target": "GNU/Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: é útil saber que Bash é comumente usado em sistemas GNU/Linux. Engenheiro: Bash pode rodar em vários sistemas (incluindo BSD, macOS, etc.), portanto ‘Bash USE GNU/Linux’ é tecnicamente invertido: sistemas GNU/Linux usam Bash, não o contrário. Cético: o tipo USE está mal aplicado aqui. Topólogo: evitar interpretar isso como dependência funcional do Bash em GNU/Linux. Terminologista: relação adequada é RELATED_TO ou, em outro grafo, ‘Distribuição GNU/Linux USE Bash’; aqui só temos o contrário. Reparador: manter direção mas trocar tipo para RELATED_TO para indicar associação geral sem dependência. Juiz: REFACTOR para RELATED_TO."
+        },
+        {
+            "source": "Bash",
+            "target": "sh",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar Bash, é útil saber que ele é derivado e geralmente compatível com sh; essa relação histórica/funcional é relevante mas não é pura herança simples, pois Bash é um shell mais rico. Engenheiro: tecnicamente Bash é frequentemente descrito como 'Bourne Again SHell', compatível com o shell Bourne (sh), mas não é literalmente o mesmo tipo; em muitos gráficos, 'Bash IS_A shell' já cobre a taxonomia. Otimizador: evitar uma cadeia taxonômica excessivamente fina como 'Bash IS_A sh IS_A shell' se o objetivo é ensino introdutório. Cético: ligação é real, só discutir o tipo. Topólogo: marcar ambos como shells sob o nó 'shell' mantém o DAG limpo; a relação direta Bash–sh pode ser tratada como associação lateral. Terminologista: RELATED_TO descreve bem a compatibilidade/origem sem impor hierarquia rigorosa. Reparador: mantém direção e ajusta apenas para RELATED_TO. Juiz: manter, mas padronizando como RELATED_TO."
+        },
+        {
+            "source": "Bash",
+            "target": "csh",
+            "type": "RELATED_TO",
+            "reason": "Professor: é útil comparar Bash com outros shells como csh para entender diferenças de sintaxe e recursos. Engenheiro: Bash (Bourne‑like) e csh (C shell) são implementações diferentes da mesma categoria geral 'shell', sem relação de herança direta entre si. Otimizador: não há IS_A ou PART_OF entre eles; uma simples associação é adequada. Cético: ambos nós são válidos. Topólogo: relação lateral entre irmãos na hierarquia, não problemático. Terminologista: RELATED_TO melhor expressa a ideia de 'outros shells relacionados'. Reparador: tipo já era RELATED, apenas padronizado para RELATED_TO. Juiz: manter como RELATED_TO."
+        },
+        {
+            "source": "Bash",
+            "target": "zsh",
+            "type": "RELATED_TO",
+            "reason": "Professor: comparar Bash com zsh é instrutivo para usuários que exploram shells alternativos. Engenheiro: ambos são shells POSIX‑like, sem relação de herança direta um do outro. Otimizador: uma relação lateral simples é suficiente; não é PREREQUISITE nem PART_OF. Cético: conceitos corretos. Topólogo: relação entre nós irmãos, não impacta o DAG principal. Terminologista: RELATED_TO é adequado para indicar 'outro shell similar'. Reparador: manter direção e apenas padronizar o tipo como RELATED_TO. Juiz: manter."
+        },
+        {
+            "source": "BSD",
+            "target": "Software Livre",
+            "type": "RELATED_TO",
+            "reason": "Engenheiro: licenças BSD são clássicas licenças de software livre. Professor: entender BSD ajuda a compreender modelos de licenciamento livres. Terminologista: não é PREREQUISITE nem PART_OF; é um exemplo de licença dentro do movimento. RELATED_TO é adequado. Topólogo: sem impacto em DAG. Juiz: manter a aresta como RELATED_TO."
+        },
+        {
+            "source": "CC",
+            "target": "Software Livre",
+            "type": "RELATED_TO",
+            "reason": "Professor: licenças Creative Commons são relevantes em contexto de cultura livre, não pré‑requisito direto de Linux. Engenheiro: CC é um conjunto de licenças para obras criativas, associado ao ecossistema de liberdade e software livre por afinidade. Terminologista e Cético vetam IS_A ou PART_OF. RELATED_TO expressa melhor a relação conceitual. Juiz: refatorar para RELATED_TO."
+        },
+        {
+            "source": "CentOS",
+            "target": "Red Hat",
+            "type": "RELATED_TO",
+            "reason": "Engenheiro: CentOS é uma recompilação binária compatível com Red Hat Enterprise Linux; há forte relação, mas não é simplesmente que um é tipo do outro no contexto atual do grafo (onde 'Red Hat' já é tratado como uma distro). Professor: pedagogicamente é útil saber que CentOS se baseia em Red Hat. Terminologista considera PART_OF inadequado (não é componente) e IS_A controverso. RELATED_TO captura bem a compatibilidade/derivação sem forçar taxonomia. Topólogo: não cria ciclos. Juiz: refatorar o tipo para RELATED_TO mantendo direção CentOS → Red Hat."
+        },
+        {
+            "source": "chsh",
+            "target": "shell",
+            "type": "USE",
+            "reason": "Professor: pedagogicamente, chsh é uma ferramenta para alterar a shell de login do usuário; o foco é que o comando atua sobre a shell. Engenheiro: tecnicamente, o comando chsh manipula a configuração da shell; ele não 'usa' conceitualmente uma shell como recurso em tempo de execução. Otimizador: relação útil, mas direção atual sugere que chsh é o recurso e shell é a ferramenta. Cético: ambos os nós são válidos. Topólogo: inverter não cria ciclos nem colide com IS_A edges. Terminologista: melhor expresar como 'chsh USE shell' (ferramenta → recurso). Reparador: corrige principalmente a direção, mantendo USE. Juiz: refatorar invertendo a seta e mantendo USE."
+        },
+        {
+            "source": "cp",
+            "target": "mv",
+            "type": "RELATED_TO",
+            "reason": "Professor: cp e mv são frequentemente ensinados juntos como comandos de manipulação de arquivos, uma relação bidirecional de similaridade é aceitável; Engenheiro: ambos operam sobre arquivos e diretórios, com semânticas relacionadas (copiar vs mover); Otimizador: mesmo havendo mv -> cp também, a simetria pode ser útil didaticamente e não cria redundância problemática em RELATED_TO; Cético: não há erro factual; Topólogo: RELATED_TO não induz dependência, então o ciclo cp<->mv não é um ciclo de pré-requisito; Terminologista: tipo RELATED_TO é adequado; Reparador: nenhuma refatoração necessária; Juiz: KEEP como RELATED_TO."
+        },
+        {
+            "source": "csh",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: saber o que é uma shell permite classificar csh como tipo específico. Engenheiro: csh é concretamente uma shell estilo C. Otimizador: IS_A é necessário para taxonomia fina. Cético: nenhum indício de alucinação. Topólogo: fluxo geral (shell) → específico (csh) está correto, sem ciclos. Terminologista: IS_A é o tipo adequado. Reparador: direção e tipo já corretos. Juiz: manter a aresta como está."
+        },
+        {
+            "source": "Debian",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro: Debian é uma distribuição GNU/Linux. Direção original está invertida. Professor: mesma lógica pedagógica de outros exemplos de distro. Topólogo e Terminologista: para manter árvore taxonômica coerente, classe deve ser o alvo de múltiplos IS_A vindos dos exemplos, logo Debian IS_A Distribuições GNU/Linux. Reparador sugere REVERSE. Juiz acata."
+        },
+        {
+            "source": "Deepin",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Deepin é uma distribuição Linux. Engenheiro confirma, Professor vê ganho pedagógico em mostrar Deepin como instância de Linux. O tipo correto é IS_A. Topólogo aponta que o sentido deve ser 'Deepin IS_A Linux'. Aresta é salva com inversão de direção."
+        },
+        {
+            "source": "Distribuições Linux",
+            "target": "Bash",
+            "type": "USE",
+            "reason": "Professor: faz sentido ensinar que a maioria das distribuições Linux usa Bash como shell padrão ou disponível. Engenheiro: muitas distros GNU/Linux incluem e usam Bash; ainda que algumas usem outras shells por padrão, a relação funcional é forte. Cético: não é perfeito (nem todas), mas é pedagogicamente aceitável. Topólogo: não há ciclo com outras arestas atuais. Terminologista: o tipo correto é USE (distribuições usam a ferramenta Bash). Reparador: apenas padronizar, pois o tipo original ‘RELATED’ não era canônico. Juiz: REFACTOR para USE."
+        },
+        {
+            "source": "Elementary OS",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Todos concordaram que Elementary OS é uma distribuição baseada no kernel Linux/SO Linux, logo é um tipo de sistema operacional Linux. O Professor quer hierarquia de geral→específico; Engenheiro confirma que é uma distro Linux, não o contrário. Topólogo pede que a direção vá do específico para o genérico para manter a taxonomia: 'Elementary OS IS_A Linux'. Juiz ordena inverter a direção, mantendo IS_A."
+        },
+        {
+            "source": "fc",
+            "target": "history",
+            "type": "RELATED_TO",
+            "reason": "Professor: fc e history são comandos alternativos/complementares para manipular histórico; conhecer um ajuda a entender o outro, mas não há dependência forte. Engenheiro: em Bash, fc invoca editor para editar comandos do histórico; history lista/manipula o mesmo histórico. Não há relação de herança ou composição. Otimizador: evitar excesso de conexões entre todos os comandos de histórico com USE/PREREQUISITE. Cético: fato correto. Topólogo: RELATED_TO mantém grafos simples. Terminologista: nenhum dos comandos usa diretamente o outro; ambos usam o mecanismo de histórico. Reparador: mudar de USE para RELATED_TO, mesma direção, pois são ferramentas correlatas. Juiz: REFACTOR para RELATED_TO."
+        },
+        {
+            "source": "Fedora",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Fedora é uma distribuição Linux. Engenheiro confirma, Professor vê coerência com as demais distros. Topólogo insiste na hierarquia específica→genérico, logo 'Fedora IS_A Linux'. Aresta é tecnicamente boa, mas com direção invertida; Reparador propõe inversão. Juiz: REFACTOR com direção REVERSE e tipo IS_A."
+        },
+        {
+            "source": "Fedora",
+            "target": "Red Hat",
+            "type": "RELATED_TO",
+            "reason": "Professor: há valor em mostrar que Fedora e Red Hat estão intimamente ligados (Fedora como upstream community para RHEL). Engenheiro: Fedora não é parte de Red Hat nem um subtipo de ‘Red Hat Enterprise Linux’; é um projeto patrocinado pela Red Hat e tecnicamente related. Cético: nada fictício, mas a natureza da relação é complexa. Topólogo: não há ciclo imediato. Terminologista: melhor mantê‑la como relação fraca; RELATED_TO é adequado. Reparador: direção pode ficar como está pois é uma associação, não hierarquia forte. Juiz: manter, mas padronizar o tipo para o canônico RELATED_TO (já equivalente). Como o tipo de entrada ‘RELATED’ não era canônico, aplica‑se REFACTOR para RELATED_TO."
+        },
+        {
+            "source": "FHS",
+            "target": "file",
+            "type": "RELATED_TO",
+            "reason": "Professor: o FHS (Filesystem Hierarchy Standard) trata de hierarquia de diretórios e tipos de conteúdo, não de um arquivo específico; conexão é muito genérica, mas ainda há relação conceitual com arquivos e sistema de arquivos. Engenheiro: FHS é um padrão de layout de diretórios do sistema; ‘file’ como nó genérico é amplo demais para PREREQUISITE, PART_OF ou USE. Otimizador: não há cadeia clara para remover redundância; precisa só ser enfraquecido. Cético: sem alucinação, apenas granulação ruim. Topólogo: não ameaça aciclicidade. Terminologista: USE e PART_OF não se aplicam; IS_A é incorreto; a melhor opção, se mantida, é RELATED_TO para marcar a associação fraca. Reparador: reforça que o elo não é de dependência forte, apenas associação conceitual. Juiz: REFACTOR para RELATED_TO, com confiança moderada, aceitando uma ligação conceitual fraca."
+        },
+        {
+            "source": "FHS",
+            "target": "FSSTND",
+            "type": "RELATED_TO",
+            "reason": "Professor: FSSTND antecede e fundamenta FHS; aprender o padrão antigo ajuda a entender o novo, então a origem histórica é de FSSTND para FHS. Engenheiro: FSSTND foi o antecessor do FHS; FHS não é um tipo de FSSTND, são padrões distintos de versões diferentes; IS_A está tecnicamente errado. Otimizador: uma simples relação histórica é suficiente, sem criar hierarquia taxonômica. Cético: nenhum conceito é alucinado, apenas o tipo de relação está inadequado. Topólogo: inverter direção não cria ciclos e mantém hierarquia conceitual (padrão antigo -> padrão novo). Terminologista: não é PREREQUISITE forte de currículo moderno nem PART_OF nem IS_A; melhor usar RELATED_TO como relação histórica, com direção FSSTND -> FHS. Reparador: corrige tipo para RELATED_TO e inverte direção. Juiz: maioria qualificada apoia REFACTOR para FSSTND RELATED_TO FHS (REVERSE)."
+        },
+        {
+            "source": "FIFO",
+            "target": "Buffer",
+            "type": "RELATED_TO",
+            "reason": "Professor: relacionar FIFO a Buffer pode ajudar a entender que FIFO é uma política/estrutura de enfileiramento frequentemente implementada sobre buffers; Engenheiro: FIFO (fila first-in-first-out) está conceitualmente ligada a estruturas de buffer/queue, embora não seja estritamente parte ou subtipo; Otimizador: não há outra aresta mais específica para consolidar; Cético: não é falso, apenas genérico; Topólogo: RELATED_TO entre conceitos não cria ciclos aqui; Terminologista: para essa relação conceitual frouxa o tipo RELATED_TO é aceitável; Reparador: nenhuma inversão melhora; Juiz: manter a aresta como RELATED_TO com baixa a moderada confiança."
+        },
+        {
+            "source": "find",
+            "target": "-name",
+            "type": "USE",
+            "reason": "Professor: ensinar find inclui aprender opções essenciais como -name, o comando é o conceito principal e a flag é um modificador; Engenheiro: find usa a opção -name para selecionar arquivos por nome, portanto a direção find -> -name como USE é tecnicamente correta; Otimizador: isso segue o mesmo padrão adotado para whereis e ls com suas flags; Cético: tratar -name como nó de opção de linha de comando é consistente; Topólogo: não afeta aciclicidade; Terminologista: trocar tipo de RELATED/implícito para USE deixa a semântica mais precisa; Reparador: apenas padroniza o tipo mantendo a direção; Juiz: REFACTOR para USE."
+        },
+        {
+            "source": "find",
+            "target": "-maxdepth",
+            "type": "USE",
+            "reason": "Professor: -maxdepth é uma opção importante de find para controle de profundidade, apresentada como parte do uso do comando; Engenheiro: find utiliza a flag -maxdepth para limitar a profundidade da busca, então é um claro caso de comando usando opção; Otimizador: mantém consistência com outras relações comando->flag; Cético: é um fato técnico estabelecido; Topólogo: não introduz ciclos; Terminologista: tipo correto é USE; Reparador: direção está boa, só ajustar tipo; Juiz: REFACTOR para USE."
+        },
+        {
+            "source": "find",
+            "target": "-amin",
+            "type": "RELATED_TO",
+            "reason": "Professor: aprender find inclui aprender seus testes de tempo como -amin; é uma ligação funcional útil. Engenheiro: -amin é um primário/opção específica de find, e find realmente a utiliza para filtrar por minutos desde o último acesso. Otimizador: poderia ser modelado como PART_OF (opção de comando), mas USE expressa bem a relação ferramenta→parâmetro e não cria redundância maior. Cético: -amin é um argumento, não um comando; ainda assim faz sentido como nó no contexto de sintaxe de find. Topólogo: não há risco de ciclo; direção geral→específico está correta. Terminologista: USE é aceitável para ‘comando usa opção’; não é PREREQUISITE nem IS_A. Reparador: nada a inverter ou trocar de tipo. Juiz: manter a aresta como USE com alta confiança."
+        },
+        {
+            "source": "find",
+            "target": "-atime",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar find, aprender -atime é parte importante do uso baseado em tempo. Engenheiro: -atime é um teste suportado por find para tempo de último acesso; a relação é factual. Otimizador: semelhante a -amin; granularidade aceitável se o grafo modela opções. Cético: nenhum sinal de alucinação; -atime é real e específico de find. Topólogo: não afeta aciclicidade; direção está correta (ferramenta→opção). Terminologista: USE descreve bem ferramenta que utiliza um parâmetro. Reparador: não há melhoria óbvia no tipo. Juiz: manter como USE."
+        },
+        {
+            "source": "find",
+            "target": "-uid",
+            "type": "RELATED_TO",
+            "reason": "Professor: -uid é um critério típico ao ensinar busca por proprietário com find. Engenheiro: -uid é um primário válido que compara UID do dono do arquivo; a aresta é tecnicamente correta. Otimizador: mesma estrutura que outras opções; consistente no grafo. Cético: nada inventado aqui. Topólogo: sem ciclos; comando continua mais geral que o parâmetro. Terminologista: USE é adequado para comando usando critério. Reparador: sem ajustes necessários. Juiz: manter find USE -uid."
+        },
+        {
+            "source": "find",
+            "target": "-user",
+            "type": "RELATED_TO",
+            "reason": "Professor: -user complementa -uid na didática de busca por dono; é conteúdo útil ligado a find. Engenheiro: -user é um primário de find que compara nome de usuário; a relação é exata. Otimizador: segue padrão das demais opções; não introduz redundância problemática. Cético: é uma opção real, não alucinação. Topólogo: não gera ciclos. Terminologista: USE continua sendo o melhor tipo: find usa -user ao filtrar. Reparador: nada a refatorar. Juiz: aresta mantida."
+        },
+        {
+            "source": "find",
+            "target": "-perm",
+            "type": "RELATED_TO",
+            "reason": "Professor: -perm é central para ensinar busca por permissões com find; ligação pedagógica forte. Engenheiro: -perm é um primário legítimo para corresponder modos de permissão; relação é correta. Otimizador: coerente com demais opções detalhadas de find. Cético: conceito existente e bem definido. Topólogo: sem impacto em DAG além de refinamento local. Terminologista: USE adequado (comando usa critério). Reparador: nenhum conserto exigido. Juiz: KEEP."
+        },
+        {
+            "source": "find",
+            "target": "-size",
+            "type": "RELATED_TO",
+            "reason": "Professor: -size é um argumento clássico ao mostrar find por tamanho de arquivo. Engenheiro: -size é um primário correto (tamanho em blocos, k, M, etc.); relação factual. Otimizador: consistente com o modelo comando→opções. Cético: não há traço de alucinação. Topólogo: sem risco de ciclo. Terminologista: USE continua adequado. Reparador: não há motivo para alterar tipo ou direção. Juiz: manter."
+        },
+        {
+            "source": "find",
+            "target": "-type",
+            "type": "RELATED_TO",
+            "reason": "Professor: -type é um dos primeiros filtros mostrados em find (arquivo, diretório, link); pedagogicamente importante. Engenheiro: -type é um primário real e amplamente usado; a relação é correta. Otimizador: segue o mesmo padrão das outras opções; não gera redundância extra além do design pretendido. Cético: nada de fictício. Topólogo: estruturalmente seguro. Terminologista: USE representa bem a dependência do comando em seu parâmetro. Reparador: nenhuma refatoração necessária. Juiz: KEEP."
+        },
+        {
+            "source": "find",
+            "target": "xargs",
+            "type": "RELATED_TO",
+            "reason": "Professor: é didaticamente comum ensinar o encadeamento find | xargs para processar resultados; relação funcional forte entre as ferramentas. Engenheiro: find frequentemente gera listas para xargs consumir; ambos são comandos separados, mas find é usado em conjunto com xargs. Otimizador: já existe também xargs USE find; o par cria uma relação bidirecional mas não um ciclo de pré-requisito, apenas de uso, aceitável se o grafo tolera relações USE em ambos os sentidos para cooperação. Cético: a co-ocorrência é real na prática. Topólogo: como não é PREREQUISITE, o ciclo não viola a DAG de dependências de aprendizado; é somente um circuito funcional benigno. Terminologista: USE é o melhor tipo para ferramentas que operam em conjunto. Reparador: não inverter, pois find é mais naturalmente visto como produtor que alimenta xargs, mas a aresta inversa também pode existir; manter como está. Juiz: KEEP."
+        },
+        {
+            "source": "find",
+            "target": "file",
+            "type": "USE",
+            "reason": "Professor: find é apresentado como ferramenta para localizar arquivos e diretórios; associação direta com o conceito de arquivo. Engenheiro: find percorre a árvore de diretórios e avalia arquivos de acordo com critérios; opera sobre objetos de tipo arquivo. Otimizador: não é redundante com as opções específicas; é uma ligação geral comando→recurso. Cético: tecnicamente correto. Topólogo: não cria ciclos. Terminologista: USE é o tipo apropriado para comando que manipula/inspeciona arquivos. Reparador: a formulação original já era USE; a refatoração apenas consolida que essa é a tipologia correta. Juiz: REFACTOR para USE de forma explícita e canônica."
+        },
+        {
+            "source": "GCP",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: reforça a ideia de que grandes clouds usam Linux. Engenheiro: Google Cloud Platform executa ampla gama de serviços em Linux e oferece VMs Linux. Otimizador: não redundante, pois é um provedor distinto. Cético: afirmação é sólida embora não exclusiva. Topólogo: não gera ciclos. Terminologista: USE é apropriado. Reparador: sem ajustes. Juiz: manter."
+        },
+        {
+            "source": "Gentoo",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro: Gentoo é uma distribuição GNU/Linux. Direção original inverte a relação taxonômica. Terminologista e Topólogo insistem em manter padrão Gentoo IS_A Distribuições GNU/Linux. Reparador sugere REVERSE. Juiz: aplicar inversão e manter tipo IS_A."
+        },
+        {
+            "source": "GFDL",
+            "target": "Software Livre",
+            "type": "RELATED_TO",
+            "reason": "Professor: conhecer GFDL ajuda a entender software livre, mas não é pré‑requisito forte. Engenheiro: GFDL é uma licença de documentação, relacionada ao ecossistema de software livre. Cético pede evitar exageros taxonômicos (não é IS_A). Terminologista: melhor relação ampla é RELATED_TO. Topólogo: não cria ciclos. Juiz: manter a ligação, padronizando como RELATED_TO."
+        },
+        {
+            "source": "GNU",
+            "target": "GPL",
+            "type": "PART_OF",
+            "reason": "Professor: para entender a GPL, conhecer o projeto GNU ajuda, mas a relação principal é que a GPL é uma licença criada/associada ao GNU. Engenheiro: a GPL (em especial a GPLv3) é parte central do ecossistema GNU; é mais plausível modelar GPL PART_OF GNU do que apenas RELATED. Otimizador: isso dá estrutura ao grafo de licenças dentro de GNU. Cético: \"GNU RELATED GPL\" é vago; melhor uma mereologia conceitual. Topólogo: inverter não cria ciclos com as demais arestas. Terminologista: GPL é um componente/elemento do projeto GNU, logo PART_OF é aceitável. Reparador: ajustar para 'GPL PART_OF GNU' invertendo a direção. Juiz: refatorar para PART_OF com direção REVERSE."
+        },
+        {
+            "source": "GNU/Linux",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro e Cético: \"GNU/Linux\" é a denominação genérica do sistema; \"Distribuições GNU/Linux\" é a classe das distros específicas. Uma distribuição é um tipo de GNU/Linux, não o inverso. Professor: pedagogicamente o aprendiz vê várias distros como exemplos de GNU/Linux. Topólogo: direção atual quebra hierarquia (específico apontando para genérico). Reparador propõe inverter mantendo IS_A. Juiz: relação correta é Distribuições GNU/Linux IS_A GNU/Linux (REVERSE)."
+        },
+        {
+            "source": "GNU/Linux",
+            "target": "Kernel",
+            "type": "PART_OF",
+            "reason": "Professor: ensina‑se que um sistema GNU/Linux é composto pelo kernel Linux + userland GNU. Engenheiro: o kernel é parte do sistema GNU/Linux, não o contrário. Cético: ‘GNU/Linux PART_OF Kernel’ está invertido. Topólogo: direção deve fluir de componente para todo. Terminologista: PART_OF é o tipo certo, mas trocando sujeito e objeto. Reparador: inverter: ‘Kernel PART_OF GNU/Linux’. Juiz: REFACTOR com PART_OF e direção REVERSE."
+        },
+        {
+            "source": "GNU/Linux",
+            "target": "Sistema Operacional",
+            "type": "IS_A",
+            "reason": "Professor: o aluno deve ver GNU/Linux como um tipo de sistema operacional, não o contrário. Engenheiro: GNU/Linux é uma família de sistemas operacionais baseados em kernel Linux + userland GNU; logo é subtipo de 'Sistema Operacional'. Otimizador: taxonomia deve ir de instância/família → categoria genérica. Cético: apenas a direção está invertida, não o fato. Topólogo: Sistema Operacional é mais geral, então deve ser alvo de IS_A, evitando hierarquia invertida. Terminologista: IS_A é o tipo correto, mas em direção Sistema Operacional (genérico) <- GNU/Linux (específico). Reparador: inverte a seta, mantendo IS_A. Juiz: refatorar para GNU/Linux IS_A Sistema Operacional (REVERSE)."
+        },
+        {
+            "source": "GNU/Linux",
+            "target": "case-sensitive",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao estudar GNU/Linux, um ponto conceitual importante é que o sistema de arquivos e o ambiente em geral são case sensitive; isso é uma característica relevante do sistema, mas não um pré‑requisito separado. Engenheiro: sistemas GNU/Linux (kernel Linux + userland GNU) tratam nomes de arquivos de forma sensível a maiúsculas/minúsculas em quase todos os sistemas de arquivos padrão (ext4, etc.). Otimizador: uma relação simples de associação é suficiente. Cético: 'case-sensitive' é um atributo, mas representá‑lo como nó conceitual relacionado é aceitável. Topólogo: não cria ciclos nem hierarquias inadequadas. Terminologista: RELATED_TO é a categoria mais apropriada para relacionar o sistema à sua propriedade. Reparador: direção é razoável, nada a inverter. Juiz: manter com RELATED_TO."
+        },
+        {
+            "source": "GNU/Linux",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Conceitualmente, GNU/Linux refere-se tipicamente a sistemas operacionais que combinam o kernel Linux com o userland GNU; Linux sozinho é normalmente o kernel. O Cético alerta que tratar ‘GNU/Linux’ como conceito derivado de ‘Linux’ pode distorcer a taxonomia. Reparador propõe inverter: Linux RELATED_TO GNU/Linux (sistemas baseados em Linux). Terminologista prefere RELATED_TO para evitar implicar IS_A de um para o outro. JUIZ inverte a direção e mantém RELATED_TO."
+        },
+        {
+            "source": "GPL",
+            "target": "GNU/Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: importante mostrar a ligação entre a licença GPL e muitos componentes de sistemas GNU/Linux. Engenheiro: a GPL é uma licença sob a qual o kernel Linux e muitos softwares GNU são distribuídos; não é parte física nem pré‑requisito de aprendizado técnico do sistema operacional em si. Cético: a relação é conceitual/legal, mas real. Topólogo: classificação fraca evita ciclos e sobrecarga semântica. Terminologista: melhor marcá‑la como RELATED_TO. Reparador: troca o tipo genérico por RELATED_TO canônico. Juiz: REFACTOR."
+        },
+        {
+            "source": "GPLv2",
+            "target": "GPLv1",
+            "type": "IS_A",
+            "reason": "Todas são versões da mesma licença GPL. Professor e Terminologista sugerem relação taxonômica: GPLv2 é uma variante específica da licença GPL, não apenas genericamente relacionada a GPLv1. Entre os nós dados, a melhor interpretação é que GPLv2 e GPLv1 são instâncias do conceito GPL; porém, sem nó ‘GPL’ disponível, a mesa considera aceitável indicar que GPLv2 IS_A GPLv1 como ‘versão específica dentro da família GPL’ sabendo que é uma aproximação. Cético vê risco de semântica imperfeita, mas Topólogo prefere IS_A a RELATED_TO para estruturar a hierarquia. Em nome de maior estrutura, JUIZ refatora para IS_A mantendo direção."
+        },
+        {
+            "source": "GPLv3",
+            "target": "GPLv2",
+            "type": "IS_A",
+            "reason": "Discussão idêntica ao caso anterior: GPLv3 é outra versão da mesma família de licença que GPLv2. RELATED_TO é fraco; a mesa opta por representá-la como instância/variante na mesma linha taxonômica. Para manter consistência com GPLv2→GPLv1, Terminologista sugere GPLv3 IS_A GPLv2. Embora não represente perfeitamente a relação histórica entre versões, é tecnicamente segura em termos de DAG e mais informativa que RELATED_TO. JUIZ refatora para IS_A mantendo direção."
+        },
+        {
+            "source": "Hadoop",
+            "target": "Java",
+            "type": "RELATED_TO",
+            "reason": "Professor: é útil o aluno saber que Hadoop está fortemente associado ao ecossistema Java. Engenheiro: Hadoop é majoritariamente implementado em Java e sua API principal é em Java; relação técnica é forte. Otimizador: não há outra aresta entre eles, portanto não há redundância. Cético: nenhum erro conceitual. Topólogo: relação lateral, não causa ciclos estruturais. Terminologista: não é exatamente PREREQUISITE para entender Hadoop em alto nível, mas há forte correlação tecnológica; RELATED_TO é apropriado. Reparador: direção Hadoop -> Java é aceitável como \"tecnologia dependente\" para \"linguagem base\". Juiz: manter com tipo RELATED_TO."
+        },
+        {
+            "source": "halt",
+            "target": "Sistema Operacional",
+            "type": "USE",
+            "reason": "Mesmo raciocínio de shutdown: halt é um comando exposto pelo sistema, ele não usa o sistema operacional. Engenheiro e Professor concordaram que o sistema operacional utiliza o comando como interface de controle. Juiz: inverter para 'Sistema Operacional USE halt'."
+        },
+        {
+            "source": "history",
+            "target": ".bash_history",
+            "type": "USE",
+            "reason": "Professor: para compreender o comando history, é útil saber que ele lê/exibe o histórico armazenado, tipicamente em .bash_history. Engenheiro: em Bash, history manipula o histórico mantido em memória e sincronizado com o arquivo de histórico; operacionalmente o comando interage com esse arquivo. Otimizador: nenhuma redundância clara com outras arestas. Cético: não há alucinação. Topólogo: direção history -> .bash_history preserva fluxo ferramenta -> recurso. Terminologista: melhor modelar como USE, pois history é a ferramenta e .bash_history é o recurso. Reparador: apenas mudar tipo de RELATED para USE. Juiz: REFACTOR para USE é apropriado."
+        },
+        {
+            "source": "ifconfig",
+            "target": "/sbin",
+            "type": "PART_OF",
+            "reason": "Engenheiro aponta que ifconfig é um binário localizado tipicamente em /sbin, não que ifconfig USE /sbin. Terminologista rejeita USE por não expressar relação de localização/composição. Reparador sugere inverter: ifconfig é um arquivo dentro de /sbin. Topólogo aceita PART_OF sem risco de ciclo. JUIZ refatora para ifconfig PART_OF /sbin, invertendo a direção."
+        },
+        {
+            "source": "info",
+            "target": "yelp",
+            "type": "RELATED_TO",
+            "reason": "Professor: info e yelp são diferentes frontends para documentação, mas o aprendizado de um ajuda a entender o outro; relação fraca mas aceitável. Engenheiro: yelp é o visualizador de ajuda do GNOME que pode mostrar páginas info entre outros formatos; a relação é de proximidade funcional. Terminologista: ORIGINAL RELATED deve virar RELATED_TO. Topólogo: não há risco de ciclo conhecido. JUIZ: manter como RELATED_TO (mapeando RELATED→RELATED_TO) com direção info→yelp aceitável."
+        },
+        {
+            "source": "info",
+            "target": "xman",
+            "type": "RELATED_TO",
+            "reason": "Professor: info e xman são sistemas de ajuda/documentação; conhecer um ajuda a entender o outro. Engenheiro: xman é um visualizador gráfico de páginas man; não usa info diretamente, mas está no mesmo domínio de ajuda. Terminologista: mapeia RELATED para RELATED_TO. Otimizador: essa aresta não cria redundância problemática. JUIZ: manter como RELATED_TO com a mesma direção."
+        },
+        {
+            "source": "info",
+            "target": "man",
+            "type": "RELATED_TO",
+            "reason": "Professor: info e man são sistemas de documentação distintos, mas complementares; não há bloqueio de aprendizado nem composição. Engenheiro: não há uso direto obrigatório entre os binários; apenas tematização comum de ajuda. Terminologista: mapeia RELATED para RELATED_TO. Topólogo: relação lateral entre dois nós de mesmo nível; não cria hierarquia circular. JUIZ: corrigir o tipo para RELATED_TO e manter direção info→man."
+        },
+        {
+            "source": "init",
+            "target": "/sbin",
+            "type": "PART_OF",
+            "reason": "Caso análogo ao de ifconfig: o binário init tradicionalmente reside em /sbin (ou link). A relação correta é de inclusão no diretório, não de uso. Professor e Terminologista consideram PART_OF /sbin mais claro. Direção deve ser /sbin como todo e init como parte. JUIZ decide por init PART_OF /sbin com direção invertida."
+        },
+        {
+            "source": "iptables",
+            "target": "/sbin",
+            "type": "PART_OF",
+            "reason": "iptables é um executável normalmente localizado em /sbin. A semântica USE não se aplica à relação entre executável e diretório. Reparador propõe ver como arquivo contido em /sbin. Topólogo, Engenheiro e Terminologista convergem em iptables PART_OF /sbin com direção invertida. Aresta refatorada."
+        },
+        {
+            "source": "Kernel Linux",
+            "target": "Hardware",
+            "type": "RELATED_TO",
+            "reason": "Professor: é pedagógico mostrar que o kernel interage diretamente com o hardware. Engenheiro: o kernel gerencia hardware via drivers, efetivamente usando recursos de hardware. Otimizador: USE captura essa relação funcional sem exigir modelagem extra. Cético: ambos os conceitos existem e a relação é sólida. Topólogo: nenhuma implicação cíclica com outras camadas. Terminologista: USE é adequado (ferramenta/sofware → recurso físico). Reparador: direção kernel→hardware é coerente. Juiz: manter."
+        },
+        {
+            "source": "Knoppix",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro: Knoppix é uma distribuição GNU/Linux (focada em live CD). Professor: é mais um exemplo concreto da classe de distros. Aresta precisa ser da distro para a classe. Topólogo: alinhado às demais distros no grafo. Juiz: inverter direção, mantendo IS_A."
+        },
+        {
+            "source": "ksh",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: classificar ksh como shell é pedagogicamente útil. Engenheiro: KornShell é uma shell POSIX. Otimizador: relação necessária na hierarquia de shells. Cético: sem alucinações. Topólogo: direção geral → específico correta. Terminologista: IS_A é o rótulo certo. Reparador: sem ajustes. Juiz: manter."
+        },
+        {
+            "source": "ksh",
+            "target": "sh",
+            "type": "IS_A",
+            "reason": "Professor: é útil ensinar ksh como uma shell do tipo sh/POSIX, não apenas 'relacionada'. Engenheiro: ksh é uma implementação compatível com o shell Bourne/POSIX; há relação de subtipo funcional. Otimizador: IS_A torna a taxonomia mais clara que RELATED. Cético: nada indica fantasia, apenas tipo fraco. Topólogo: não introduz ciclos com outras shells. Terminologista: IS_A se encaixa melhor que RELATED_TO. Reparador: apenas reforça o tipo mantendo a direção. Juiz: refatorar para IS_A."
+        },
+        {
+            "source": "Linux",
+            "target": "GCC",
+            "type": "USE",
+            "reason": "Professor: para aprender a usar Linux como sistema, aprender GCC não é pré-requisito; o aluno normalmente aprende Linux antes de GCC. Engenheiro: GCC é um compilador de C/C++ que roda em Linux; dizer que 'Linux USE GCC' está tecnicamente invertido — usuários usam GCC sobre Linux. Otimizador: é útil registrar que GCC roda em Linux, não que Linux dependa de GCC. Cético: a direção atual sugere dependência do kernel em GCC em tempo de uso, o que é enganoso. Topólogo: inverter não cria ciclos com outras arestas. Terminologista: relação correta é GCC USE Linux (GCC utiliza o sistema para executar). Reparador: propõe inverter a seta e manter o tipo USE. Juiz: refatorar para 'GCC USE Linux' com direção REVERSE."
+        },
+        {
+            "source": "Linux",
+            "target": "Bash",
+            "type": "USE",
+            "reason": "Professor: para aprender Bash, é comum já ter noção de Linux/Unix; Linux não depende conceitualmente de Bash (podem existir outros shells). Engenheiro: Bash é um shell que roda sobre Linux; o uso é do Bash em relação ao sistema operacional, não o inverso. Otimizador: mais útil representar que Bash é uma ferramenta que utiliza o sistema. Cético: aresta atual pode sugerir que Bash é componente obrigatório de Linux, o que não é verdade. Topólogo: inverter é seguro. Terminologista: tipo mais adequado é USE, no sentido de Bash USE Linux. Reparador: propõe inverter a seta. Juiz: refatorar para 'Bash USE Linux' com direção REVERSE."
+        },
+        {
+            "source": "Linux",
+            "target": "Unix-like",
+            "type": "RELATED_TO",
+            "reason": "Professor: colocar Linux como subtipo de Unix-like ajuda a posicionar o conceito em uma hierarquia clara. Engenheiro: Linux é devidamente classificado como um sistema operacional Unix-like. Otimizador: esta é a forma correta e não redundante da relação com Unix-like. Cético: semanticamente preciso, sem extrapolação. Topólogo: hierarquia do específico (Linux) para o genérico (Unix-like) preserva o DAG. Terminologista: IS_A é o tipo exato. Reparador: nada a mudar. Juiz: manter a aresta."
+        },
+        {
+            "source": "Linux",
+            "target": "Kernel",
+            "type": "IS_A",
+            "reason": "Professor: fundamental que o aluno entenda que Linux é o kernel. Engenheiro: Linux é um kernel de sistema operacional, não o contrário. Cético: a afirmação ‘Linux IS_A Kernel’ é exata. Topólogo: encaixa em uma taxonomia limpa (Kernel como categoria, Linux como instância/tipo). Terminologista: usar IS_A, não ‘IS_A Kernel’ ao contrário. Reparador: o tipo está correto (IS_A) mas o alvo deve ser a classe ‘Kernel’; isso já ocorre, só é preciso padronizar o tipo para o canônico IS_A (idêntico, mas entrada já estava correta). Como já usa tipo canônico, tecnicamente seria KEEP, porém mantemos REFACTOR apenas se considerarmos que ‘Kernel’ é categoria; ainda assim não há correção estrutural a fazer além de confirmar. Juiz: dado que o tipo já é canônico, poderia ser KEEP, mas para consistência com outros ajustes mínimos manteremos REFACTOR com IS_A idêntico."
+        },
+        {
+            "source": "Linux",
+            "target": "GNU/Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: relação é útil para contextualizar o termo GNU/Linux ao aprender Linux, sem ser pré-requisito. Engenheiro: Linux (kernel/sistema) e GNU/Linux (distribuição baseada na combinação GNU+Linux) estão fortemente associados; não é correto dizer que um é parte ou tipo direto do outro no nível conceitual simplificado desse grafo. Otimizador: não há outra aresta intermediária no lote que torne esta redundante. Cético: nenhum dos conceitos é alucinação, ambos são usados usualmente, apesar de certa imprecisão histórica. Topólogo: RELATED_TO não cria dependências ou ciclos; topologia segura. Terminologista: não é PREREQUISITE, PART_OF, IS_A nem USE; RELATED_TO é o rótulo adequado. Reparador: não há necessidade de inverter ou alterar o tipo, a direção é simétrica em RELATED_TO. Juiz: consenso em manter como RELATED_TO tal como proposto."
+        },
+        {
+            "source": "Linux Mint",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Linux Mint é uma distribuição de Linux. Toda a mesa converge em que a relação é taxonômica: Mint é um tipo de sistema Linux. Para manter coerência com o DAG hierárquico, o Topólogo exige 'Linux Mint IS_A Linux' (específico→genérico). Juiz: refatorar invertendo direção, mantendo IS_A."
+        },
+        {
+            "source": "locate",
+            "target": "updatedb",
+            "type": "RELATED_TO",
+            "reason": "Professor: ao ensinar locate é fundamental mencionar que ele depende de um banco de dados criado/atualizado por updatedb. Engenheiro: o comando locate consulta a base construída por updatedb; há uma relação funcional estreita. Otimizador: poderia haver também uma relação reversed (updatedb USE locate-db), mas essa aresta em si é útil e não redundante. Cético: ambos são comandos reais do mlocate/plocate; relação factual. Topólogo: não há ciclo de PREREQUISITE; relação USE é segura. Terminologista: USE é apropriado (locate usa o banco que updatedb produz). Reparador: direção está correta (locate depende do trabalho de updatedb). Juiz: manter."
+        },
+        {
+            "source": "ls",
+            "target": "mkdir",
+            "type": "RELATED_TO",
+            "reason": "Professor: ls e mkdir são normalmente ensinados juntos na navegação básica do sistema de arquivos, relação de associação ajuda a agrupar comandos de diretório; Engenheiro: ambos operam sobre diretórios/árvores de arquivos; Otimizador: conjunto moderado de relações RELATED_TO entre comandos básicos é aceitável; Cético: tecnicamente correto; Topólogo: não cria ciclos prejudiciais; Terminologista: RELATED_TO é adequado; Reparador: nada a corrigir; Juiz: KEEP."
+        },
+        {
+            "source": "ls",
+            "target": "rm",
+            "type": "RELATED_TO",
+            "reason": "Professor: ls e rm são compartilhados em aulas iniciais para mostrar listagem e remoção de arquivos; Engenheiro: ambos tratam de arquivos no sistema, com operações complementares (listar vs apagar); Otimizador: não há sobrecarga excessiva de similaridades; Cético: relação é plausível; Topólogo: RELATED_TO não compromete a estrutura de dependências; Terminologista: tipo RELATED_TO é o melhor encaixe; Reparador: nenhuma alteração sugerida; Juiz: KEEP."
+        },
+        {
+            "source": "ls",
+            "target": "rmdir",
+            "type": "RELATED_TO",
+            "reason": "Professor: ls, mkdir, rm, rmdir formam um grupo didático de comandos básicos para manipulação de diretórios e arquivos, associá-los é útil; Engenheiro: ls e rmdir operam sobre diretórios, um listando e o outro removendo; Otimizador: a malha leve de RELATED_TO entre esses comandos de filesystem é aceitável e não excessiva; Cético: relação é técnica e pedagogicamente razoável; Topólogo: permanece compatível com um DAG de pré-requisitos; Terminologista: RELATED_TO é o rótulo adequado; Reparador: nenhuma modificação requerida; Juiz: KEEP."
+        },
+        {
+            "source": "ls",
+            "target": "-l",
+            "type": "RELATED_TO",
+            "reason": "Professor: aprender ls ajuda a entender opções como -l, mas não é um pré-requisito separado; -l é um parâmetro/flag, não uma entidade de estudo isolada no mesmo nível. Engenheiro: tecnicamente ls usa a opção -l para mudar o formato de listagem; não é ls que usa -l como recurso externo, e sim -l que modifica o comportamento de ls, portanto o tipo USE é inadequado. Otimizador: não há estrutura de parâmetros no grafo, manter como relação fraca é suficiente. Cético: nenhum conceito é alucinado, ambos existem; apenas o tipo da relação está fraco. Topólogo: trocar para RELATED_TO não cria ciclos nem dependências fortes. Terminologista: USE deve ser reservado para ferramenta que manipula recurso distinto (ex.: comando usa arquivo); aqui é melhor relação semântica fraca. Reparador: mantém direção (ls relacionado à opção -l) e fortalece o tipo para RELATED_TO em vez de USE. Juiz: decisão de REFACTOR para RELATED_TO, mantendo direção."
+        },
+        {
+            "source": "makewhatis",
+            "target": "whatis",
+            "type": "USE",
+            "reason": "Professor: faz sentido ver 'whatis USE makewhatis' ou ambos usando o banco de dados; porém a alegação de PART_OF está errada. Engenheiro: makewhatis (ou mandb em sistemas modernos) constrói o banco de dados usado pelas consultas whatis/apropos. Ele não é parte de whatis; é uma ferramenta de manutenção que whatis depende funcionalmente. Terminologista: USE é adequado para representar que whatis usa o banco gerado por makewhatis. Topólogo: direção correta é de whatis para makewhatis. Reparador: inverte a seta e muda o tipo para USE. Juiz: REFACTOR para 'whatis USE makewhatis'."
+        },
+        {
+            "source": "man",
+            "target": "iptables",
+            "type": "USE",
+            "reason": "Professor: o comando man é uma ferramenta para consultar documentação de ferramentas como iptables; aprender man ajuda a explorar iptables, mas não é um pré‑requisito forte para entender o conceito de firewall em si. Engenheiro: tecnicamente 'man iptables' invoca a página de manual correspondente; man usa as páginas de man associadas ao comando alvo. Otimizador: relação funcional simples e clara é suficiente. Cético: ambos são conceitos reais. Topólogo: não gera ciclos nem hierarquias estranhas. Terminologista: o tipo USE é o melhor ajuste, indicando que man é usado para acessar a documentação de iptables. Reparador: não há necessidade de inverter; direção 'man -> iptables' como uso está correta. Juiz: manter com tipo USE."
+        },
+        {
+            "source": "man",
+            "target": "man <nivel> intro",
+            "type": "USE",
+            "reason": "Engenheiro confirma que a ferramenta man aceita uma sintaxe como 'man 1 intro'; isso é um modo específico de uso do comando. Professor vê valor pedagógico em mostrar que o comando man pode ser invocado com um nível e a página 'intro'. Terminologista julga USE como tipo adequado, pois é uma forma de invocação/opção do próprio comando. Topólogo não vê problema topológico. JUIZ refatora apenas para padronizar como relação de uso mantendo a direção."
+        },
+        {
+            "source": "man",
+            "target": "passwd",
+            "type": "USE",
+            "reason": "Professor nota que conceitualmente o que ocorre é 'usar man para ver a página de passwd', portanto o sujeito ativo é o comando man, que opera sobre a página/comando passwd. Terminologista aplica regra: comando man USA a página de manual de passwd, logo a direção mais correta é man USE passwd. Engenheiro valida que passwd também é um comando, mas aqui o foco é a página de manual. Reparador sugere inverter em vez de descartar. JUIZ decide por REFACTOR com direção REVERSE e tipo USE."
+        },
+        {
+            "source": "man",
+            "target": "/usr/share/man/",
+            "type": "USE",
+            "reason": "Engenheiro confirma que o comando man lê bases de dados de páginas de manual normalmente armazenadas em /usr/share/man/. Assim, man funcionalmente USA esse diretório como fonte de dados. Professor vê valor em explicitar essa relação ferramenta–recurso. Terminologista marca claramente como USE. Topólogo não encontra ciclos. JUIZ refatora o tipo para USE, mantendo direção."
+        },
+        {
+            "source": "man",
+            "target": "whatis",
+            "type": "RELATED_TO",
+            "reason": "Professor: man e whatis pertencem ao mesmo ecossistema de documentação; saber whatis ajuda a compreender man -f, mas não há dependência forte. Engenheiro: whatis mostra sumário da página man a partir do banco whatis; man em geral não invoca whatis como comando separado. Terminologista: a relação é de parentesco funcional, então RELATED_TO. Cético: qualquer suposição de uso direto seria arriscada. JUIZ: refatorar o tipo para RELATED_TO."
+        },
+        {
+            "source": "Manjaro Linux",
+            "target": "Arch Linux",
+            "type": "IS_A",
+            "reason": "Professor: importante saber que Manjaro deriva do ecossistema Arch. Engenheiro: Manjaro é uma distribuição baseada em Arch Linux. Cético: factual. Topólogo: usar taxonomia clara com o derivado como subtipo. Terminologista: tipo adequado é IS_A em vez de genérico RELATED. Reparador: inverter direção para ‘Manjaro Linux IS_A Arch-based distribution’, ou simplesmente IS_A Arch Linux no grafo. Juiz: REFACTOR, IS_A, direção REVERSE."
+        },
+        {
+            "source": "Manjaro Linux",
+            "target": "Manjaro OS",
+            "type": "RELATED_TO",
+            "reason": "Professor: sinônimos/nomenclaturas diferentes para o mesmo sistema, útil para evitar confusão de termos, mas não há pré-requisito. Engenheiro: na prática, Manjaro Linux e Manjaro OS referem-se ao mesmo projeto/distribuição; não faz sentido IS_A ou PART_OF entre eles, pois seriam duplicações conceituais. Otimizador: em um grafo maior, isso tenderia a ser normalizado para um único nó, mas com o lote atual é aceitável manter apenas uma aresta de equivalência fraca. Cético: não há invenção, são formas reais de nomear o mesmo produto. Topólogo: RELATED_TO não gera ciclos significativos de pré-requisito; a simetria é conceitual. Terminologista: sem uma relação de herança ou composição clara, RELATED_TO é o tipo menos enganoso. Reparador: não há ganho em inverter a direção, pois a relação é simétrica. Juiz: manter como RELATED_TO é aceitável e tecnicamente seguro."
+        },
+        {
+            "source": "Manjaro OS",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Manjaro OS é uma distro Linux (baseada em Arch). Taxonomicamente: 'Manjaro OS IS_A Linux'. A direção original (Linux como subtipo de Manjaro) está invertida. Terminologista indica IS_A como tipo adequado. Topólogo e Reparador concordam em inverter a seta, Juiz refatora."
+        },
+        {
+            "source": "Manjaro OS",
+            "target": "Manjaro Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: mesma análise da aresta inversa; mostra que os dois nomes remetem ao mesmo conceito geral, sem pré-requisitos. Engenheiro: ambos são rótulos práticos para a mesma distribuição; não é correto dizer que um é tipo ou parte do outro. Otimizador: a dupla de arestas cria um ciclo de RELATED_TO, mas como não é PREREQUISITE nem hierarquia, não prejudica o DAG de dependência pedagógica; remover uma seria opcional e foge ao escopo deste lote. Cético: sem alucinações conceituais. Topólogo: o ciclo é apenas simétrico em RELATED_TO, não afeta o fluxo de pré-requisitos. Terminologista: RELATED_TO continua sendo o melhor rótulo, pois se trata de equivalência/nomenclatura. Reparador: nenhuma correção de direção é necessária. Juiz: manter simetria é aceitável neste contexto, aresta permanece como RELATED_TO."
+        },
+        {
+            "source": "Minix",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: conhecer Minix pode ajudar a entender a origem de Linux, mas não é pré-requisito forte; porém um RELATED_TO histórico é pedagogicamente aceitável em um grafo de contexto. Engenheiro: Linus se inspirou em Minix; há relação histórica clara. Otimizador: não há outra aresta cobrindo essa origem, então não é redundante. Cético: a relação é verdadeira e não distorce o papel de ambos. Topólogo: RELATED_TO não cria hierarquia nem ciclos relevantes aqui. Terminologista: tipo RELATED_TO é apropriado. Reparador: nada a ajustar. Juiz: manter a aresta como RELATED_TO."
+        },
+        {
+            "source": "mkdir",
+            "target": "rmdir",
+            "type": "RELATED_TO",
+            "reason": "Professor: mkdir e rmdir formam um par natural (criar/remover diretórios), a relação de associação é útil; Engenheiro: ambos são comandos de diretório opostos mas relacionados; Otimizador: não há outra relação competindo, a simetria com outras arestas cp/mv é consistente; Cético: tecnicamente correto; Topólogo: RELATED_TO não interfere em hierarquias de pré-requisito; Terminologista: tipo RELATED_TO é adequado para comandos complementares; Reparador: nada a ajustar; Juiz: KEEP."
+        },
+        {
+            "source": "mkdir",
+            "target": "file",
+            "type": "USE",
+            "reason": "Professor: mkdir é ensinado como comando que cria diretórios, um tipo específico de entrada de sistema de arquivos; conectá‑lo ao conceito genérico de ‘file’ faz sentido se ‘file’ representa ‘entry no filesystem’. Engenheiro: em Unix, diretórios são tipos especiais de arquivos; mkdir cria diretórios, logo manipula esse tipo de objeto. Otimizador: seria mais preciso ligar a ‘directory’, mas dado o nó ‘file’ a relação é aceitável. Cético: nada inventado. Topólogo: não compromete a estrutura. Terminologista: USE é o tipo adequado (comando manipulando recurso). Reparador: ajustar explicitamente o tipo para USE; direção está correta. Juiz: REFACTOR para USE com confiança alta, reconhecendo leve imprecisão conceitual mas utilidade pedagógica."
+        },
+        {
+            "source": "mkdir",
+            "target": "-p",
+            "type": "RELATED_TO",
+            "reason": "Professor: aprender mkdir inclui entender opções como -p, mas -p sozinho não é um tópico independente nem pré-requisito; não faz sentido como PREREQUISITE forte. Engenheiro: -p é uma opção de linha de comando que altera o comportamento de mkdir (criar diretórios pais conforme necessário); não é um recurso externo que mkdir usa, e sim um modificador interno. Otimizador: não há hierarquia explícita de opções no grafo, então uma relação fraca é suficiente para conectar o comando e sua opção. Cético: ambos são conceitos reais do comando mkdir; o problema é a tipagem da relação apenas. Topólogo: trocar para RELATED_TO evita dependência artificial; sem risco de ciclo. Terminologista: PREREQUISITE é inadequado, pois não se aprende -p antes de mkdir; o mais correto é marcar apenas que estão relacionados. Reparador: mantém direção (comando relacionado a sua opção) e ajusta tipo para RELATED_TO. Juiz: REFACTOR para RELATED_TO, direção mantida."
+        },
+        {
+            "source": "mv",
+            "target": "cp",
+            "type": "RELATED_TO",
+            "reason": "Professor: assim como cp -> mv, a associação inversa reforça o contraste entre mover e copiar; Engenheiro: comandos são funcionalmente próximos; Otimizador: embora cp<->mv forme um ciclo em RELATED_TO, não é um ciclo de PREREQUISITE e pode ser mantido por clareza sem poluição excessiva; Cético: é factual; Topólogo: aciclicidade exigida é principalmente para pré-requisitos, não para relações de similaridade; Terminologista: RELATED_TO continua apropriado; Reparador: nenhum ajuste; Juiz: KEEP."
+        },
+        {
+            "source": "MX Linux",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "MX Linux é uma distribuição Linux. A formulação correta é 'MX Linux IS_A Linux'. Engenheiro valida o fato, Professor e Topólogo exigem a direção específica→genérico na taxonomia. Terminologista acha o tipo IS_A adequado. Juiz decide inverter a aresta, mantendo IS_A."
+        },
+        {
+            "source": "OCI",
+            "target": "Linux",
+            "type": "RELATED_TO",
+            "reason": "Professor: segue o padrão de mostrar clouds que utilizam Linux. Engenheiro: Oracle Cloud Infrastructure oferece instâncias Linux e serviços baseados em Linux. Otimizador: similar às demais clouds, mas ainda informativo. Cético: relação é verdadeira mesmo que coexistam outros sistemas. Topólogo: seguro para o DAG. Terminologista: USE é o tipo correto. Reparador: nada a alterar. Juiz: manter a aresta."
+        },
+        {
+            "source": "OpenSUSE",
+            "target": "SUSE",
+            "type": "RELATED_TO",
+            "reason": "Professor: útil saber que openSUSE e SUSE estão conectadas (comercial vs community). Engenheiro: openSUSE é uma distribuição comunitária patrocinada pela SUSE; não é parte física nem um subtipo de ‘empresa SUSE’. Cético: correto, mas heterogêneo (produto vs empresa). Topólogo: manter como associação fraca. Terminologista: RELATED_TO é a melhor escolha. Reparador: apenas normaliza o tipo de ‘RELATED’ para RELATED_TO. Juiz: REFACTOR para RELATED_TO, mantendo direção."
+        },
+        {
+            "source": "OPL",
+            "target": "Software Livre",
+            "type": "RELATED_TO",
+            "reason": "Professor: OPL aparece em discussões de licenças abertas, mas não é núcleo de Linux; ainda assim, pode ser nó periférico. Engenheiro: OPL (Open Publication License) é licença de documentação ligada a conteúdos livres e ao movimento de software livre. Terminologista: melhor relação genérica é RELATED_TO. Topólogo: aresta é simples, sem risco de ciclo. Juiz: refatorar para RELATED_TO e manter."
+        },
+        {
+            "source": "Oracle Linux",
+            "target": "Red Hat",
+            "type": "IS_A",
+            "reason": "Professor: pedagogicamente é útil saber que Oracle Linux deriva do ecossistema Red Hat. Engenheiro: tecnicamente, Oracle Linux é uma distribuição compatível com Red Hat Enterprise Linux, logo Oracle Linux é um tipo de distribuição Linux da família Red Hat, não apenas genericamente ‘related’. Cético: não é uma alucinação, ambas são distros. Topólogo: evitar relações genéricas; uma hierarquia de taxonomia é melhor. Terminologista: o tipo adequado é IS_A, mas a direção correta é ‘Oracle Linux IS_A distro da família Red Hat’, equivalente a relacionar Oracle Linux como subtipo de Red Hat (no papel de base). Reparador: inverte a seta e fortalece de RELATED para IS_A. Juiz: REFACTOR para Red Hat IS_A Oracle Linux? Não; manter o nó mais específico como source, então direção deve ser REVERSE com tipo IS_A."
+        },
+        {
+            "source": "passwd",
+            "target": "/etc/passwd",
+            "type": "USE",
+            "reason": "Engenheiro lembra que o comando passwd modifica dados de autenticação, tipicamente armazenados em /etc/passwd (ou via PAM/Shadow, mas historicamente /etc/passwd). Professor considera didático mostrar que passwd opera sobre esse arquivo. Terminologista diz que isso é uma relação funcional de ferramenta sobre recurso, logo USE. Cético nota que sistemas modernos usam /etc/shadow, mas /etc/passwd ainda é relevante; a relação é simplificada, porém não falsa. JUIZ refatora o tipo para USE mantendo a direção."
+        },
+        {
+            "source": "PATH",
+            "target": "$PATH",
+            "type": "IS_A",
+            "reason": "Professor: é útil distinguir o conceito geral PATH (variável de ambiente de caminho de busca) de uma instância concreta $PATH usada no shell, mas essa distinção não é de pré-requisito entre si. Engenheiro: $PATH é a sintaxe específica da variável PATH em shells tipo POSIX; semanticamente, $PATH é uma instância/uso concreto do conceito PATH. Otimizador: manter dois nós distintos só faz sentido se houver hierarquia; fazer de $PATH um subtipo/instância de PATH é mais informativo do que simples RELATED_TO. Cético: ambos os termos são reais; apenas a direção original é confusa. Topólogo: a relação correta é do específico para o geral; PATH não pode ser tipo de $PATH, mas $PATH pode ser tipo/realização do conceito PATH; inverter evita ambiguidade hierárquica. Terminologista: IS_A encaixa melhor como taxonomia: '$PATH é (uma forma concreta de) PATH variável de ambiente'. Reparador: inverte direção para '$PATH -> PATH' e muda tipo para IS_A para refletir especialização/instanciação. Juiz: veredito de REFACTOR com correção de direção para REVERSE e tipo IS_A, com alta confiança."
+        },
+        {
+            "source": "Pop!_OS",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Pop!_OS é uma distribuição Linux. Engenheiro confirma o fato, Professor quer alinhar com outras distros. A forma correta é 'Pop!_OS IS_A Linux'. Topólogo pede direção específica→genérico. Juiz: refatorar invertendo a direção e mantendo IS_A."
+        },
+        {
+            "source": "poweroff",
+            "target": "Sistema Operacional",
+            "type": "USE",
+            "reason": "Painel concordou que poweroff é uma ferramenta oferecida pelo sistema, não um usuário do sistema. Topólogo não viu riscos de ciclo com a inversão. Juiz: refatorar para 'Sistema Operacional USE poweroff'."
+        },
+        {
+            "source": "pwconv",
+            "target": "/etc/passwd",
+            "type": "RELATED_TO",
+            "reason": "pwconv converte senhas de /etc/passwd para /etc/shadow e lê/manipula diretamente /etc/passwd. Terminologista afirma que USE é apropriado para ‘ferramenta que manipula recurso’. Professor considera pedagogicamente útil para explicar utilitários de contas. Engenheiro confirma correção técnica. Aresta mantida como USE."
+        },
+        {
+            "source": "Raspbian",
+            "target": "Debian",
+            "type": "IS_A",
+            "reason": "Professor: saber que Raspbian é baseado em Debian é crucial. Engenheiro: Raspbian (Raspberry Pi OS) é uma variante derivada de Debian. Cético: nada fantasioso aqui. Topólogo: queremos uma taxonomia limpa, com derivadas como subtipo da base. Terminologista: usar IS_A em vez de RELATED. Reparador: inverter direção para ‘Raspbian IS_A Debian-based distribution’. Juiz: REFACTOR, IS_A, com direção invertida."
+        },
+        {
+            "source": "reboot",
+            "target": "Sistema Operacional",
+            "type": "USE",
+            "reason": "Professor: pedagogicamente faz mais sentido ver o sistema operacional usando o comando reboot como mecanismo padrão de reinicialização. Engenheiro: comando de espaço de usuário que aciona syscalls. Juiz: inverter para 'Sistema Operacional USE reboot'."
+        },
+        {
+            "source": "Red Hat",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro: Red Hat (no contexto usual) refere‑se às distribuições Red Hat Linux/Enterprise Linux, que são distribuições GNU/Linux. A direção correta é da distro para a classe. Professor e Topólogo: consistente com as demais distros. Juiz: inverter para Red Hat IS_A Distribuições GNU/Linux."
+        },
+        {
+            "source": "rm",
+            "target": "rmdir",
+            "type": "RELATED_TO",
+            "reason": "Professor: rm e rmdir são frequentemente comparados ao ensinar remoção de arquivos vs diretórios, a associação é pedagogicamente útil; Engenheiro: rm remove arquivos (e diretórios com flags), rmdir remove diretórios vazios; Otimizador: nenhuma redundância crítica, são conceitos relacionados mas distintos; Cético: relação de similaridade é legítima; Topólogo: não gera ciclos de dependência; Terminologista: RELATED_TO é o rótulo correto; Reparador: nenhuma inversão necessária; Juiz: KEEP."
+        },
+        {
+            "source": "rm",
+            "target": "file",
+            "type": "USE",
+            "reason": "Professor: rm é ensinado como o comando que remove arquivos (e, com opções, diretórios); relação forte com o conceito de arquivo. Engenheiro: rm de fato atua sobre inodes/entradas de arquivos; ligação técnica sólida. Otimizador: não há sobrecarga indevida. Cético: nenhuma alucinação. Topólogo: estruturalmente inofensivo. Terminologista: esse é exatamente o padrão comando→recurso, devendo ser classificado como USE. Reparador: apenas confirmar o tipo; direção é correta. Juiz: REFACTOR para USE de forma explícita."
+        },
+        {
+            "source": "sh",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: mostra que ‘sh’ é um tipo de shell, útil para contrastar com Bash. Engenheiro: ‘sh’ (Bourne shell ou sua especificação) é uma shell de comandos Unix. Cético: factual. Topólogo: taxonomia consistente; ‘sh IS_A shell’ não cria ciclos. Terminologista: IS_A está bem aplicado. Reparador: nenhuma correção necessária. Juiz: KEEP."
+        },
+        {
+            "source": "shell",
+            "target": "Bash",
+            "type": "IS_A",
+            "reason": "Professor: pedagogicamente se ensina que Bash é um tipo específico de shell de comando; portanto o conceito específico (Bash) herda do conceito geral (shell). Engenheiro: Bash é uma implementação concreta de um shell compatível com sh; a afirmação 'shell IS_A Bash' está claramente invertida. Otimizador: a hierarquia deve ser do geral para o específico ('Bash IS_A shell'). Cético: ambos nós são corretos. Topólogo: como relação taxonômica, a direção atual criaria uma hierarquia invertida (pai como filho do filho), o que é ruim para o DAG conceitual. Terminologista: o tipo certo é IS_A, mas com direção oposta. Reparador: inverte para 'Bash IS_A shell'. Juiz: consenso total em refatorar invertendo direção."
+        },
+        {
+            "source": "shutdown",
+            "target": "Sistema Operacional",
+            "type": "USE",
+            "reason": "Professor e Terminologista apontaram que é o sistema operacional que fornece/usa o comando shutdown para gerenciar energia, não o contrário. Engenheiro confirmou que shutdown é uma ferramenta do espaço de usuário que interage com o sistema. Topólogo viu que inverter mantém o DAG limpo. Juiz decide inverter para 'Sistema Operacional USE shutdown'."
+        },
+        {
+            "source": "Sistema Operacional",
+            "target": "Kernel Linux",
+            "type": "PART_OF",
+            "reason": "Professor: é importante ensinar que o kernel Linux é parte de um sistema operacional, não o contrário. Engenheiro: um sistema operacional (ex.: GNU/Linux) inclui o kernel Linux como componente central, mas também userland; logo 'Kernel Linux PART_OF Sistema Operacional' é tecnicamente correto. Otimizador: mantém estrutura modular clara. Cético: a aresta original inverte a relação mereológica. Topólogo: corrigir direção evita hierarquia invertida de componentes. Terminologista: PART_OF é adequado para relação de composição. Reparador: inverte direção mantendo PART_OF. Juiz: refatorar para Kernel Linux PART_OF Sistema Operacional."
+        },
+        {
+            "source": "Slackware",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Todos concordam que Slackware é uma distribuição GNU/Linux específica. Aresta original sugere que o conjunto \"Distribuições GNU/Linux\" é um tipo de Slackware, o que é invertido. Terminologista: IS_A está correto, mas direção deve ser da distro específica para a classe geral. Topólogo: inverter previne inconsistência hierárquica. Juiz: REVERSE mantendo IS_A."
+        },
+        {
+            "source": "Software Livre",
+            "target": "GPL",
+            "type": "RELATED_TO",
+            "reason": "Conceitualmente, a GPL é uma licença de software livre; não faz sentido dizer que 'Software Livre USE GPL'. Professor e Cético apontam erro de tipo: não é uso funcional, é relação conceitual/licenciamento. Terminologista sugere RELATED_TO ou IS_A; Engenheiro lembra que nem todo Software Livre é GPL, então não é IS_A. Reparador propõe inverter para 'GPL RELATED_TO Software Livre'. Topólogo não vê risco de ciclo. Juiz refatora para RELATED_TO com direção GPL→Software Livre."
+        },
+        {
+            "source": "SPL",
+            "target": "Software Livre",
+            "type": "RELATED_TO",
+            "reason": "Engenheiro: SPL pode referir‑se a Sun Public License ou Sleepycat Public License; ambas são licenças de software livre em contexto histórico. Professor: conexão é útil para panorama de licenças. Terminologista e Cético: falta de especificidade, mas o tipo correto é uma relação ampla, não taxonômica. RELATED_TO é conservador. Juiz: refatorar para RELATED_TO com leve reserva quanto à ambiguidade do termo."
+        },
+        {
+            "source": "SUSE",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Engenheiro: SUSE é uma distribuição GNU/Linux. Aresta deve seguir o padrão específico→classe. Topólogo verifica que inversão mantém DAG limpo. Terminologista aprova IS_A. Juiz: REFACTOR com direção REVERSE."
+        },
+        {
+            "source": "tcsh",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: ajuda o aluno a entender tcsh como uma implementação concreta de shell. Engenheiro: tcsh é uma variante avançada de csh, ainda uma shell. Otimizador: taxonomia não redundante. Cético: conceito real e coerente. Topólogo: geral → específico respeitado. Terminologista: IS_A apropriado. Reparador: nada a corrigir. Juiz: manter."
+        },
+        {
+            "source": "tcsh",
+            "target": "csh",
+            "type": "IS_A",
+            "reason": "Professor: tcsh é historicamente um csh aprimorado; tratá-lo como subtipo ajuda o entendimento. Engenheiro: tcsh é uma shell compatível com csh; RELATED é fraco demais. Otimizador: modelar como IS_A evita relações vagas. Cético: não é mera relação arbitrária, há herança funcional. Topólogo: IS_A entre variantes não cria ciclos com as outras shells. Terminologista: trocar RELATED por IS_A melhora precisão sem mudar direção. Reparador: fortalece apenas o tipo. Juiz: refatorar para IS_A mantendo direção."
+        },
+        {
+            "source": "Terminal virtual em modo texto",
+            "target": "ttyn",
+            "type": "IS_A",
+            "reason": "Professor: o conceito geral é 'terminal virtual em modo texto', e ttyN é uma instância/identificador concreto disso; deve ficar claro que tty1, tty2 etc. são tipos/instâncias do conceito geral. Engenheiro: tty1, tty2 são consoles virtuais de texto; são exemplos de 'terminal virtual em modo texto'. Otimizador: uma hierarquia clara geral→específico evita ambiguidade. Cético: apenas a direção está invertida, não o fato. Topólogo: para manter DAG com generalização correta, convém ter 'ttyn IS_A Terminal virtual em modo texto'. Terminologista: IS_A é o tipo correto entre instância genérica e identificador de família. Reparador: inverter a seta para ttyn IS_A Terminal virtual em modo texto. Juiz: refatorar direção, mantendo IS_A."
+        },
+        {
+            "source": "touch",
+            "target": "file",
+            "type": "USE",
+            "reason": "Professor: ao ensinar touch, explica‑se que ele cria e/ou atualiza arquivos; relação com o conceito de arquivo é direta e instrutiva. Engenheiro: touch opera sobre arquivos no filesystem (cria arquivos vazios, muda timestamps). Otimizador: ligação é simples e não redundante. Cético: nada fictício. Topólogo: segura para o DAG. Terminologista: a aresta original já era USE conceitualmente (comando que manipula recurso ‘file’); manter explicitamente como USE é correto. Reparador: classifica claramente como uso de recurso, não como algo mais forte como PREREQUISITE. Juiz: REFACTOR apenas para confirmar o tipo canônico USE entre comando e recurso genérico."
+        },
+        {
+            "source": "Ubuntu",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Ubuntu é uma das distribuições Linux mais conhecidas. Toda a mesa considera a relação técnica e pedagogicamente central. O tipo adequado é IS_A, com Ubuntu como subtipo. Direção correta: 'Ubuntu IS_A Linux'. Aresta é refatorada invertendo a seta."
+        },
+        {
+            "source": "Ubuntu",
+            "target": "Distribuições GNU/Linux",
+            "type": "IS_A",
+            "reason": "Todos os especialistas concordam que Ubuntu é uma distribuição GNU/Linux específica. Relação correta: Ubuntu IS_A Distribuições GNU/Linux. A direção original está invertida. Topólogo exige inversão para manter hierarquia geral→específico. Juiz confirma REVERSE mantendo IS_A."
+        },
+        {
+            "source": "Unix-like",
+            "target": "Linux",
+            "type": "IS_A",
+            "reason": "Professor: conceitualmente, compreender Unix-like ajuda depois a classificar Linux; a direção correta para taxonomia é do específico para o genérico. Engenheiro: Linux é um sistema Unix-like; logo Linux IS_A Unix-like, não o contrário. Otimizador: a forma genérico->específico é redundante e menos clara. Cético: configuração atual pode induzir erro conceitual. Topólogo: inverter melhora a hierarquia (Unix-like acima de Linux). Terminologista: o tipo correto é IS_A com direção 'Linux IS_A Unix-like'. Reparador: propõe inverter a seta mantendo IS_A. Juiz: refatorar para 'Linux IS_A Unix-like' com direção REVERSE."
+        },
+        {
+            "source": "updatedb",
+            "target": "file",
+            "type": "USE",
+            "reason": "Professor: aprender updatedb envolve entender que ele opera sobre o banco de dados de caminhos de arquivos, não sobre o conceito genérico de arquivo em si; pedagógico mas fraco. Engenheiro: tecnicamente updatedb atualiza o banco de dados usado por locate, varrendo o sistema de arquivos, não um único 'file', mas há relação funcional. Otimizador: não há redundância óbvia, mas RELATED_TO é genérico demais. Cético: nenhum dos nós é alucinado, mas o tipo RELATED é pouco informativo. Topólogo: não há risco de ciclo e a direção updatedb -> recurso é coerente. Terminologista: melhor classificar como USE, pois é uma ferramenta que utiliza/manipula o sistema de arquivos (arquivos). Reparador: mantém direção e troca para USE, aceitando o alvo genérico 'file' dentro do contexto. Juiz: consenso em refatorar para USE mantendo a direção."
+        },
+        {
+            "source": "whatis",
+            "target": "apropos",
+            "type": "RELATED_TO",
+            "reason": "Professor: both are man-db utilitários de busca; aprender um ajuda a entender o outro, mas não há dependência forte. Engenheiro: whatis busca descrições exatas de páginas de manual; apropos busca por palavras‑chave. Nenhum usa diretamente o outro. Terminologista: RELATED_TO é o melhor tipo para funções irmãs. Topólogo: nenhum problema de ciclo. Reparador: endurece a semântica trocando RELATED genérico para RELATED_TO. Juiz: REFACTOR para RELATED_TO."
+        },
+        {
+            "source": "whatis",
+            "target": "man",
+            "type": "USE",
+            "reason": "Professor: faz sentido ensinar que whatis usa o banco de dados/man pages gerenciadas pelo sistema de man. Engenheiro: whatis consulta o banco de dados whatis/man; funcionalmente depende da infraestrutura de man-db. Terminologista: USE expressa bem que whatis é uma ferramenta sobre o recurso man. Topólogo: não introduz ciclos. Reparador: ajusta apenas o tipo para USE. Juiz: REFACTOR para USE."
+        },
+        {
+            "source": "whereis",
+            "target": "-b",
+            "type": "USE",
+            "reason": "Professor: as opções de linha de comando são parte do modo de usar whereis; o comando usa o parâmetro -b para filtrar saídas. Engenheiro: -b é flag padrão de whereis (buscar apenas binário). Terminologista: isto é uma relação USE (ferramenta usa argumento/opção). Topólogo: nenhuma hierarquia problemática. JUIZ: refatorar o tipo implícito para USE e manter direção whereis→-b."
+        },
+        {
+            "source": "whereis",
+            "target": "-u",
+            "type": "USE",
+            "reason": "Professor: -u altera o comportamento de whereis; é claramente um parâmetro de uso. Engenheiro: -u é opção legítima (arquivos incomuns). Terminologista: padronizar como USE (comando usa a opção). Topólogo: não há implicações topológicas. JUIZ: refatorar para USE, mesma direção."
+        },
+        {
+            "source": "whereis",
+            "target": "-M",
+            "type": "USE",
+            "reason": "Professor: -M define paths alternativos para man pages; faz parte da interface do comando. Engenheiro: é opção documentada de whereis. Terminologista: relação comando→opção é USE. Topólogo: relação folha, sem ciclos. JUIZ: refatorar para USE mantendo direção."
+        },
+        {
+            "source": "whereis",
+            "target": "-S",
+            "type": "USE",
+            "reason": "Professor: -S altera os caminhos de busca de fontes; é uma opção de uso de whereis. Engenheiro: também é flag padrão. Terminologista: classificar como USE (ferramenta usa opção). Topólogo: sem riscos topológicos. JUIZ: refatorar o tipo para USE com mesma direção."
+        },
+        {
+            "source": "whereis",
+            "target": "-f",
+            "type": "USE",
+            "reason": "Professor: a opção -f é um modificador do comando whereis, aprender whereis envolve conhecer suas flags; Engenheiro: tecnicamente whereis -f existe e altera o comportamento, então é mais correto dizer que whereis USA a flag -f do que o inverso; Otimizador: não há redundância direta com outras arestas; Cético: -f é melhor entendido como parâmetro/flag, mas tratado aqui como nó de opção de linha de comando é aceitável; Topólogo: relação funcional não cria ciclos relevantes; Terminologista: tipo correto é USE, não RELATED; Reparador: mantém direção whereis -> -f e apenas padroniza para USE; Juiz: REFACTOR para USE, direção mantida."
+        },
+        {
+            "source": "whereis",
+            "target": "-h",
+            "type": "USE",
+            "reason": "Professor: a flag -h é parte do uso de whereis, não um pré-requisito; Engenheiro: whereis -h é uma opção válida em muitas implementações (ajuda/formatos humanos), modelando como uso de uma flag é tecnicamente coerente; Otimizador: nenhuma redundância óbvia; Cético: aceitar flags como nós é consistente com o restante do grafo; Topólogo: não gera ciclo; Terminologista: USE é o tipo apropriado para comando que utiliza opção; Reparador: mantém direção, ajusta apenas o tipo; Juiz: REFACTOR para USE, direção preservada."
+        },
+        {
+            "source": "whereis",
+            "target": "-v",
+            "type": "USE",
+            "reason": "Professor: aprender whereis inclui conhecer flags como -v (verbose), então o comando usa a opção; Engenheiro: whereis -v é uma flag comum para saída detalhada; Otimizador: relação é específica e não redundante; Cético: tratamento de flags como recursos usados é aceitável; Topólogo: não afeta aciclicidade; Terminologista: padronizar o tipo para USE; Reparador: direção whereis -> -v é correta funcionalmente; Juiz: REFACTOR para USE mantendo direção."
+        },
+        {
+            "source": "which",
+            "target": "whereis",
+            "type": "RELATED_TO",
+            "reason": "Professor: both which e whereis ajudam a localizar executáveis; aprender um ajuda a entender o outro, mas nenhum usa o outro. Engenheiro: são comandos distintos que consultam caminhos diferentes; não há chamada interna direta típica. Terminologista: o tipo original RELATED deve ser padronizado; sem relação de uso, melhor é RELATED_TO. Topólogo: relação lateral, sem ciclos. JUIZ: refatorar para RELATED_TO na mesma direção."
+        },
+        {
+            "source": "xargs",
+            "target": "find",
+            "type": "RELATED_TO",
+            "reason": "Professor: é comum mostrar xargs aplicando comandos como rm ou cp a resultados vindos de find; a relação funcional xargs→find aparece em exemplos como xargs find -name '*.log' -delete, embora o padrão mais clássico seja find | xargs comando. Engenheiro: xargs em geral consome a saída de comandos (incluindo find) e pode invocar find novamente; há um uso legítimo de find como comando chamado por xargs. Otimizador: combinada com find USE xargs, cria uma relação de cooperação bidirecional, mas não de pré-requisito; aceitável se o grafo quer capturar usos típicos em pipelines. Cético: interação é real. Topólogo: por não ser PREREQUISITE, o pequeno ciclo de USE não viola a DAG de dependências de aprendizado. Terminologista: USE é adequado para ‘xargs utiliza find como comando a ser executado sobre argumentos’. Reparador: não inverter; o uso mais direto aqui é xargs chamando find. Juiz: manter."
+        },
+        {
+            "source": "yelp",
+            "target": "info",
+            "type": "RELATED_TO",
+            "reason": "Professor: yelp efetivamente apresenta conteúdos info; o estudante de yelp irá acionar documentos no formato info. Engenheiro: tecnicamente, yelp é um visualizador que consome man/info/HTML, logo usa o conteúdo/info como fonte. Terminologista: esta é claramente uma relação USE (ferramenta usa recurso). Topólogo: yelp USE info não entra em ciclo com info RELATED yelp (sem PRE/IS_A). JUIZ: manter USE com direção yelp→info."
+        },
+        {
+            "source": "zsh",
+            "target": "shell",
+            "type": "RELATED_TO",
+            "reason": "Professor: entender zsh como um tipo de shell é fundamental para organização mental. Engenheiro: zsh é tecnicamente uma shell interativa compatível com sh. Otimizador: taxonomia fina de shells é útil. Cético: conceitos corretos. Topólogo: grafo permanece acíclico, granularidade correta. Terminologista: IS_A adequado. Reparador: nada a alterar. Juiz: manter."
+        },
+        {
+            "source": "~/.bashrc",
+            "target": "alias",
+            "type": "USE",
+            "reason": "Engenheiro e Professor destacaram que aliases são um recurso do shell, e ~/.bashrc é um arquivo que tipicamente os define. Didaticamente, diz-se que o arquivo usa o mecanismo de alias, não o contrário. Terminologista manteve USE e o Reparador sugeriu inverter direção. Juiz: 'alias USE ~/.bashrc' seria estranho, então maioria concluiu ' ~/.bashrc USE alias ' era intenção; porém relação mais correta é 'alias PART_OF ~/.bashrc'? Após debate, concluiu-se que ~/.bashrc não é composto de aliases apenas, logo melhor é o arquivo usar o mecanismo alias. Como já está nessa direção, o Juiz corrige: ' ~/.bashrc USE alias ' estava semanticamente invertido na leitura original; para obedecer ao padrão A USE B, refatora para ' ~/.bashrc USE alias ' via REVERSE sobre o rótulo. Como o schema só permite inverter direção, mantemos direção REVERSE para que o nó que usa seja o arquivo: final efetivo: 'alias' (Source) e '~/.bashrc' (Target) tornam-se 'alias USE ~/.bashrc' na estrutura, assumindo alias como ferramenta do usuário sobre o arquivo."
+        }
+    ]
+}

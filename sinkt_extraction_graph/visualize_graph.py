@@ -123,10 +123,17 @@ def calculate_sizes(G):
 def main():
     # Caminhos absolutos para garantir funcionamento
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    input_path = os.path.join(base_dir, "output", "enhanced_graph.json")
-    output_path = os.path.join(base_dir, "output", "interactive_graph.html")
     
-    print("--- Gerador de Visualização de Grafo SINKT ---")
+    # CAMINHOS ATUALIZADOS PARA ESTRUTURA v2
+    # Input agora vem da auditoria final (Fase 4)
+    input_path = os.path.join(base_dir, "output", "03_final_audit", "final_sinkt_graph.json")
+    
+    # Output organizado em pasta de visualização
+    output_dir = os.path.join(base_dir, "output", "visualization")
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, "interactive_graph.html")
+    
+    print("--- Gerador de Visualização de Grafo SINKT (Final) ---")
     
     # 1. Carregar Dados
     data = load_data(input_path)
