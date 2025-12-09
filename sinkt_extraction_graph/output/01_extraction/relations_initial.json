@@ -1,219 +1,63 @@
 [
     {
-        "source": "Linux Standard Base",
-        "target": "Red Hat",
-        "type": "RELATED",
-        "explanation": "Red Hat utiliza o padrão LSB para suas certificações."
-    },
-    {
         "source": "Linux",
-        "target": "GNU",
+        "target": "GNU/Hurd",
         "type": "RELATED",
-        "explanation": "Linux foi desenvolvido em conjunto com ferramentas GNU."
+        "explanation": "Linux was developed to complement GNU tools."
     },
     {
         "source": "Linux",
         "target": "GCC",
         "type": "USE",
-        "explanation": "Linux utiliza o compilador GCC para compilar código."
+        "explanation": "Linux uses GCC for compiling programs."
     },
     {
         "source": "Linux",
-        "target": "Bash",
+        "target": "bash",
         "type": "USE",
-        "explanation": "Linux utiliza o interpretador de comandos Bash."
-    },
-    {
-        "source": "GNU/Hurd",
-        "target": "Linux",
-        "type": "RELATED",
-        "explanation": "Linux foi criado como um kernel para o sistema GNU."
+        "explanation": "Linux uses bash as a command interpreter."
     },
     {
         "source": "Minix",
         "target": "Linux",
         "type": "RELATED",
-        "explanation": "Linux foi desenvolvido a partir do sistema Minix."
+        "explanation": "Linux was based on Minix for its development."
     },
     {
         "source": "Unix-like",
         "target": "Linux",
+        "type": "IS_A",
+        "explanation": "Linux is a Unix-like operating system."
+    },
+    {
+        "source": "GNU/Hurd",
+        "target": "Linux",
         "type": "RELATED",
-        "explanation": "Linux é um sistema operacional que segue padrões Unix-like."
+        "explanation": "GNU/Hurd was intended to be a kernel for GNU."
     },
     {
-        "source": "GNU",
-        "target": "GPL",
+        "source": "GNU/Hurd",
+        "target": "GCC",
+        "type": "PART_OF",
+        "explanation": "GCC is part of the GNU project."
+    },
+    {
+        "source": "GNU/Hurd",
+        "target": "bash",
+        "type": "PART_OF",
+        "explanation": "bash is part of the GNU project."
+    },
+    {
+        "source": "GCC",
+        "target": "GNU/Hurd",
         "type": "RELATED",
-        "explanation": "GNU promove software livre licenciado sob a GPL."
+        "explanation": "GCC was developed as part of the GNU project."
     },
     {
-        "source": "Linux",
-        "target": "Unix-like",
-        "type": "IS_A",
-        "explanation": "Linux é classificado como um sistema operacional Unix-like."
-    },
-    {
-        "source": "Android",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Android é um sistema operacional baseado no kernel Linux."
-    },
-    {
-        "source": "AWS",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "AWS oferece serviços que utilizam distribuições Linux."
-    },
-    {
-        "source": "GCP",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "GCP fornece infraestrutura que executa Linux."
-    },
-    {
-        "source": "OCI",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "OCI oferece máquinas virtuais baseadas em Linux."
-    },
-    {
-        "source": "DigiTal Ocean",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "DigiTal Ocean disponibiliza distribuições Linux."
-    },
-    {
-        "source": "Azure",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "Azure oferece máquinas virtuais com Linux."
-    },
-    {
-        "source": "Big Data",
-        "target": "Linux",
-        "type": "USE",
-        "explanation": "Ferramentas de Big Data são executadas em Linux."
-    },
-    {
-        "source": "Elementary OS",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Elementary OS é uma distribuição Linux."
-    },
-    {
-        "source": "MX Linux",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "MX Linux é uma distribuição Linux."
-    },
-    {
-        "source": "Linux Mint",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Linux Mint é uma distribuição Linux."
-    },
-    {
-        "source": "Deepin",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Deepin é uma distribuição Linux."
-    },
-    {
-        "source": "Manjaro OS",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Manjaro OS é uma distribuição Linux."
-    },
-    {
-        "source": "Pop!_OS",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Pop!_OS é uma distribuição Linux."
-    },
-    {
-        "source": "Ubuntu",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Ubuntu é uma distribuição Linux."
-    },
-    {
-        "source": "Fedora",
-        "target": "Linux",
-        "type": "IS_A",
-        "explanation": "Fedora é uma distribuição Linux."
-    },
-    {
-        "source": "Software Livre",
-        "target": "GPL",
-        "type": "USE",
-        "explanation": "GPL defende juridicamente o software livre."
-    },
-    {
-        "source": "GPL",
-        "target": "Liberdade número 0",
+        "source": "bash",
+        "target": "GNU/Hurd",
         "type": "RELATED",
-        "explanation": "GPL garante a liberdade de executar software."
-    },
-    {
-        "source": "GPL",
-        "target": "Liberdade número 1",
-        "type": "RELATED",
-        "explanation": "GPL permite estudar e modificar software."
-    },
-    {
-        "source": "GPL",
-        "target": "Liberdade número 2",
-        "type": "RELATED",
-        "explanation": "GPL assegura a redistribuição de software."
-    },
-    {
-        "source": "GPL",
-        "target": "Liberdade número 3",
-        "type": "RELATED",
-        "explanation": "GPL permite modificar e compartilhar melhorias."
-    },
-    {
-        "source": "GPLv1",
-        "target": "GPLv2",
-        "type": "IS_A",
-        "explanation": "GPLv2 é uma versão posterior da GPLv1."
-    },
-    {
-        "source": "GPLv2",
-        "target": "GPLv3",
-        "type": "IS_A",
-        "explanation": "GPLv3 é uma versão posterior da GPLv2."
-    },
-    {
-        "source": "GFDL",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "GFDL é uma licença que defende software livre."
-    },
-    {
-        "source": "OPL",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "OPL é uma licença que promove software livre."
-    },
-    {
-        "source": "CC",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "CC é uma licença associada ao software livre."
-    },
-    {
-        "source": "BSD",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "BSD é uma licença que permite software livre."
-    },
-    {
-        "source": "SPL",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "SPL é uma licença que defende software livre."
+        "explanation": "bash is a tool developed under the GNU project."
     },
     {
         "source": "GNU/Linux",
@@ -222,136 +66,112 @@
         "explanation": "Distribuições são variantes do sistema GNU/Linux."
     },
     {
-        "source": "Slackware",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Slackware é uma das primeiras distribuições GNU/Linux."
-    },
-    {
-        "source": "Debian",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Debian é uma das principais distribuições GNU/Linux."
-    },
-    {
-        "source": "Red Hat",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Red Hat é uma distribuição GNU/Linux corporativa."
-    },
-    {
-        "source": "SUSE",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "SUSE é uma distribuição GNU/Linux corporativa."
-    },
-    {
-        "source": "Ubuntu",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Ubuntu é uma distribuição baseada no Debian."
-    },
-    {
-        "source": "Knoppix",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Knoppix é uma distribuição Live do GNU/Linux."
-    },
-    {
-        "source": "Gentoo",
-        "target": "Distribuições GNU/Linux",
-        "type": "IS_A",
-        "explanation": "Gentoo é uma metadistribuição GNU/Linux."
-    },
-    {
-        "source": "CentOS",
-        "target": "Red Hat",
-        "type": "RELATED",
-        "explanation": "CentOS é derivado do Red Hat Enterprise Linux."
-    },
-    {
-        "source": "Oracle Linux",
-        "target": "Red Hat",
-        "type": "RELATED",
-        "explanation": "Oracle Linux é baseado no Red Hat Enterprise Linux."
-    },
-    {
-        "source": "Raspbian",
-        "target": "Debian",
-        "type": "RELATED",
-        "explanation": "Raspbian é um derivado do Debian."
-    },
-    {
         "source": "Android",
         "target": "Distribuições GNU/Linux",
         "type": "RELATED",
         "explanation": "Android é um sistema baseado no kernel Linux."
     },
     {
-        "source": "Yocto",
+        "source": "Docker",
         "target": "Distribuições GNU/Linux",
         "type": "RELATED",
-        "explanation": "Yocto ajuda a criar distribuições personalizadas do Linux."
-    },
-    {
-        "source": "Fedora",
-        "target": "Red Hat",
-        "type": "RELATED",
-        "explanation": "Fedora é patrocinado pela Red Hat."
-    },
-    {
-        "source": "Manjaro Linux",
-        "target": "Arch Linux",
-        "type": "RELATED",
-        "explanation": "Manjaro é uma distribuição derivada do Arch Linux."
-    },
-    {
-        "source": "OpenSUSE",
-        "target": "SUSE",
-        "type": "RELATED",
-        "explanation": "OpenSUSE é uma distribuição livre da SUSE."
+        "explanation": "Docker utiliza distribuições Linux para containers."
     },
     {
         "source": "Linux",
-        "target": "Kernel",
+        "target": "Android",
         "type": "IS_A",
-        "explanation": "Linux é o kernel do sistema operacional."
+        "explanation": "Android é um sistema operacional baseado no kernel Linux."
     },
     {
-        "source": "GNU/Linux",
-        "target": "Kernel",
-        "type": "PART_OF",
-        "explanation": "GNU/Linux inclui o kernel Linux."
-    },
-    {
-        "source": "GNU/Linux",
-        "target": "Distribuições Linux",
+        "source": "Linux",
+        "target": "Computação em Nuvem",
         "type": "RELATED",
-        "explanation": "Distribuições Linux são baseadas em GNU/Linux."
+        "explanation": "Ambientes de computação em nuvem utilizam Linux."
     },
     {
-        "source": "Bash",
+        "source": "AWS",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "AWS oferece distribuições Linux em sua nuvem."
+    },
+    {
+        "source": "GCP",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "GCP oferece distribuições Linux em sua nuvem."
+    },
+    {
+        "source": "OCI",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "OCI oferece distribuições Linux em sua nuvem."
+    },
+    {
+        "source": "DigiTal Ocean",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "DigiTal Ocean oferece distribuições Linux em sua nuvem."
+    },
+    {
+        "source": "Azure",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "Azure oferece máquinas virtuais baseadas em Linux."
+    },
+    {
+        "source": "Big Data",
+        "target": "Linux",
+        "type": "RELATED",
+        "explanation": "Ferramentas de Big Data são executadas em Linux."
+    },
+    {
+        "source": "Linux",
+        "target": "Open Source",
+        "type": "IS_A",
+        "explanation": "Linux é um exemplo de software Open Source."
+    },
+    {
+        "source": "Linux",
+        "target": "sistema operacional",
+        "type": "IS_A",
+        "explanation": "Linux é o kernel de um sistema operacional."
+    },
+    {
+        "source": "GNU/Linux",
+        "target": "sistema operacional",
+        "type": "IS_A",
+        "explanation": "GNU/Linux é um sistema operacional que utiliza o kernel Linux."
+    },
+    {
+        "source": "bash",
         "target": "shell",
         "type": "IS_A",
         "explanation": "Bash é um tipo de shell."
     },
     {
-        "source": "Bash",
-        "target": "GNU/Linux",
+        "source": "GNU/Linux",
+        "target": "distribuições Linux",
+        "type": "RELATED",
+        "explanation": "Distribuições Linux são variantes do sistema GNU/Linux."
+    },
+    {
+        "source": "Linux",
+        "target": "distribuições Linux",
+        "type": "RELATED",
+        "explanation": "Distribuições Linux utilizam o kernel Linux."
+    },
+    {
+        "source": "bash",
+        "target": "Linux",
         "type": "USE",
-        "explanation": "Bash é usado para executar comandos em GNU/Linux."
+        "explanation": "Bash é utilizado para executar comandos no Linux."
     },
     {
-        "source": "Distribuições Linux",
-        "target": "Bash",
-        "type": "RELATED",
-        "explanation": "Distribuições Linux frequentemente utilizam Bash como shell."
-    },
-    {
-        "source": "GPL",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "GNU/Linux é distribuído sob a GPL."
+        "source": "shell",
+        "target": "Linux",
+        "type": "USE",
+        "explanation": "Shells como bash são usados em sistemas Linux."
     },
     {
         "source": "sh",
@@ -384,6 +204,12 @@
         "explanation": "zsh é um tipo de shell."
     },
     {
+        "source": "bash",
+        "target": "sh",
+        "type": "RELATED",
+        "explanation": "bash é compatível com comandos do sh."
+    },
+    {
         "source": "tcsh",
         "target": "csh",
         "type": "RELATED",
@@ -396,28 +222,22 @@
         "explanation": "ksh é o Bourne Shell evoluído."
     },
     {
+        "source": "zsh",
+        "target": "bash",
+        "type": "RELATED",
+        "explanation": "zsh engloba funções úteis do bash."
+    },
+    {
         "source": "chsh",
         "target": "shell",
         "type": "USE",
         "explanation": "chsh altera o shell atual do usuário."
     },
     {
-        "source": "GNU/Linux",
-        "target": "Sistema Operacional",
-        "type": "IS_A",
-        "explanation": "GNU/Linux é um tipo de sistema operacional."
-    },
-    {
-        "source": "Sistema Operacional",
-        "target": "Kernel Linux",
-        "type": "PART_OF",
-        "explanation": "Kernel Linux é parte do sistema operacional."
-    },
-    {
         "source": "Kernel Linux",
         "target": "Hardware",
-        "type": "USE",
-        "explanation": "Kernel Linux interage com o hardware do sistema."
+        "type": "PART_OF",
+        "explanation": "Kernel Linux interage com o hardware."
     },
     {
         "source": "Ambiente de trabalho",
@@ -426,100 +246,298 @@
         "explanation": "DM gerencia o ambiente de trabalho gráfico."
     },
     {
-        "source": "DM",
-        "target": "Sessão",
-        "type": "USE",
-        "explanation": "DM inicia sessões na interface gráfica."
-    },
-    {
         "source": "ttyn",
-        "target": "Sessão",
+        "target": "bash",
         "type": "USE",
-        "explanation": "ttyn permite a execução de sessões de usuário."
+        "explanation": "ttyn executa comandos no bash."
     },
     {
-        "source": "Terminal virtual em modo texto",
-        "target": "ttyn",
-        "type": "IS_A",
-        "explanation": "Terminal virtual em modo texto é um tipo de ttyn."
+        "source": "bash",
+        "target": "sessão",
+        "type": "USE",
+        "explanation": "bash é usado para iniciar uma sessão."
+    },
+    {
+        "source": "sessão",
+        "target": "logout",
+        "type": "USE",
+        "explanation": "sessão pode ser encerrada com logout."
     },
     {
         "source": "logout",
-        "target": "Sessão",
-        "type": "USE",
-        "explanation": "logout encerra uma sessão de usuário."
+        "target": "exit",
+        "type": "RELATED",
+        "explanation": "logout e exit encerram a sessão."
     },
     {
         "source": "shutdown",
-        "target": "Sistema Operacional",
+        "target": "sistema operacional",
         "type": "USE",
-        "explanation": "shutdown é um comando para desligar o sistema."
-    },
-    {
-        "source": "halt",
-        "target": "Sistema Operacional",
-        "type": "USE",
-        "explanation": "halt é um comando para desligar o sistema."
-    },
-    {
-        "source": "poweroff",
-        "target": "Sistema Operacional",
-        "type": "USE",
-        "explanation": "poweroff é um comando para desligar o sistema."
+        "explanation": "shutdown desliga o sistema operacional."
     },
     {
         "source": "reboot",
-        "target": "Sistema Operacional",
+        "target": "sistema operacional",
         "type": "USE",
-        "explanation": "reboot é um comando para reiniciar o sistema."
-    },
-    {
-        "source": "su",
-        "target": "Sessão",
-        "type": "USE",
-        "explanation": "su altera a sessão para outro usuário."
-    },
-    {
-        "source": "sudo",
-        "target": "Sessão",
-        "type": "USE",
-        "explanation": "sudo permite executar comandos como superusuário."
+        "explanation": "reboot reinicia o sistema operacional."
     },
     {
         "source": "whoami",
-        "target": "Sessão",
+        "target": "bash",
         "type": "USE",
-        "explanation": "whoami informa o usuário atual na sessão."
+        "explanation": "whoami é um comando executado no bash."
+    },
+    {
+        "source": "who am i",
+        "target": "bash",
+        "type": "USE",
+        "explanation": "who am i é um comando executado no bash."
+    },
+    {
+        "source": "su",
+        "target": "bash",
+        "type": "USE",
+        "explanation": "su é usado no bash para mudar de usuário."
+    },
+    {
+        "source": "sudo",
+        "target": "bash",
+        "type": "USE",
+        "explanation": "sudo é usado no bash para executar comandos como root."
+    },
+    {
+        "source": "telnet",
+        "target": "ttyn",
+        "type": "USE",
+        "explanation": "telnet acessa terminais virtuais ttyn."
+    },
+    {
+        "source": "ssh",
+        "target": "ttyn",
+        "type": "USE",
+        "explanation": "ssh acessa terminais virtuais ttyn."
+    },
+    {
+        "source": "rlogin",
+        "target": "ttyn",
+        "type": "USE",
+        "explanation": "rlogin acessa terminais virtuais ttyn."
+    },
+    {
+        "source": "rsh",
+        "target": "ttyn",
+        "type": "USE",
+        "explanation": "rsh acessa terminais virtuais ttyn."
+    },
+    {
+        "source": "rdesktop",
+        "target": "ttyn",
+        "type": "USE",
+        "explanation": "rdesktop acessa terminais virtuais ttyn."
+    },
+    {
+        "source": "GNU/Linux",
+        "target": "Aspecto multitarefa / multiusuário",
+        "type": "RELATED",
+        "explanation": "GNU/Linux permite múltiplos usuários simultaneamente."
+    },
+    {
+        "source": "Aspecto case-sensitive",
+        "target": "Permissão para executar arquivos",
+        "type": "RELATED",
+        "explanation": "Nomes de arquivos diferem em maiúsculas e minúsculas."
+    },
+    {
+        "source": "Arquivos e diretórios ocultos",
+        "target": "ls",
+        "type": "USE",
+        "explanation": "ls pode listar arquivos ocultos com opção específica."
+    },
+    {
+        "source": "Representação por arquivos",
+        "target": "Divisão em camadas",
+        "type": "RELATED",
+        "explanation": "Arquivos representam componentes do sistema em camadas."
+    },
+    {
+        "source": "Superusuário (root)",
+        "target": "Permissão para executar arquivos",
+        "type": "RELATED",
+        "explanation": "Root tem permissões para executar qualquer arquivo."
+    },
+    {
+        "source": "Apache HTTP Server",
+        "target": "NGINX",
+        "type": "RELATED",
+        "explanation": "Ambos são servidores web populares."
+    },
+    {
+        "source": "Apache Tomcat",
+        "target": "Java",
+        "type": "USE",
+        "explanation": "Tomcat é um servidor para aplicações Java."
+    },
+    {
+        "source": "MariaDB",
+        "target": "PostgreSQL",
+        "type": "RELATED",
+        "explanation": "Ambos são bancos de dados relacionais open-source."
+    },
+    {
+        "source": "Node.js",
+        "target": "Java",
+        "type": "RELATED",
+        "explanation": "Node.js utiliza JavaScript, que é inspirado em Java."
+    },
+    {
+        "source": "Kubernetes",
+        "target": "Docker",
+        "type": "RELATED",
+        "explanation": "Kubernetes orquestra contêineres criados com Docker."
+    },
+    {
+        "source": "VirtualBox",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "VirtualBox pode ser instalado em GNU/Linux."
+    },
+    {
+        "source": "LibreOffice",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "LibreOffice é uma suíte de escritório para GNU/Linux."
+    },
+    {
+        "source": "GIMP",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "GIMP é um software de edição de imagens para GNU/Linux."
+    },
+    {
+        "source": "Blender",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "Blender é um software de modelagem disponível para GNU/Linux."
+    },
+    {
+        "source": "Audacity",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "Audacity é um software de edição de áudio para GNU/Linux."
+    },
+    {
+        "source": "VLC",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "VLC é um media player disponível para GNU/Linux."
+    },
+    {
+        "source": "Kdenlive",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "Kdenlive é um editor de vídeo para GNU/Linux."
+    },
+    {
+        "source": "ImageMagick",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "ImageMagick é uma ferramenta de edição de imagem para GNU/Linux."
+    },
+    {
+        "source": "K3B",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "K3B é um software de gravação de mídias para GNU/Linux."
+    },
+    {
+        "source": "Postfix",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "Postfix é um MTA utilizado em servidores GNU/Linux."
+    },
+    {
+        "source": "BIND",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "BIND é um servidor DNS utilizado em GNU/Linux."
+    },
+    {
+        "source": "Squid",
+        "target": "GNU/Linux",
+        "type": "USE",
+        "explanation": "Squid é um servidor proxy disponível para GNU/Linux."
+    },
+    {
+        "source": "Hadoop",
+        "target": "Java",
+        "type": "USE",
+        "explanation": "Hadoop é uma plataforma Java para computação distribuída."
+    },
+    {
+        "source": "echo",
+        "target": "Variáveis Locais",
+        "type": "USE",
+        "explanation": "echo é usado para imprimir variáveis locais."
+    },
+    {
+        "source": "echo",
+        "target": "Variáveis Globais",
+        "type": "USE",
+        "explanation": "echo é usado para imprimir variáveis globais."
     },
     {
         "source": "export",
         "target": "Variáveis Globais",
         "type": "USE",
-        "explanation": "export define variáveis como globais."
+        "explanation": "export é usado para definir variáveis globais."
     },
     {
-        "source": "PATH",
+        "source": "unset",
         "target": "Variáveis Globais",
-        "type": "IS_A",
-        "explanation": "PATH é uma variável global de ambiente."
+        "type": "USE",
+        "explanation": "unset é usado para excluir variáveis globais."
+    },
+    {
+        "source": "unset",
+        "target": "Variáveis Locais",
+        "type": "USE",
+        "explanation": "unset é usado para excluir variáveis locais."
+    },
+    {
+        "source": "HOME",
+        "target": "Variáveis Globais",
+        "type": "RELATED",
+        "explanation": "HOME é uma variável global que define o diretório do usuário."
     },
     {
         "source": "USER",
         "target": "Variáveis Globais",
-        "type": "IS_A",
-        "explanation": "USER é uma variável global de ambiente."
+        "type": "RELATED",
+        "explanation": "USER é uma variável global que predefine o nome da conta."
+    },
+    {
+        "source": "PATH",
+        "target": "Variáveis Globais",
+        "type": "RELATED",
+        "explanation": "PATH é uma variável global que determina diretórios de pesquisa."
     },
     {
         "source": "PS1",
         "target": "Variáveis Globais",
-        "type": "IS_A",
-        "explanation": "PS1 é uma variável global que altera o prompt."
+        "type": "RELATED",
+        "explanation": "PS1 é uma variável global que define o prompt de comando."
     },
     {
-        "source": "source",
+        "source": "/etc/profile",
         "target": "Variáveis Globais",
-        "type": "USE",
-        "explanation": "source carrega configurações de variáveis globais."
+        "type": "PART_OF",
+        "explanation": "/etc/profile é um arquivo que armazena variáveis globais."
+    },
+    {
+        "source": "~/.bashrc",
+        "target": "Variáveis Globais",
+        "type": "PART_OF",
+        "explanation": "~/.bashrc é um arquivo que armazena variáveis globais do usuário."
     },
     {
         "source": "/etc/profile",
@@ -583,159 +601,15 @@
     },
     {
         "source": "GNU/Linux",
-        "target": "Aspecto case-sensitive",
+        "target": "Software Livre",
         "type": "RELATED",
-        "explanation": "GNU/Linux é um sistema que utiliza case-sensitive."
+        "explanation": "Ambos promovem compartilhamento de conhecimento e colaboração."
     },
     {
         "source": "GNU/Linux",
-        "target": "Permissão para executar arquivos",
-        "type": "RELATED",
-        "explanation": "GNU/Linux requer permissões para execução de arquivos."
-    },
-    {
-        "source": "GNU/Linux",
-        "target": "Arquivos e diretórios ocultos",
-        "type": "RELATED",
-        "explanation": "GNU/Linux utiliza ponto para arquivos ocultos."
-    },
-    {
-        "source": "GNU/Linux",
-        "target": "Divisão em camadas",
-        "type": "RELATED",
-        "explanation": "GNU/Linux é estruturado em camadas."
-    },
-    {
-        "source": "Superusuário (root)",
-        "target": "Permissão para executar arquivos",
-        "type": "RELATED",
-        "explanation": "Superusuário tem permissões para executar arquivos."
-    },
-    {
-        "source": "Aspecto multitarefa / multiusuário",
-        "target": "Superusuário (root)",
-        "type": "RELATED",
-        "explanation": "Superusuário gerencia múltiplos usuários e tarefas."
-    },
-    {
-        "source": "Apache HTTP Server",
-        "target": "NGINX",
-        "type": "RELATED",
-        "explanation": "Ambos são servidores web populares."
-    },
-    {
-        "source": "Apache HTTP Server",
-        "target": "Lighttpd",
-        "type": "RELATED",
-        "explanation": "Ambos são servidores web otimizados."
-    },
-    {
-        "source": "Apache Tomcat",
-        "target": "Java",
-        "type": "RELATED",
-        "explanation": "Apache Tomcat é um servidor Java."
-    },
-    {
-        "source": "Node.js",
-        "target": "Java",
-        "type": "RELATED",
-        "explanation": "Node.js é baseado em JavaScript, que é inspirado em Java."
-    },
-    {
-        "source": "MariaDB",
-        "target": "PostgreSQL",
-        "type": "RELATED",
-        "explanation": "Ambos são bancos de dados relacionais open-source."
-    },
-    {
-        "source": "Postfix",
-        "target": "BIND",
-        "type": "RELATED",
-        "explanation": "Postfix e BIND são usados em servidores de e-mail."
-    },
-    {
-        "source": "Hadoop",
-        "target": "Java",
-        "type": "RELATED",
-        "explanation": "Hadoop é uma plataforma Java para processamento de dados."
-    },
-    {
-        "source": "LibreOffice",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "LibreOffice é uma suíte de escritório para GNU/Linux."
-    },
-    {
-        "source": "GIMP",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "GIMP é um software de edição de imagens para GNU/Linux."
-    },
-    {
-        "source": "VLC",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "VLC é um media player disponível para GNU/Linux."
-    },
-    {
-        "source": "Audacity",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "Audacity é um software de edição de áudio para GNU/Linux."
-    },
-    {
-        "source": "Blender",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "Blender é um software de modelagem disponível para GNU/Linux."
-    },
-    {
-        "source": "Kdenlive",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "Kdenlive é um editor de vídeo para GNU/Linux."
-    },
-    {
-        "source": "ImageMagick",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "ImageMagick é uma ferramenta de edição de imagem para GNU/Linux."
-    },
-    {
-        "source": "K3B",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "K3B é um software de gravação de mídias para GNU/Linux."
-    },
-    {
-        "source": "VirtualBox",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "VirtualBox é um software de virtualização para GNU/Linux."
-    },
-    {
-        "source": "GNU/Linux",
-        "target": "Comando",
+        "target": "Software Livre",
         "type": "USE",
-        "explanation": "Comandos são utilizados no GNU/Linux para acessar documentação."
-    },
-    {
-        "source": "GNU/Linux",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "GNU/Linux é um exemplo de Software Livre."
-    },
-    {
-        "source": "Comando",
-        "target": "Software Livre",
-        "type": "RELATED",
-        "explanation": "Comandos são parte do uso de Software Livre."
-    },
-    {
-        "source": "Software Livre",
-        "target": "GNU/Linux",
-        "type": "RELATED",
-        "explanation": "Software Livre permite a colaboração na documentação do GNU/Linux."
+        "explanation": "GNU/Linux utiliza princípios do Software Livre para sua documentação."
     },
     {
         "source": "/",
@@ -768,184 +642,94 @@
         "explanation": "Proc é um subdiretório da raiz."
     },
     {
+        "source": "$PATH",
+        "target": "/bin",
+        "type": "USE",
+        "explanation": "Bin está no caminho de busca de executáveis."
+    },
+    {
         "source": "caminho absoluto",
         "target": "/",
         "type": "RELATED",
         "explanation": "Caminho absoluto sempre começa com a raiz."
     },
     {
-        "source": "caminho absoluto",
-        "target": "caminho relativo",
+        "source": "caminho relativo",
+        "target": ".",
         "type": "RELATED",
-        "explanation": "Ambos são tipos de caminhos de diretório."
+        "explanation": "Caminho relativo usa o diretório corrente."
     },
     {
         "source": "cd",
         "target": "caminho absoluto",
         "type": "USE",
-        "explanation": "O comando cd pode usar caminhos absolutos."
+        "explanation": "Cd é usado para mudar para um caminho absoluto."
     },
     {
         "source": "cd",
         "target": "caminho relativo",
         "type": "USE",
-        "explanation": "O comando cd pode usar caminhos relativos."
+        "explanation": "Cd é usado para mudar para um caminho relativo."
     },
     {
         "source": "pwd",
         "target": "caminho absoluto",
         "type": "USE",
-        "explanation": "O comando pwd mostra o caminho absoluto atual."
+        "explanation": "Pwd mostra o caminho absoluto do diretório atual."
     },
     {
         "source": "ls",
-        "target": "/bin",
+        "target": "caminho absoluto",
         "type": "USE",
-        "explanation": "O comando ls é executado a partir do diretório bin."
+        "explanation": "Ls lista arquivos em um caminho absoluto."
     },
     {
-        "source": "$PATH",
-        "target": "/bin",
-        "type": "RELATED",
-        "explanation": "Bin está no $PATH para busca de executáveis."
-    },
-    {
-        "source": "$PATH",
-        "target": "ls",
-        "type": "RELATED",
-        "explanation": "O comando ls é encontrado através do $PATH."
-    },
-    {
-        "source": "atalhos de teclado",
-        "target": "cd",
-        "type": "RELATED",
-        "explanation": "Atalhos de teclado podem ser usados ao digitar cd."
-    },
-    {
-        "source": "atalhos de teclado",
-        "target": "pwd",
-        "type": "RELATED",
-        "explanation": "Atalhos de teclado podem ser usados ao digitar pwd."
+        "source": "ls",
+        "target": "caminho relativo",
+        "type": "USE",
+        "explanation": "Ls lista arquivos em um caminho relativo."
     },
     {
         "source": "/usr/share/doc",
         "target": "iptables",
         "type": "PART_OF",
-        "explanation": "Diretório contém documentação específica do iptables."
+        "explanation": "O diretório contém documentação específica do iptables."
     },
     {
         "source": "man",
         "target": "iptables",
         "type": "USE",
-        "explanation": "Comando man é usado para consultar iptables."
+        "explanation": "O comando man é usado para acessar a documentação do iptables."
     },
     {
-        "source": "routers",
-        "target": "switch’s",
+        "source": "switch’s",
+        "target": "routers",
         "type": "RELATED",
         "explanation": "Ambos são componentes importantes em redes."
     },
     {
-        "source": "GNU/Linux",
-        "target": "case-sensitive",
+        "source": "switch’s",
+        "target": "/usr/share/doc",
         "type": "RELATED",
-        "explanation": "GNU/Linux é um sistema que é case-sensitive."
+        "explanation": "Documentação de rede inclui informações sobre switch’s."
     },
     {
-        "source": "permissões de execução",
-        "target": "usuário root",
-        "type": "USE",
-        "explanation": "Usuário root precisa de permissões de execução para administrar."
-    },
-    {
-        "source": "usuários comuns",
-        "target": "permissões de execução",
-        "type": "USE",
-        "explanation": "Usuários comuns também precisam de permissões de execução."
-    },
-    {
-        "source": "shell",
-        "target": "Bash",
-        "type": "IS_A",
-        "explanation": "Bash é um tipo de shell."
-    },
-    {
-        "source": "Bash",
-        "target": "sh",
+        "source": "routers",
+        "target": "/usr/share/doc",
         "type": "RELATED",
-        "explanation": "Bash é um sucessor do shell sh."
-    },
-    {
-        "source": "Bash",
-        "target": "csh",
-        "type": "RELATED",
-        "explanation": "Bash é um dos vários tipos de shell, incluindo csh."
-    },
-    {
-        "source": "Bash",
-        "target": "zsh",
-        "type": "RELATED",
-        "explanation": "Bash é um dos vários tipos de shell, incluindo zsh."
-    },
-    {
-        "source": "Sessão",
-        "target": "usuário root",
-        "type": "RELATED",
-        "explanation": "Sessão é iniciada por um usuário, incluindo root."
-    },
-    {
-        "source": "Sessão",
-        "target": "usuários comuns",
-        "type": "RELATED",
-        "explanation": "Sessão é iniciada por usuários comuns também."
-    },
-    {
-        "source": "variáveis",
-        "target": "aliases",
-        "type": "USE",
-        "explanation": "Aliases são uma forma de variáveis no shell."
-    },
-    {
-        "source": "comandos de inicialização",
-        "target": "Bash",
-        "type": "USE",
-        "explanation": "Comandos de inicialização são lidos pelo Bash."
-    },
-    {
-        "source": "/etc/issue",
-        "target": "usuários comuns",
-        "type": "USE",
-        "explanation": "/etc/issue exibe mensagens para usuários comuns."
-    },
-    {
-        "source": "/etc/motd",
-        "target": "usuários comuns",
-        "type": "USE",
-        "explanation": "/etc/motd exibe mensagens para usuários comuns."
-    },
-    {
-        "source": ".bash_history",
-        "target": "history",
-        "type": "IS_A",
-        "explanation": ".bash_history armazena o histórico de comandos."
-    },
-    {
-        "source": "history",
-        "target": "comandos de inicialização",
-        "type": "RELATED",
-        "explanation": "O comando history é usado para acessar comandos anteriores."
+        "explanation": "Documentação de rede inclui informações sobre routers."
     },
     {
         "source": "help",
         "target": "ls",
         "type": "USE",
-        "explanation": "help ls fornece ajuda rápida para o comando ls."
+        "explanation": "help fornece ajuda rápida para o comando ls."
     },
     {
         "source": "help",
         "target": "--help",
         "type": "USE",
-        "explanation": "--help é um parâmetro para obter ajuda rápida."
+        "explanation": "--help é um parâmetro para obter ajuda."
     },
     {
         "source": "type",
@@ -960,10 +744,70 @@
         "explanation": "--help é usado para obter ajuda sobre comandos."
     },
     {
+        "source": "root",
+        "target": "usuário de sistema",
+        "type": "IS_A",
+        "explanation": "root é um tipo de usuário de sistema com funções administrativas."
+    },
+    {
+        "source": "sessão",
+        "target": "usuário comum",
+        "type": "RELATED",
+        "explanation": "Uma sessão é iniciada por um usuário comum no sistema."
+    },
+    {
+        "source": "bash",
+        "target": "variáveis",
+        "type": "USE",
+        "explanation": "bash permite a criação e uso de variáveis."
+    },
+    {
+        "source": "aliases",
+        "target": "bash",
+        "type": "USE",
+        "explanation": "Aliases são usados para personalizar comandos no bash."
+    },
+    {
+        "source": "comandos de sistema",
+        "target": "bash",
+        "type": "USE",
+        "explanation": "bash é usado para executar comandos de sistema."
+    },
+    {
+        "source": ".bash_history",
+        "target": "history",
+        "type": "IS_A",
+        "explanation": ".bash_history armazena o histórico de comandos."
+    },
+    {
+        "source": "history",
+        "target": "comandos de sistema",
+        "type": "USE",
+        "explanation": "O comando history lista comandos de sistema anteriores."
+    },
+    {
+        "source": "/etc/issue",
+        "target": "GNU/Linux",
+        "type": "PART_OF",
+        "explanation": "/etc/issue é um arquivo do sistema GNU/Linux."
+    },
+    {
+        "source": "/etc/motd",
+        "target": "GNU/Linux",
+        "type": "PART_OF",
+        "explanation": "/etc/motd é um arquivo do sistema GNU/Linux."
+    },
+    {
+        "source": "/etc/issue.net",
+        "target": "GNU/Linux",
+        "type": "PART_OF",
+        "explanation": "/etc/issue.net é um arquivo do sistema GNU/Linux."
+    },
+    {
         "source": "whatis",
         "target": "apropos",
         "type": "RELATED",
-        "explanation": "Ambos buscam informações em manuais."
+        "explanation": "Ambos buscam informações sobre manuais."
     },
     {
         "source": "whatis",
@@ -979,117 +823,123 @@
     },
     {
         "source": "catman",
+        "target": "root",
+        "type": "USE",
+        "explanation": "catman é executado pelo administrador do sistema."
+    },
+    {
+        "source": "makewhatis",
+        "target": "root",
+        "type": "USE",
+        "explanation": "makewhatis é executado pelo administrador do sistema."
+    },
+    {
+        "source": "catman",
         "target": "whatis",
-        "type": "PART_OF",
-        "explanation": "catman constrói o banco de dados usado pelo whatis."
+        "type": "RELATED",
+        "explanation": "catman constrói o banco de dados para whatis."
     },
     {
         "source": "makewhatis",
         "target": "whatis",
-        "type": "PART_OF",
-        "explanation": "makewhatis constrói o banco de dados para whatis."
-    },
-    {
-        "source": "root",
-        "target": "catman",
-        "type": "USE",
-        "explanation": "root executa catman para construir o banco de dados."
-    },
-    {
-        "source": "root",
-        "target": "makewhatis",
-        "type": "USE",
-        "explanation": "root executa makewhatis para construir o banco de dados."
-    },
-    {
-        "source": "man",
-        "target": "man <nivel> intro",
-        "type": "USE",
-        "explanation": "man <nivel> intro fornece introdução aos níveis de manuais."
-    },
-    {
-        "source": "man",
-        "target": "passwd",
-        "type": "USE",
-        "explanation": "man é usado para visualizar o manual do comando passwd."
-    },
-    {
-        "source": "passwd",
-        "target": "/etc/passwd",
         "type": "RELATED",
-        "explanation": "passwd é o arquivo de usuários do sistema."
-    },
-    {
-        "source": "passwd",
-        "target": "/usr/share/man/",
-        "type": "PART_OF",
-        "explanation": "manuais estão localizados em /usr/share/man/."
-    },
-    {
-        "source": "man",
-        "target": "/usr/share/man/",
-        "type": "USE",
-        "explanation": "man acessa manuais armazenados em /usr/share/man/."
+        "explanation": "makewhatis constrói o banco de dados para whatis."
     },
     {
         "source": "apropos",
         "target": "-d",
         "type": "USE",
-        "explanation": "apropos usa -d para emitir mensagens de depuração."
-    },
-    {
-        "source": "apropos",
-        "target": "-v",
-        "type": "USE",
-        "explanation": "apropos usa -v para imprimir mensagens de aviso detalhadas."
+        "explanation": "A opção -d é usada com apropos para depuração."
     },
     {
         "source": "apropos",
         "target": "-e",
         "type": "USE",
-        "explanation": "apropos usa -e para correspondência exata de palavras-chave."
+        "explanation": "A opção -e busca correspondência exata com apropos."
     },
     {
         "source": "apropos",
         "target": "-w",
         "type": "USE",
-        "explanation": "apropos usa -w para pesquisar com curingas."
+        "explanation": "A opção -w permite usar curingas com apropos."
     },
     {
         "source": "apropos",
         "target": "-a",
         "type": "USE",
-        "explanation": "apropos usa -a para corresponder todas as palavras-chave."
+        "explanation": "A opção -a exige que todas as palavras-chave correspondam em apropos."
     },
     {
         "source": "apropos",
         "target": "-l",
         "type": "USE",
-        "explanation": "apropos usa -l para evitar truncamento da saída."
+        "explanation": "A opção -l evita truncamento da saída de apropos."
     },
     {
         "source": "apropos",
         "target": "-C",
         "type": "USE",
-        "explanation": "apropos usa -C para usar arquivo de configuração do usuário."
+        "explanation": "A opção -C usa arquivo de configuração do usuário com apropos."
     },
     {
         "source": "apropos",
         "target": "-M",
         "type": "USE",
-        "explanation": "apropos usa -M para definir caminho de pesquisa das páginas de manual."
+        "explanation": "A opção -M define o caminho de pesquisa para apropos."
     },
     {
         "source": "apropos",
         "target": "-?",
         "type": "USE",
-        "explanation": "apropos usa -? para exibir a lista de ajuda."
+        "explanation": "A opção -? exibe ajuda para o comando apropos."
+    },
+    {
+        "source": "apropos",
+        "target": "-V",
+        "type": "USE",
+        "explanation": "A opção -V imprime a versão do comando apropos."
+    },
+    {
+        "source": "apropos",
+        "target": "-r",
+        "type": "USE",
+        "explanation": "A opção -r interpreta palavras-chave como regex em apropos."
     },
     {
         "source": "apropos",
         "target": "man -k",
         "type": "RELATED",
         "explanation": "apropos é equivalente a man -k para busca de comandos."
+    },
+    {
+        "source": "man",
+        "target": "ls",
+        "type": "USE",
+        "explanation": "ls é usado para listar manuais disponíveis."
+    },
+    {
+        "source": "passwd",
+        "target": "/usr/share/man/man1",
+        "type": "PART_OF",
+        "explanation": "O manual de passwd está na seção 1 dos manuais."
+    },
+    {
+        "source": "passwd",
+        "target": "/usr/share/man/man5",
+        "type": "PART_OF",
+        "explanation": "O manual de passwd está na seção 5 dos manuais."
+    },
+    {
+        "source": "/usr/share/man/man5",
+        "target": "man",
+        "type": "RELATED",
+        "explanation": "Seção 5 é parte da documentação acessada pelo comando man."
+    },
+    {
+        "source": "/usr/share/man/man1",
+        "target": "man",
+        "type": "RELATED",
+        "explanation": "Seção 1 é parte da documentação acessada pelo comando man."
     },
     {
         "source": "info",
@@ -1107,13 +957,61 @@
         "source": "yelp",
         "target": "info",
         "type": "USE",
-        "explanation": "yelp pode ser usado para visualizar manuais."
+        "explanation": "yelp é usado para visualizar manuais de aplicativos."
     },
     {
         "source": "xman",
         "target": "info",
         "type": "USE",
-        "explanation": "xman é um front-end para consulta de man pages."
+        "explanation": "xman é um front-end para facilitar a consulta de man pages."
+    },
+    {
+        "source": "whereis",
+        "target": "-b",
+        "type": "USE",
+        "explanation": "Opção -b é usada com whereis para buscar binários."
+    },
+    {
+        "source": "whereis",
+        "target": "-u",
+        "type": "USE",
+        "explanation": "Opção -u é usada com whereis para buscar entradas incomuns."
+    },
+    {
+        "source": "whereis",
+        "target": "-M",
+        "type": "USE",
+        "explanation": "Opção -M é usada com whereis para limitar seções manuais."
+    },
+    {
+        "source": "whereis",
+        "target": "-S",
+        "type": "USE",
+        "explanation": "Opção -S é usada com whereis para limitar busca por fontes."
+    },
+    {
+        "source": "whereis",
+        "target": "-f",
+        "type": "USE",
+        "explanation": "Opção -f é usada com whereis para sinalizar início de arquivos."
+    },
+    {
+        "source": "whereis",
+        "target": "-V",
+        "type": "USE",
+        "explanation": "Opção -V é usada com whereis para exibir versão."
+    },
+    {
+        "source": "whereis",
+        "target": "-h",
+        "type": "USE",
+        "explanation": "Opção -h é usada com whereis para exibir ajuda."
+    },
+    {
+        "source": "whereis",
+        "target": "whereis",
+        "type": "RELATED",
+        "explanation": "Comando whereis é comparado ao comando find."
     },
     {
         "source": "which",
@@ -1131,187 +1029,205 @@
         "source": "man",
         "target": "whatis",
         "type": "RELATED",
-        "explanation": "man pode ser usado como alternativa ao whatis."
+        "explanation": "man pode ser usado de forma equivalente ao whatis."
     },
     {
         "source": "info",
         "target": "man",
         "type": "RELATED",
-        "explanation": "info e man fornecem ajuda sobre comandos."
+        "explanation": "info lê documentação, assim como man fornece ajuda."
     },
     {
         "source": "help",
         "target": "man",
         "type": "RELATED",
-        "explanation": "help fornece ajuda para comandos internos como man."
+        "explanation": "help fornece ajuda para comandos, similar ao man."
     },
     {
         "source": "whereis",
-        "target": "-b",
-        "type": "USE",
-        "explanation": "Opção para pesquisar apenas binários."
-    },
-    {
-        "source": "whereis",
-        "target": "-u",
-        "type": "USE",
-        "explanation": "Opção para pesquisar entradas incomuns."
-    },
-    {
-        "source": "whereis",
-        "target": "-M",
-        "type": "USE",
-        "explanation": "Opção para limitar locais de pesquisa de manuais."
-    },
-    {
-        "source": "whereis",
-        "target": "-S",
-        "type": "USE",
-        "explanation": "Opção para limitar locais de pesquisa de fontes."
-    },
-    {
-        "source": "whereis",
-        "target": "-f",
-        "type": "USE",
-        "explanation": "Indica o início dos nomes dos arquivos."
-    },
-    {
-        "source": "whereis",
-        "target": "-h",
-        "type": "USE",
-        "explanation": "Exibe ajuda sobre o comando."
-    },
-    {
-        "source": "whereis",
-        "target": "-v",
-        "type": "USE",
-        "explanation": "Exibe informações sobre a versão."
-    },
-    {
-        "source": "whereis",
-        "target": "whereis",
+        "target": "man",
         "type": "RELATED",
-        "explanation": "Comando utilizado para localizar binários e manuais."
+        "explanation": "whereis localiza arquivos relacionados a comandos, como man."
     },
     {
-        "source": "-l",
-        "target": "ls",
+        "source": "ls",
+        "target": "-l",
         "type": "USE",
         "explanation": "O parâmetro -l é usado com o comando ls."
+    },
+    {
+        "source": "ls",
+        "target": "-a",
+        "type": "USE",
+        "explanation": "O parâmetro -a é usado com o comando ls."
+    },
+    {
+        "source": "ls",
+        "target": "curingas",
+        "type": "RELATED",
+        "explanation": "Curingas são usados em comandos como ls."
+    },
+    {
+        "source": "cp",
+        "target": "-p",
+        "type": "USE",
+        "explanation": "A opção -p é usada com o comando cp."
     },
     {
         "source": "FIFO",
         "target": "Buffer",
         "type": "RELATED",
-        "explanation": "FIFO utiliza buffers para gerenciar dados."
+        "explanation": "FIFO é um tipo de buffer para comunicação."
     },
     {
-        "source": "cp",
-        "target": "mv",
+        "source": "FIFO",
+        "target": "ls",
         "type": "RELATED",
-        "explanation": "Ambos são comandos para manipulação de arquivos."
+        "explanation": "FIFO pode ser listado usando o comando ls."
     },
     {
-        "source": "mkdir",
-        "target": "rmdir",
+        "source": "FHS",
+        "target": "FSSTND",
         "type": "RELATED",
-        "explanation": "mkdir cria e rmdir remove diretórios."
+        "explanation": "FHS é uma evolução do FSSTND para padronização."
     },
     {
-        "source": "rm",
-        "target": "rmdir",
-        "type": "RELATED",
-        "explanation": "rm remove arquivos e rmdir remove diretórios."
+        "source": "FHS",
+        "target": "/bin",
+        "type": "PART_OF",
+        "explanation": "FHS define a estrutura que inclui o diretório /bin."
     },
     {
-        "source": "mv",
-        "target": "cp",
-        "type": "RELATED",
-        "explanation": "mv pode mover ou renomear arquivos, cp copia."
+        "source": "/bin",
+        "target": "ls",
+        "type": "USE",
+        "explanation": "ls é um comando essencial localizado em /bin."
     },
     {
-        "source": "ls",
-        "target": "mkdir",
-        "type": "RELATED",
-        "explanation": "ls lista diretórios criados por mkdir."
+        "source": "/sbin",
+        "target": "ifconfig",
+        "type": "USE",
+        "explanation": "ifconfig é um comando administrativo em /sbin."
     },
     {
-        "source": "ls",
-        "target": "rm",
-        "type": "RELATED",
-        "explanation": "ls lista arquivos que podem ser removidos por rm."
+        "source": "/etc",
+        "target": "cat",
+        "type": "USE",
+        "explanation": "cat é usado para visualizar arquivos em /etc."
     },
     {
-        "source": "ls",
-        "target": "rmdir",
+        "source": "/etc",
+        "target": "pwconv",
+        "type": "USE",
+        "explanation": "pwconv manipula arquivos de configuração em /etc."
+    },
+    {
+        "source": "/lib",
+        "target": "uname",
+        "type": "USE",
+        "explanation": "uname fornece informações sobre o sistema usando bibliotecas em /lib."
+    },
+    {
+        "source": "/proc",
+        "target": "/sys",
         "type": "RELATED",
-        "explanation": "ls lista diretórios que podem ser removidos por rmdir."
+        "explanation": "Ambos são diretórios virtuais com informações do sistema."
+    },
+    {
+        "source": "/home",
+        "target": "/root",
+        "type": "RELATED",
+        "explanation": "/home e /root são diretórios pessoais de usuários."
+    },
+    {
+        "source": "/tmp",
+        "target": "cat",
+        "type": "USE",
+        "explanation": "cat pode ser usado para visualizar arquivos temporários em /tmp."
+    },
+    {
+        "source": "/boot",
+        "target": "init",
+        "type": "USE",
+        "explanation": "init é parte do processo de inicialização em /boot."
+    },
+    {
+        "source": "/media",
+        "target": "/mnt",
+        "type": "RELATED",
+        "explanation": "Ambos são pontos de montagem para dispositivos."
     },
     {
         "source": "find",
         "target": "-name",
         "type": "USE",
-        "explanation": "find utiliza -name para buscar arquivos."
+        "explanation": "find usa -name para procurar arquivos por nome."
     },
     {
         "source": "find",
         "target": "-maxdepth",
         "type": "USE",
-        "explanation": "find utiliza -maxdepth para limitar a busca."
+        "explanation": "find usa -maxdepth para limitar a profundidade da busca."
     },
     {
         "source": "find",
         "target": "-amin",
         "type": "USE",
-        "explanation": "find utiliza -amin para buscar por tempo de acesso."
+        "explanation": "find usa -amin para buscar arquivos acessados recentemente."
     },
     {
         "source": "find",
         "target": "-atime",
         "type": "USE",
-        "explanation": "find utiliza -atime para buscar por dias de acesso."
+        "explanation": "find usa -atime para buscar arquivos acessados em dias."
     },
     {
         "source": "find",
         "target": "-uid",
         "type": "USE",
-        "explanation": "find utiliza -uid para buscar por usuário."
+        "explanation": "find usa -uid para buscar arquivos por ID de usuário."
     },
     {
         "source": "find",
         "target": "-user",
         "type": "USE",
-        "explanation": "find utiliza -user para buscar por nome de usuário."
+        "explanation": "find usa -user para buscar arquivos por nome de usuário."
     },
     {
         "source": "find",
         "target": "-perm",
         "type": "USE",
-        "explanation": "find utiliza -perm para buscar por permissões."
+        "explanation": "find usa -perm para buscar arquivos por permissões."
     },
     {
         "source": "find",
         "target": "-size",
         "type": "USE",
-        "explanation": "find utiliza -size para buscar por tamanho de arquivo."
+        "explanation": "find usa -size para buscar arquivos por tamanho."
     },
     {
         "source": "find",
         "target": "-type",
         "type": "USE",
-        "explanation": "find utiliza -type para buscar por tipo de arquivo."
+        "explanation": "find usa -type para buscar arquivos por tipo."
     },
     {
         "source": "find",
         "target": "xargs",
         "type": "USE",
-        "explanation": "find pode usar xargs para executar comandos."
+        "explanation": "find pode usar xargs para executar comandos em arquivos encontrados."
     },
     {
         "source": "locate",
         "target": "updatedb",
         "type": "USE",
-        "explanation": "locate depende de updatedb para criar base de dados."
+        "explanation": "locate usa updatedb para criar sua base de dados."
+    },
+    {
+        "source": "find",
+        "target": "locate",
+        "type": "RELATED",
+        "explanation": "find e locate são comandos de busca de arquivos."
     },
     {
         "source": "FHS",
@@ -1348,149 +1264,5 @@
         "target": "find",
         "type": "USE",
         "explanation": "xargs constrói listas para find e outros comandos."
-    },
-    {
-        "source": "updatedb",
-        "target": "file",
-        "type": "RELATED",
-        "explanation": "updatedb gera base de dados de arquivos."
-    },
-    {
-        "source": "FHS",
-        "target": "FSSTND",
-        "type": "IS_A",
-        "explanation": "FHS é uma evolução do FSSTND."
-    },
-    {
-        "source": "/bin",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/bin é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/sbin",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/sbin é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/boot",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/boot é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/dev",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/dev é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/etc",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/etc é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/lib",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/lib é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/media",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/media é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/mnt",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/mnt é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/opt",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/opt é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/srv",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/srv é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/var",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/var é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/home",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/home é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/root",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/root é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/usr",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/usr é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/proc",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/proc é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/sys",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/sys é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "/tmp",
-        "target": "FHS",
-        "type": "PART_OF",
-        "explanation": "/tmp é parte da estrutura definida pelo FHS."
-    },
-    {
-        "source": "ifconfig",
-        "target": "/sbin",
-        "type": "USE",
-        "explanation": "ifconfig é um comando essencial em /sbin."
-    },
-    {
-        "source": "init",
-        "target": "/sbin",
-        "type": "USE",
-        "explanation": "init é um comando essencial em /sbin."
-    },
-    {
-        "source": "iptables",
-        "target": "/sbin",
-        "type": "USE",
-        "explanation": "iptables é um comando essencial em /sbin."
-    },
-    {
-        "source": "uname",
-        "target": "/lib",
-        "type": "USE",
-        "explanation": "uname é usado para obter informações do kernel em /lib."
-    },
-    {
-        "source": "pwconv",
-        "target": "/etc/passwd",
-        "type": "USE",
-        "explanation": "pwconv cria /etc/shadow a partir de /etc/passwd."
     }
 ]
