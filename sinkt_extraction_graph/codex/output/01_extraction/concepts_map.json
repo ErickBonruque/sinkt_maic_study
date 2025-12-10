@@ -1,0 +1,1298 @@
+[
+    {
+        "nome": "$PATH",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Variável que armazena os diretórios nos quais o sistema deve buscar executáveis. É essencial para a execução de comandos sem especificar o caminho absoluto.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "*",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O curinga '*' é utilizado para representar qualquer sequência de caracteres em operações de listagem, cópia, remoção, etc.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "--help",
+        "tipo": "COMANDO",
+        "definicao": "O parâmetro --help pode ser utilizado em qualquer comando externo para obter uma consulta rápida sobre os parâmetros que ele oferece, sendo um recurso útil para entender a funcionalidade de comandos não internos.",
+        "capitulo_origem": "16"
+    },
+    {
+        "nome": "-?",
+        "tipo": "COMANDO",
+        "definicao": "Exibe a lista de ajuda disponível para o comando apropos.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-a",
+        "tipo": "COMANDO",
+        "definicao": "Exige que todas as palavras-chave correspondam, não retornando resultados se qualquer uma das palavras não tiver correspondência.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-amin",
+        "tipo": "COMANDO",
+        "definicao": "A opção -amin permite buscar arquivos que foram acessados há um número específico de minutos, podendo também buscar por intervalos de tempo.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-atime",
+        "tipo": "COMANDO",
+        "definicao": "A opção -atime busca arquivos que foram acessados há um número específico de dias, com a possibilidade de buscar por intervalos.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-B",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção é usada com o comando 'whereis' para alterar ou limitar os locais onde o comando procura por binários.",
+        "capitulo_origem": "21"
+    },
+    {
+        "nome": "-C",
+        "tipo": "COMANDO",
+        "definicao": "Utiliza o arquivo de configuração do usuário em vez do padrão (/manpath) para a pesquisa.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-d",
+        "tipo": "COMANDO",
+        "definicao": "Emite mensagens de depuração, retornando informações sobre diretórios man, caminho global e avisos relacionados aos comandos encontrados.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-e",
+        "tipo": "COMANDO",
+        "definicao": "Realiza uma pesquisa exata, retornando apenas comandos cuja descrição corresponde exatamente à palavra-chave fornecida.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-f",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção é usada com o comando 'whereis' para sinalizar o início dos nomes dos arquivos após a lista de diretórios.",
+        "capitulo_origem": "21"
+    },
+    {
+        "nome": "-h",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção exibe a ajuda do comando 'whereis' e sai.",
+        "capitulo_origem": "21"
+    },
+    {
+        "nome": "-l",
+        "tipo": "COMANDO",
+        "definicao": "Desativa o truncamento da saída, permitindo que os resultados sejam exibidos em sua totalidade.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-M",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção é usada com o comando 'whereis' para alterar ou limitar os locais onde o comando procura por seções manuais.",
+        "capitulo_origem": "17, 21"
+    },
+    {
+        "nome": "-maxdepth",
+        "tipo": "COMANDO",
+        "definicao": "A opção -maxdepth limita a profundidade da busca na árvore de diretórios, especificando quantos níveis de subdiretórios devem ser incluídos na busca.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-name",
+        "tipo": "COMANDO",
+        "definicao": "A opção -name permite que o comando find busque arquivos e diretórios que correspondam a um nome específico fornecido como expressão.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-perm",
+        "tipo": "COMANDO",
+        "definicao": "A opção -perm permite buscar arquivos com modos de permissão específicos, que podem ser definidos em formato numérico ou literal.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-r",
+        "tipo": "COMANDO",
+        "definicao": "Interpreta cada palavra-chave como uma expressão regular (regex), permitindo comparações mais flexíveis.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "-S",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção é usada com o comando 'whereis' para alterar ou limitar os locais onde o comando procura por fontes.",
+        "capitulo_origem": "17, 21"
+    },
+    {
+        "nome": "-size",
+        "tipo": "COMANDO",
+        "definicao": "A opção -size busca arquivos com um tamanho específico, permitindo o uso de sufixos para especificar unidades como kilobytes, megabytes ou gigabytes.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-type",
+        "tipo": "COMANDO",
+        "definicao": "A opção -type permite especificar o tipo de arquivo a ser buscado, como diretórios, arquivos regulares, links simbólicos, entre outros.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-u",
+        "tipo": "COMANDO",
+        "definicao": "Esta opção é usada com o comando 'whereis' para pesquisar entradas incomuns, ou seja, arquivos que não têm correspondência no sistema de acordo com as opções [-bmsu].",
+        "capitulo_origem": "21"
+    },
+    {
+        "nome": "-uid",
+        "tipo": "COMANDO",
+        "definicao": "A opção -uid permite buscar arquivos que pertencem a um usuário específico, identificado pelo seu UID.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-user",
+        "tipo": "COMANDO",
+        "definicao": "A opção -user busca arquivos que pertencem a um usuário específico, identificado pelo seu nome.",
+        "capitulo_origem": "25"
+    },
+    {
+        "nome": "-v",
+        "tipo": "COMANDO",
+        "definicao": "Imprime mensagens de aviso detalhadas durante a execução do comando apropos.",
+        "capitulo_origem": "17, 21"
+    },
+    {
+        "nome": "-w",
+        "tipo": "COMANDO",
+        "definicao": "Permite que a pesquisa inclua curingas nas palavras-chave, buscando correspondências no nome da página e na descrição.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "../",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Representa o diretório pai em um caminho relativo, permitindo navegar para um nível acima na hierarquia de diretórios.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "./",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Representa o diretório corrente em um caminho relativo, permitindo acesso a arquivos e diretórios dentro do diretório atual.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": ".bash_history",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo responsável por armazenar o histórico de linhas de comando executadas pelo usuário, permitindo acesso fácil a comandos previamente utilizados.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "/",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "O diretório raiz é o ponto de partida da hierarquia de diretórios no sistema Linux, representado por uma barra (/). Todos os outros diretórios e arquivos estão organizados sob ele.",
+        "capitulo_origem": "12, 24"
+    },
+    {
+        "nome": "/bin",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém executáveis essenciais do sistema, disponíveis para todos os usuários.",
+        "capitulo_origem": "12, 23"
+    },
+    {
+        "nome": "/boot",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém arquivos estáticos necessários para a inicialização do sistema e a imagem do kernel.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/dev",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém arquivos de dispositivos, permitindo a comunicação do GNU/Linux com periféricos através de links especiais.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/etc",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena arquivos de configuração do sistema e de programas, incluindo scripts de inicialização e configurações de login.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/etc/bash.bashrc",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo executado automaticamente em shells que não são de login, permitindo configurações globais para todos os usuários.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "/etc/environment",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo utilizado por sistemas Debian para definir variáveis de ambiente, que são exportadas automaticamente na inicialização do sistema.",
+        "capitulo_origem": "10, 11"
+    },
+    {
+        "nome": "/etc/issue",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "O arquivo /etc/issue exibe uma mensagem para o usuário antes do login, podendo ser utilizado para fornecer informações sobre o sistema.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "/etc/issue.net",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "O arquivo /etc/issue.net permite visualizar mensagens exibidas em logins remotos, sendo útil para comunicação com usuários que acessam o sistema via rede.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "/etc/motd",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "O arquivo /etc/motd (Message of the Day) exibe uma mensagem para o usuário após o login, geralmente utilizado para avisos ou informações importantes.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "/etc/passwd",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo que contém informações sobre as contas de usuário do sistema, incluindo nomes de usuário, senhas (ou hashes de senhas), UID, GID e informações adicionais.",
+        "capitulo_origem": "19"
+    },
+    {
+        "nome": "/etc/profile",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo executado automaticamente no momento do login, responsável por definir variáveis de ambiente e armazenar comandos a serem executados quando o usuário efetua o login no sistema.",
+        "capitulo_origem": "10, 11"
+    },
+    {
+        "nome": "/home",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que geralmente contém os diretórios pessoais dos usuários no sistema Linux.",
+        "capitulo_origem": "12, 23"
+    },
+    {
+        "nome": "/lib",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém bibliotecas essenciais do sistema e módulos do kernel, que podem ser utilizados por vários programas.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/lost+found",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena arquivos recuperados pelo sistema após falhas.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/media",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Ponto de montagem para dispositivos removíveis, como pen drives e CDs.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/mnt",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Ponto de montagem para sistemas de arquivos temporários.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/opt",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório destinado a pacotes de software adicionais, geralmente de natureza proprietária.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/proc",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena informações dinâmicas sobre o sistema operacional, como processos e estatísticas do sistema.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/proc/cpuinfo",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo que contém informações sobre a CPU do sistema, acessível através de um caminho absoluto.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "/root",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório pessoal do super usuário root, que possui permissões administrativas no sistema.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/run",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém informações sobre o sistema em execução desde o último boot.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/sbin",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena comandos binários essenciais administrativos, utilizados principalmente pelo usuário root.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/srv",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém dados providos por serviços de rede do sistema.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/sys",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que fornece uma interface para interagir com dispositivos conectados ao sistema, semelhante ao /proc.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/tmp",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena arquivos temporários que são limpos durante a inicialização do sistema.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "/usr",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que contém dados de usuário e programas de software adicionais, incluindo bibliotecas e documentação.",
+        "capitulo_origem": "12, 23"
+    },
+    {
+        "nome": "/usr/share/doc",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório padrão no sistema GNU/Linux onde são armazenados documentos de ajuda e informações sobre pacotes instalados, incluindo How-to’s e manuais.",
+        "capitulo_origem": "15"
+    },
+    {
+        "nome": "/usr/share/man/",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório onde os manuais do sistema estão armazenados, organizados por seções e idiomas, permitindo a consulta de documentação através do comando man.",
+        "capitulo_origem": "19"
+    },
+    {
+        "nome": "/usr/share/man/man5",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Subdiretório específico que contém os manuais da seção 5, que abrange arquivos de configuração e convenções do sistema.",
+        "capitulo_origem": "19"
+    },
+    {
+        "nome": "/var",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Diretório que armazena dados variáveis, como arquivos de log e dados em filas.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "4LINUX",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Exemplo de uma variável local que armazena o valor 'joatham'. Acessada com o operador $ para imprimir seu valor.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "?",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O curinga '?' é utilizado para representar um único caractere em operações de manipulação de arquivos.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "[ ]",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Os colchetes '[ ]' são utilizados para especificar um intervalo de caracteres em operações de manipulação de arquivos.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "alias",
+        "tipo": "COMANDO",
+        "definicao": "Um alias é um atalho que permite executar um comando com parâmetros específicos toda vez que o termo atribuído for utilizado, simplificando a execução de comandos frequentes.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "Amazon Web Services (AWS)",
+        "tipo": "REDE",
+        "definicao": "AWS é uma plataforma de serviços em nuvem que oferece infraestrutura sob demanda, com muitos de seus serviços executados em ambientes Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "Ambiente de trabalho",
+        "tipo": "FERRAMENTA",
+        "definicao": "Camada que hospeda todos os programas que dependem de um ambiente gráfico para funcionar, permitindo a interação do usuário com o sistema através de uma interface visual.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Android",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Android é um sistema operacional baseado no kernel Linux, amplamente utilizado em dispositivos móveis, como smartphones, e licenciado sob a GPLv2.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "AndroidThings",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Um sistema operacional baseado em Android projetado para dispositivos IoT, com suporte para APIs do Android.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Apache HTTP Server",
+        "tipo": "REDE",
+        "definicao": "Servidor HTTP livre e amplamente utilizado, que permite a execução de aplicações web e é extensível através de módulos.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "apropos",
+        "tipo": "COMANDO",
+        "definicao": "O comando apropos busca páginas de manuais e descrições de maneira mais genérica, retornando resultados que contêm a palavra pesquisada em qualquer parte do nome ou descrição.",
+        "capitulo_origem": "17, 18, 22"
+    },
+    {
+        "nome": "Arquivos e diretórios ocultos",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Arquivos ou diretórios que começam com um ponto (.) são considerados ocultos e não são exibidos por padrão na linha de comando.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Aspecto case-sensitive",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Em sistemas Unix-like, a diferenciação entre letras maiúsculas e minúsculas é significativa, afetando nomes de arquivos, diretórios e comandos.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Aspecto multitarefa / multiusuário",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Permite a execução simultânea de várias tarefas e usuários, uma herança dos sistemas Unix.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Azure",
+        "tipo": "REDE",
+        "definicao": "Azure é a plataforma de nuvem da Microsoft que oferece máquinas virtuais baseadas em Linux, permitindo que os usuários executem aplicações em um ambiente Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "bash",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O bash (Bourne Again SHell) é um interpretador de comandos amplamente utilizado em sistemas Linux, permitindo a execução de comandos e scripts, e é uma das ferramentas desenvolvidas pelo projeto GNU.",
+        "capitulo_origem": "3, 7, 8, 9, 13"
+    },
+    {
+        "nome": "Big Data",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Big Data refere-se ao conjunto de tecnologias e práticas para lidar com grandes volumes de dados, muitas vezes utilizando ferramentas que operam em ambientes Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "BIND",
+        "tipo": "REDE",
+        "definicao": "Servidor DNS amplamente utilizado, considerado um padrão em sistemas Unix para resolução de nomes na Internet.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "cat",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para visualizar o conteúdo de arquivos de texto, como arquivos de configuração.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "catman",
+        "tipo": "COMANDO",
+        "definicao": "O comando catman é utilizado para construir o banco de dados de páginas de manual, que é utilizado pelos comandos apropos e whatis para realizar buscas.",
+        "capitulo_origem": "18"
+    },
+    {
+        "nome": "cd",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para mudar o diretório atual no qual o usuário está trabalhando.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "CentOS",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição Linux de classe corporativa derivada do Red Hat Enterprise Linux, conhecida por sua estabilidade e suporte a longo prazo.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "chsh",
+        "tipo": "COMANDO",
+        "definicao": "O comando chsh é utilizado para alterar o shell atual do usuário, permitindo especificar um novo shell com a opção -s ou --shell.",
+        "capitulo_origem": "9, 13"
+    },
+    {
+        "nome": "comando",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Exemplo de uma variável local que armazena o comando 'ls'. Pode ser acessada e executada usando o operador $.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "cp",
+        "tipo": "COMANDO",
+        "definicao": "O comando 'cp' é utilizado para copiar arquivos e diretórios, com a opção '-r' necessária para diretórios.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "csh",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O C shell é preferido por alguns programadores e possui uma sintaxe semelhante à linguagem de programação C.",
+        "capitulo_origem": "9"
+    },
+    {
+        "nome": "DEB",
+        "tipo": "FERRAMENTA",
+        "definicao": "O sistema de gerenciamento de pacotes utilizado pela distribuição Debian e suas derivadas, facilitando a instalação e atualização de software.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Debian",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Debian é uma das distribuições mais populares do Linux, conhecida por sua estabilidade e vasto repositório de pacotes de software.",
+        "capitulo_origem": "5, 7"
+    },
+    {
+        "nome": "Deepin",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Deepin é uma distribuição Linux que se destaca por sua interface gráfica atraente e fácil de usar, focada na experiência do usuário.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "DigiTal Ocean",
+        "tipo": "REDE",
+        "definicao": "DigiTal Ocean é um provedor de serviços em nuvem que oferece máquinas virtuais baseadas em Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "Distribuições GNU/Linux",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Pacotes que consistem em um kernel Linux e uma seleção de aplicativos, otimizados para um tipo específico de uso ou grupo de usuários.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Divisão em camadas",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "O sistema é estruturado em camadas, com o kernel no centro, controlando hardware e gerenciando usuários e processos.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "DM",
+        "tipo": "FERRAMENTA",
+        "definicao": "Gerenciador responsável por gerenciar logins na interface gráfica e selecionar o tipo de ambiente gráfico que será executado.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Docker",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma plataforma que permite a criação, implantação e execução de aplicativos em containers, facilitando a portabilidade e a escalabilidade.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "DTrace",
+        "tipo": "FERRAMENTA",
+        "definicao": "Uma estrutura de rastreamento dinâmico para solucionar problemas de kernel e aplicativos em sistemas de produção em tempo real.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "echo",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para imprimir texto na tela ou redirecionar para um arquivo. É útil para inspecionar variáveis de ambiente.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "Elementary OS",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Elementary OS é uma distribuição Linux conhecida por sua interface amigável e simplicidade, voltada para usuários comuns.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "fc",
+        "tipo": "COMANDO",
+        "definicao": "Comando que permite encontrar e corrigir comandos previamente digitados, facilitando a edição e reexecução de comandos do histórico.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "Fedora",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Fedora é uma distribuição Linux que serve como um campo de testes para novas tecnologias e inovações no ecossistema Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "FHS",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Filesystem Hierarchy Standard (FHS) é um padrão que define a estrutura e organização dos diretórios em sistemas GNU/Linux, garantindo compatibilidade entre diferentes distribuições.",
+        "capitulo_origem": "23, 26"
+    },
+    {
+        "nome": "file",
+        "tipo": "COMANDO",
+        "definicao": "O comando file é utilizado para determinar o tipo de um arquivo, analisando seu conteúdo e retornando informações sobre o formato do arquivo.",
+        "capitulo_origem": "26"
+    },
+    {
+        "nome": "find",
+        "tipo": "COMANDO",
+        "definicao": "O comando find é utilizado para localizar arquivos e diretórios no sistema de arquivos, permitindo a busca por critérios como nome, data de modificação, tamanho e permissões.",
+        "capitulo_origem": "25, 26"
+    },
+    {
+        "nome": "GCC",
+        "tipo": "FERRAMENTA",
+        "definicao": "O GCC (GNU Compiler Collection) é um conjunto de compiladores desenvolvidos pelo projeto GNU, que permite a compilação de programas escritos em várias linguagens de programação, sendo uma ferramenta essencial para o desenvolvimento no ambiente Linux.",
+        "capitulo_origem": "3"
+    },
+    {
+        "nome": "Gentoo",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição altamente personalizável que permite ao usuário otimizar o sistema para suas necessidades específicas.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "GNU/Hurd",
+        "tipo": "HARDWARE",
+        "definicao": "O GNU/Hurd é o kernel desenvolvido como parte do projeto GNU, que não alcançou a estabilidade necessária para ser considerado um kernel maduro e confiável, o que contribuiu para a não liberação de um sistema operacional GNU completo.",
+        "capitulo_origem": "3"
+    },
+    {
+        "nome": "GNU/Linux",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "GNU/Linux é um sistema operacional que combina o kernel Linux com ferramentas e bibliotecas do projeto GNU, formando um ambiente completo para usuários e desenvolvedores.",
+        "capitulo_origem": "5, 7, 8, 14"
+    },
+    {
+        "nome": "Google Cloud Platform (GCP)",
+        "tipo": "REDE",
+        "definicao": "GCP é uma plataforma de serviços em nuvem que fornece uma variedade de serviços, muitos dos quais são baseados em distribuições Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "halt",
+        "tipo": "COMANDO",
+        "definicao": "Comando que encerra todos os processos e desliga o sistema imediatamente, sem a opção de especificar um tempo.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Hardware",
+        "tipo": "HARDWARE",
+        "definicao": "Camada que compreende todos os dispositivos físicos disponíveis para uso no sistema, como CD-ROM, teclado e monitor.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "help",
+        "tipo": "COMANDO",
+        "definicao": "O comando help fornece ajuda para comandos internos do interpretador de comandos, permitindo que o usuário visualize rapidamente as opções disponíveis para esses comandos.",
+        "capitulo_origem": "16, 22"
+    },
+    {
+        "nome": "hexdump",
+        "tipo": "COMANDO",
+        "definicao": "Comando que exibe o conteúdo de arquivos em formatos como hexadecimal, octal e ASCII.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "HISTFILE",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Variável que armazena o nome do arquivo utilizado para armazenar históricos de comandos.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "history",
+        "tipo": "COMANDO",
+        "definicao": "O comando history exibe uma lista dos comandos anteriormente utilizados pelo usuário, facilitando a reutilização de comandos sem a necessidade de reescrevê-los.",
+        "capitulo_origem": "11, 13"
+    },
+    {
+        "nome": "HISTSIZE",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Variável que armazena o número máximo de comandos que o arquivo de histórico suportará.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "HOME",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Identifica o diretório do usuário no sistema.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "HOSTTYPE",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Faz referência à plataforma que está sendo utilizada.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "ifconfig",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para configurar interfaces de rede e visualizar informações sobre a configuração de rede.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "info",
+        "tipo": "COMANDO",
+        "definicao": "O comando info lê a documentação armazenada no formato info, que foi desenvolvido pela Free Software Foundation, oferecendo uma alternativa à documentação do man.",
+        "capitulo_origem": "20, 22"
+    },
+    {
+        "nome": "iptables",
+        "tipo": "REDE",
+        "definicao": "Ferramenta de filtragem de pacotes que permite configurar regras de firewall no Linux, sendo um exemplo de aplicação que possui documentação em /usr/share/doc.",
+        "capitulo_origem": "15"
+    },
+    {
+        "nome": "Java",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Linguagem orientada a objetos que é compilada para bytecode, executada em uma máquina virtual, permitindo portabilidade entre plataformas.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Kali Linux",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição projetada para testes de invasão e exploração de vulnerabilidades de software.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Kernel",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "O núcleo do sistema operacional Linux, responsável pela comunicação entre o hardware e o software.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Kernel Linux",
+        "tipo": "HARDWARE",
+        "definicao": "A camada central do sistema operacional que atua como mediadora entre o hardware e as camadas superiores, gerenciando recursos e processos do sistema.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "ksh",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O Korn shell é uma evolução do Bourne shell, mantendo a compatibilidade com os comandos do Bourne shell e oferecendo mais opções.",
+        "capitulo_origem": "9"
+    },
+    {
+        "nome": "Ksplice",
+        "tipo": "HARDWARE",
+        "definicao": "Uma tecnologia que permite aplicar patches de segurança ao kernel Linux em execução sem a necessidade de reinicializações.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Kubernetes",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Sistema open-source que automatiza a implantação e gestão de aplicações em contêineres, originalmente projetado pelo Google.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "less",
+        "tipo": "COMANDO",
+        "definicao": "Comando semelhante ao more, mas com funcionalidades adicionais, como rolagem para cima e para os lados.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "Lighttpd",
+        "tipo": "REDE",
+        "definicao": "Servidor web otimizado para ambientes de alta performance, projetado para lidar com muitas conexões simultâneas.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Linux",
+        "tipo": "HARDWARE",
+        "definicao": "O Linux é um kernel de sistema operacional que serve como o núcleo de execução, gerenciando recursos de hardware e permitindo a interação com software. É a base sobre a qual sistemas operacionais completos são construídos.",
+        "capitulo_origem": "1, 3, 7"
+    },
+    {
+        "nome": "Linux Mint",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Linux Mint é uma distribuição Linux baseada no Ubuntu, projetada para ser fácil de usar e acessível para iniciantes.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "Live Distribution",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Distribuições que podem ser executadas a partir de mídias removíveis sem instalação no disco rígido, permitindo testes e uso temporário.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "locate",
+        "tipo": "COMANDO",
+        "definicao": "O comando locate é uma ferramenta de busca rápida que utiliza uma base de dados pré-construída para localizar arquivos, sendo mais eficiente que a busca recursiva tradicional.",
+        "capitulo_origem": "25, 26"
+    },
+    {
+        "nome": "LOGNAME",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Sinônimo da variável USER, que representa o nome do usuário.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "logout",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para encerrar uma sessão de usuário em um terminal, retornando ao estado anterior de login.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "ls",
+        "tipo": "COMANDO",
+        "definicao": "O comando 'ls' é utilizado para listar arquivos e diretórios em um sistema de arquivos, apresentando informações detalhadas como permissões, dono, grupo, tamanho e data de criação.",
+        "capitulo_origem": "12, 16, 24"
+    },
+    {
+        "nome": "ls --color",
+        "tipo": "COMANDO",
+        "definicao": "Opção do comando ls que permite listar o conteúdo do diretório corrente com saída colorida, facilitando a visualização.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "ls -a",
+        "tipo": "COMANDO",
+        "definicao": "Opção do comando ls que lista todos os arquivos, incluindo os ocultos que começam com um ponto (.).",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "MAIL",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Informa como o correio eletrônico está definido no sistema.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "makewhatis",
+        "tipo": "COMANDO",
+        "definicao": "O comando makewhatis é uma alternativa ao catman, utilizado para criar o banco de dados de páginas de manual, permitindo que os comandos apropos e whatis funcionem corretamente.",
+        "capitulo_origem": "18"
+    },
+    {
+        "nome": "man",
+        "tipo": "COMANDO",
+        "definicao": "O comando man é utilizado para acessar a documentação e manuais de comandos, arquivos de configuração e bibliotecas no sistema Linux, permitindo que os usuários obtenham informações detalhadas sobre o uso e funcionalidades desses elementos.",
+        "capitulo_origem": "15, 18, 19, 22"
+    },
+    {
+        "nome": "man -k",
+        "tipo": "COMANDO",
+        "definicao": "Uma forma alternativa de usar o comando apropos, que pesquisa a descrição da página do manual usando a opção -k.",
+        "capitulo_origem": "17"
+    },
+    {
+        "nome": "Manjaro OS",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Manjaro OS é uma distribuição Linux baseada no Arch Linux, que oferece uma experiência de usuário simplificada e acessível.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "MariaDB",
+        "tipo": "FERRAMENTA",
+        "definicao": "Banco de dados relacional de código aberto, criado como uma alternativa ao MySQL, focado em manter a liberdade de uso.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Minix",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Minix é um sistema operacional Unix-like desenvolvido por Andrew Tanenbaum, que serviu como base para o desenvolvimento do Linux por Linus Torvalds, sendo utilizado principalmente para fins educacionais.",
+        "capitulo_origem": "3"
+    },
+    {
+        "nome": "mkdir",
+        "tipo": "COMANDO",
+        "definicao": "O comando mkdir é utilizado para criar novos diretórios no sistema de arquivos. O parâmetro -p permite criar diretórios pai, evitando erros se o diretório já existir.",
+        "capitulo_origem": "24, 26"
+    },
+    {
+        "nome": "more",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para visualizar o conteúdo de arquivos de texto, permitindo a navegação página a página.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "mv",
+        "tipo": "COMANDO",
+        "definicao": "O comando 'mv' é utilizado para mover ou renomear arquivos e diretórios no sistema de arquivos.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "MX Linux",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "MX Linux é uma distribuição Linux que combina um ambiente leve e amigável, ideal para usuários que buscam uma experiência simples.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "NGINX",
+        "tipo": "REDE",
+        "definicao": "Servidor leve de HTTP e proxy reverso, conhecido por sua eficiência em lidar com conexões simultâneas.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Node.js",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Interpretador de JavaScript assíncrono que permite a criação de aplicações escaláveis no lado do servidor.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "NOME=VALOR",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Formato padrão para a definição de variáveis em shell, onde 'NOME' é o identificador da variável e 'VALOR' é o dado que ela armazena.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "od",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para visualizar o conteúdo de arquivos em diferentes formatos, como hexadecimal e ASCII.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "OpenWrt",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição baseada em Linux projetada para dispositivos embarcados, como roteadores sem fio.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "Oracle Cloud (OCI)",
+        "tipo": "REDE",
+        "definicao": "OCI é uma plataforma de serviços em nuvem que oferece soluções de computação, armazenamento e rede, utilizando distribuições Linux.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "OSTYPE",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Define o tipo de sistema operacional que está sendo utilizado.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "passwd",
+        "tipo": "COMANDO",
+        "definicao": "O comando passwd é utilizado para adicionar ou modificar a senha de um usuário no sistema, sendo uma ferramenta essencial para a gestão de contas de usuário.",
+        "capitulo_origem": "19"
+    },
+    {
+        "nome": "PATH",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Determina quais diretórios devem ser pesquisados para encontrar comandos executáveis.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "Permissão para executar arquivos",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Para que um arquivo seja executável, deve ter permissões de execução, o que protege o sistema contra a execução de arquivos maliciosos.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "PHP",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Linguagem de script interpretada, usada para desenvolvimento de aplicações web dinâmicas no lado do servidor.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Pop!_OS",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Pop!_OS é uma distribuição Linux desenvolvida pela System76, focada em desenvolvedores e usuários de tecnologia, com uma interface moderna.",
+        "capitulo_origem": "1"
+    },
+    {
+        "nome": "Postfix",
+        "tipo": "REDE",
+        "definicao": "MTA livre que encaminha e entrega e-mails, projetado para ser uma alternativa segura ao Sendmail.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "PostgreSQL",
+        "tipo": "FERRAMENTA",
+        "definicao": "Sistema de banco de dados relacional de objetos, conhecido por sua robustez e extensibilidade, ideal para cargas de trabalho complexas.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "poweroff",
+        "tipo": "COMANDO",
+        "definicao": "Comando que desliga o sistema de forma direta, semelhante ao halt, mas comumente utilizado em sistemas modernos.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "PS1",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Representa as informações exibidas no prompt de comando do shell.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "PS1='[u@h-t]'",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Exemplo de configuração da variável PS1 para alterar o prompt de comando, exibindo o nome do usuário, o nome do host e a hora atual.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "PS2",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Representa o prompt estendido no shell.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "pwconv",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para criar o arquivo /etc/shadow a partir do arquivo /etc/passwd, protegendo as senhas dos usuários.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "pwd",
+        "tipo": "COMANDO",
+        "definicao": "Comando que imprime o nome do diretório corrente em que o usuário está trabalhando.",
+        "capitulo_origem": "12"
+    },
+    {
+        "nome": "pwunconv",
+        "tipo": "COMANDO",
+        "definicao": "Comando que executa a operação inversa do pwconv, movendo as senhas criptografadas de volta para o arquivo /etc/passwd.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "Python",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Linguagem de programação de alto nível, interpretada e orientada a objetos, conhecida por sua simplicidade e versatilidade.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "Raspbian",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição baseada no Debian, otimizada para o hardware Raspberry Pi, incluindo uma vasta gama de pacotes.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "reboot",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para reiniciar o sistema, permitindo que todos os processos sejam encerrados antes da reinicialização.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Red Hat",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma das distribuições Linux comerciais mais populares, conhecida por seu programa de certificação que inclui exames práticos e conteúdo baseado na versão mais recente do Red Hat Enterprise Linux.",
+        "capitulo_origem": "2, 5, 7"
+    },
+    {
+        "nome": "Representação por arquivos",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "No sistema Unix, tudo é representado como um arquivo, incluindo dispositivos de armazenamento, memória, e diretórios, o que é essencial para a gestão do sistema.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "reset",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para reiniciar o terminal, limpando a tela e restaurando as configurações padrão.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "rm",
+        "tipo": "COMANDO",
+        "definicao": "O comando rm é utilizado para remover arquivos ou diretórios. Os parâmetros -i, -r e -f permitem interatividade, remoção recursiva e forçada, respectivamente.",
+        "capitulo_origem": "24, 26"
+    },
+    {
+        "nome": "rmdir",
+        "tipo": "COMANDO",
+        "definicao": "O comando 'rmdir' é utilizado para remover diretórios vazios do sistema de arquivos.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "root",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "O usuário root, ou superusuário, possui funções administrativas e tem permissões totais sobre o sistema, permitindo a execução de qualquer comando e a modificação de qualquer arquivo.",
+        "capitulo_origem": "13, 18"
+    },
+    {
+        "nome": "RPM",
+        "tipo": "FERRAMENTA",
+        "definicao": "O sistema de gerenciamento de pacotes utilizado por distribuições como Red Hat e SUSE para instalação e gerenciamento de software.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "sh",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O Bourne shell, desenvolvido por Stephen Bourne, é o shell original, simples e com poucas ferramentas, ainda utilizado em sistemas UNIX e ambientes relacionados.",
+        "capitulo_origem": "9"
+    },
+    {
+        "nome": "shell",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O shell é a interface que permite a interação do usuário com o sistema operacional, podendo ser acessado tanto em modo gráfico quanto em modo texto, e é personalizável para atender às necessidades do usuário.",
+        "capitulo_origem": "7, 9, 10"
+    },
+    {
+        "nome": "shutdown",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para desligar ou reiniciar o sistema de forma segura, permitindo especificar o tempo para a operação.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Sistema Operacional",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Camada que auxilia e hospeda todos os aplicativos das camadas superiores, servindo como a base para a execução de programas e serviços.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Slackware",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Slackware é uma das distribuições mais antigas do Linux, focada em simplicidade e minimalismo, sendo ideal para usuários que desejam um controle total sobre o sistema.",
+        "capitulo_origem": "5, 7"
+    },
+    {
+        "nome": "su",
+        "tipo": "COMANDO",
+        "definicao": "Comando que permite ao usuário trocar de identidade para outro usuário, sendo o padrão o usuário root, facilitando a execução de tarefas administrativas.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "sudo",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para executar programas com privilégios de superusuário, permitindo que usuários comuns realizem tarefas administrativas após autenticação.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "Superusuário (root)",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "O superusuário root possui permissões completas para administrar o sistema, sendo identificado pela UID 0, e seu uso deve ser cauteloso.",
+        "capitulo_origem": "6"
+    },
+    {
+        "nome": "SUSE",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "SUSE é uma distribuição Linux que se destaca por sua facilidade de uso e suporte a ambientes empresariais, oferecendo soluções robustas para servidores e desktops.",
+        "capitulo_origem": "5, 7"
+    },
+    {
+        "nome": "tcsh",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O Turbo C shell é uma versão melhorada do csh, que pode ser usada como um shell de login interativo ou como processador de comandos de shell scripts, sendo completamente compatível com o csh.",
+        "capitulo_origem": "9"
+    },
+    {
+        "nome": "TERM",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Define o tipo de terminal que está sendo utilizado.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "touch",
+        "tipo": "COMANDO",
+        "definicao": "O comando touch é utilizado para criar um arquivo vazio ou atualizar a data de modificação de um arquivo ou diretório existente.",
+        "capitulo_origem": "24, 26"
+    },
+    {
+        "nome": "ttyn",
+        "tipo": "FERRAMENTA",
+        "definicao": "Terminais virtuais que interpretam comandos introduzidos pelo usuário e os convertem em uma linguagem que o computador pode entender, permitindo a execução de comandos e definições de configurações.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "type",
+        "tipo": "COMANDO",
+        "definicao": "O comando type determina se um nome de comando é um comando do UNIX, um comando interno, um alias, uma palavra-chave do shell ou uma função de shell definida.",
+        "capitulo_origem": "16"
+    },
+    {
+        "nome": "Ubuntu",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma distribuição baseada no Debian, popular por sua facilidade de uso e suporte a longo prazo, com versões LTS publicadas a cada dois anos.",
+        "capitulo_origem": "1, 5"
+    },
+    {
+        "nome": "Ubuntu Core",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Uma versão do Ubuntu projetada para sistemas com recursos mínimos, ideal para dispositivos IoT.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "unalias",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para remover um alias previamente definido, restaurando o comportamento original do comando.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "uname",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para exibir informações sobre o sistema, incluindo a versão do kernel.",
+        "capitulo_origem": "23"
+    },
+    {
+        "nome": "Unix-like",
+        "tipo": "CONCEITO_TEORICO",
+        "definicao": "Unix-like refere-se a sistemas operacionais que seguem os padrões do Unix, caracterizando-se por robustez, segurança e suporte a multiusuário e multitarefa, sendo a base para o desenvolvimento de sistemas como o Linux.",
+        "capitulo_origem": "3"
+    },
+    {
+        "nome": "unset",
+        "tipo": "COMANDO",
+        "definicao": "Comando utilizado para excluir variáveis. Sua aplicação em variáveis globais só afeta a sessão atual.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "updatedb",
+        "tipo": "COMANDO",
+        "definicao": "O comando updatedb é utilizado para criar ou atualizar a base de dados utilizada pelo comando locate, permitindo que as buscas sejam realizadas de forma rápida e eficiente.",
+        "capitulo_origem": "25, 26"
+    },
+    {
+        "nome": "updatedb.conf",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo de configuração utilizado pelo sistema para armazenar informações sobre a base de dados de arquivos, geralmente utilizado pelo comando 'locate'.",
+        "capitulo_origem": "24"
+    },
+    {
+        "nome": "USER",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Predefine o nome da conta do usuário como uma variável global.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "Variáveis Globais",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Variáveis que estão disponíveis tanto para o shell atual quanto para subprocessos, permitindo acesso em diferentes ambientes.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "Variáveis Locais",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "Variáveis que estão disponíveis apenas para o shell atual, não acessíveis a outros ambientes ou subprocessos.",
+        "capitulo_origem": "10"
+    },
+    {
+        "nome": "whatis",
+        "tipo": "COMANDO",
+        "definicao": "O comando whatis é utilizado para buscar informações específicas sobre um comando ou programa, retornando a descrição do manual correspondente ao nome exato pesquisado.",
+        "capitulo_origem": "18, 22"
+    },
+    {
+        "nome": "whereis",
+        "tipo": "COMANDO",
+        "definicao": "O comando 'whereis' é utilizado para localizar a localização do binário de um comando, arquivos de configuração e páginas de manuais associadas a um comando ou arquivo específico.",
+        "capitulo_origem": "21, 22"
+    },
+    {
+        "nome": "which",
+        "tipo": "COMANDO",
+        "definicao": "O comando which é utilizado para localizar a localização do binário de um comando específico no sistema.",
+        "capitulo_origem": "22"
+    },
+    {
+        "nome": "whoami",
+        "tipo": "COMANDO",
+        "definicao": "Comando que exibe o nome do usuário atualmente logado no sistema, útil para verificar a identidade do usuário em uma sessão.",
+        "capitulo_origem": "8"
+    },
+    {
+        "nome": "xargs",
+        "tipo": "COMANDO",
+        "definicao": "O comando xargs é utilizado para construir e executar comandos a partir da entrada padrão, permitindo que a saída de um comando seja passada como argumento para outro.",
+        "capitulo_origem": "25, 26"
+    },
+    {
+        "nome": "xman",
+        "tipo": "FERRAMENTA",
+        "definicao": "Xman é um front-end para o comando man que facilita a consulta das man pages, proporcionando uma interface gráfica para acesso à documentação.",
+        "capitulo_origem": "20"
+    },
+    {
+        "nome": "YaST",
+        "tipo": "FERRAMENTA",
+        "definicao": "Uma ferramenta de instalação e configuração utilizada por distribuições SUSE para facilitar a administração do sistema.",
+        "capitulo_origem": "5"
+    },
+    {
+        "nome": "yelp",
+        "tipo": "FERRAMENTA",
+        "definicao": "Yelp é uma ferramenta gráfica para visualização de manuais de aplicativos gráficos do GNOME, facilitando o acesso à documentação de software.",
+        "capitulo_origem": "20"
+    },
+    {
+        "nome": "zsh",
+        "tipo": "SHELL_SCRIPT",
+        "definicao": "O Z shell é um shell interativo que combina várias funções úteis do bash, ksh e tcsh, além de ser uma linguagem de script eficiente.",
+        "capitulo_origem": "9"
+    },
+    {
+        "nome": "~/.bash_logout",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo executado automaticamente ao terminar a sessão de um usuário, se existir, permitindo a execução de comandos de logout.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "~/.bash_profile",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo de configuração pessoal do usuário que é lido quando o bash é invocado em uma sessão de login, permitindo personalizações específicas.",
+        "capitulo_origem": "11"
+    },
+    {
+        "nome": "~/.bashrc",
+        "tipo": "SISTEMA_ARQUIVOS",
+        "definicao": "Arquivo executado por shells invocados em sessões já iniciadas, semelhante ao ~/.bash_profile, utilizado para personalizações do shell.",
+        "capitulo_origem": "10, 11"
+    }
+]
