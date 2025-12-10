@@ -125,8 +125,8 @@ def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
     # CAMINHOS ATUALIZADOS PARA ESTRUTURA v2
-    # Input agora vem da auditoria final (Fase 4)
-    input_path = os.path.join(base_dir, "output", "03_final_audit", "final_sinkt_graph.json")
+    # Input agora vem do resultado do Conselho (Fase 3.5)
+    input_path = os.path.join(base_dir, "output", "03_council_execution", "final_sinkt_graph_swarm.json")
     
     # Output organizado em pasta de visualização
     output_dir = os.path.join(base_dir, "output", "visualization")
