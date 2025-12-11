@@ -66,7 +66,7 @@ Este documento detalha o funcionamento técnico, os prompts literais e a lógica
 *(Idêntico em ambas as versões)*
 
 ### 1. Extração de Conceitos (Concept Extraction)
-*   **Modelo:** `gpt-4o-mini`
+*   **Modelo:** `gpt-4o-mini` (ChatOpenAI)
 *   **Execução:** Paralela (3 workers) em todos os 26 capítulos do livro
 *   **Prompt de Sistema:**
     ```text
@@ -81,7 +81,7 @@ Este documento detalha o funcionamento técnico, os prompts literais e a lógica
 *   **Resultado:** ~360 conceitos brutos extraídos (Master) / ~333 (Codex)
 
 ### 2. Indução de Ontologia (Ontology Induction)
-*   **Modelo:** `gpt-4o`
+*   **Modelo:** `gpt-4o` (ChatOpenAI)
 *   **Função:** Criar taxonomia canônica a partir dos tipos brutos extraídos
 *   **Prompt:**
     ```text
@@ -96,7 +96,7 @@ Este documento detalha o funcionamento técnico, os prompts literais e a lógica
 *   **Resultado:** ~254 conceitos únicos consolidados (Master) / ~216 (Codex)
 
 ### 4. Extração de Relações (Relation Extraction)
-*   **Modelo:** `gpt-4o-mini`
+*   **Modelo:** `gpt-4o-mini` (ChatOpenAI)
 *   **Execução:** Paralela (3 workers) capítulo a capítulo
 *   **Prompt de Usuário:**
     ```text
@@ -122,28 +122,28 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
 **Pipeline:**
 1. **The Cleaner** → 2. **The Architect (Híbrido)** → 3. **The Teacher**
 
-##### Agente 1: The Cleaner (Faxineiro)
-*   **Modelo:** `gpt-4o-mini`
+##### Agente 1: The Cleaner (Triagem Rápida)
+*   **Modelo:** `gpt-4o-mini` (via get_model("gpt-4o-mini")) (ChatOpenAI, llm_mini)
 *   **Função:** Remover conceitos-ruído antes de gerar embeddings
 *   **Execução:** Batches de 150 conceitos
 *   **Resultado:** Remove ~17-28 ruídos (variáveis soltas, erros OCR)
 
-##### Agente 2: The Architect (Híbrido Matemática + LLM)
-*   **Fase Matemática (Scout):**
-    *   **Modelo:** `text-embedding-3-small` (OpenAI Embeddings)
+##### Agente 2: The Architect (Arquiteto Híbrido)
+**Parte 1 - Scout (Matemática Pura):**
+*   **Modelo:** `text-embedding-3-small` (OpenAIEmbeddings, embeddings_model) (OpenAI Embeddings)
     *   **Função:** Gerar embeddings e calcular similaridade de cosseno
     *   **Threshold:** 0.82 (permissivo)
     *   **Top-K:** 8 vizinhos mais similares por nó
     *   **Resultado:** ~14-26 candidatos matemáticos
-*   **Fase LLM (Validator):**
-    *   **Modelo:** `gpt-4o-mini`
+*   **Parte 2 - Validator (Validação Semântica):**
+*   **Modelo:** `gpt-4o-mini` (ChatOpenAI, llm_mini)
     *   **Função:** Validar semanticamente os candidatos
     *   **Batches:** 20 pares por chamada
     *   **Decisão:** RELATED_TO, USE ou SKIP
     *   **Resultado:** ~12-18 conexões validadas
 
 ##### Agente 3: The Teacher (Pedagogo)
-*   **Modelo:** `gpt-4o-mini`
+*   **Modelo:** `gpt-4o-mini` (ChatOpenAI, llm_mini)
 *   **Função:** Promover relações para PREREQUISITE quando há dependência de aprendizado
 *   **Batches:** 50 relações
 *   **Resultado:** ~2-5 relações promovidas para PREREQUISITE
@@ -159,7 +159,7 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
 *   **Total:** ~252-500 candidatos para validação
 
 ##### Agente 1: The Cleaner (O Porteiro)
-*   **Modelo:** `gpt-4o-mini`
+*   **Modelo:** `gpt-4o-mini` (via get_model("gpt-4o-mini")) (ChatOpenAI, llm_mini)
 *   **Função:** Triagem rápida - eliminar lixo óbvio antes dos modelos caros
 *   **Execução:** Primeira etapa do fluxo (early rejection)
 *   **Prompt:**
@@ -177,8 +177,8 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
 *   **Decisão:** REJECT ou ABSTAIN
 *   **Otimização:** Se REJECT, pula Expert e Analyst (economia de tokens)
 
-##### Agente 2: The Expert (Engenheiro + Pedagogo)
-*   **Modelo:** `gpt-4o`
+##### Agente 2: The Expert (Validador Técnico e Pedagógico)
+*   **Modelo:** `gpt-4o` (via get_model("gpt-4o"))
 *   **Função:** Validação técnica e pedagógica profunda
 *   **Prompt:**
     ```text
@@ -196,8 +196,8 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
     ```
 *   **Decisão:** APPROVE, REJECT, MODIFY (com tipo sugerido)
 
-##### Agente 3: The Analyst (Topólogo + Ontologista)
-*   **Modelo:** `gpt-4o`
+##### Agente 3: The Analyst (Arquiteto Estrutural)
+*   **Modelo:** `gpt-4o` (via get_model("gpt-4o"))
 *   **Função:** Consistência estrutural e ontológica
 *   **Prompt:**
     ```text
@@ -212,7 +212,7 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
 *   **Decisão:** APPROVE ou REJECT
 
 ##### Agente 4: The Judge (Decisor Final)
-*   **Modelo:** `gpt-4o`
+*   **Modelo:** `gpt-4o` (via get_model("gpt-4o"))
 *   **Função:** Sintetizar votos e emitir veredito final
 *   **Input:** Dossiê completo com votos de Cleaner, Expert e Analyst
 *   **Prompt:**
@@ -231,7 +231,16 @@ O Codex utiliza o **LangGraph** para orquestrar agentes autônomos que votam em 
 *   **Output:** KEEP ou DISCARD + tipo final + justificativa
 *   **Resultado:** ~53 arestas aprovadas de ~252 candidatos
 
-**Nota Importante:** O notebook `3.5_multi_agent_council.ipynb` documenta aspiracionalmente 8 agentes com modelos diversos (gpt-5.1, claude-opus-4-5, gpt-4.1), mas o código **realmente executado** usa apenas 4 agentes com 2 modelos: `gpt-4o-mini` (Cleaner) e `gpt-4o` (Expert, Analyst, Judge).
+**📋 Modelos Declarados no Código:**
+```python
+MODELS = {
+    "scout_embed": OpenAIEmbeddings(model="text-embedding-3-small"),
+    "cleaner": get_model("gpt-4o-mini"),
+    "expert": get_model("gpt-4o"),
+    "analyst": get_model("gpt-4o"),
+    "judge": get_model("gpt-4o"),
+}
+```
 
 ---
 
@@ -251,10 +260,14 @@ O Master não usa múltiplos agentes chamando API separadamente. Ele usa um **Me
 
 #### Fase 4: Validação Final - O Oracle (Mesa Redonda Virtual)
 
-*   **Modelo Declarado no Código:** `gpt-5.1` (não existe)
-*   **Modelo Realmente Executado:** `gpt-4o` (fallback automático da API OpenAI)
+*   **Modelo Declarado:** `gpt-5.1` (ChatOpenAI, llm_judge)
 *   **Processamento:** Batches de 15 arestas por chamada
 *   **Arquitetura:** Mega-Prompt simulando 8 personas em debate interno
+
+**📋 Código:**
+```python
+llm_judge = ChatOpenAI(model="gpt-5.1", temperature=0)
+```
 
 ##### As 8 Personas da Mesa Redonda:
 
@@ -336,7 +349,7 @@ Esta tabela resume os resultados obtidos na última execução de cada pipeline.
 | **Custo Computacional** | 🔴 **Alto** (4 LLM calls/aresta + embeddings) | 🟢 **Médio** (1 LLM call/15 arestas + embeddings) | Master é ~60x mais eficiente em calls de API. |
 | **Granularidade de Debug** | 🟢 **Fina** (Log por agente, voto individual) | 🔴 **Grossa** (Debate interno opaco) | Codex permite auditoria detalhada. |
 | **Filosofia** | **Recall** (Descoberta) | **Precision** (Segurança) | Codex: explorar; Master: certificar. |
-| **Modelos Usados (Fase 4)** | gpt-4o-mini (Cleaner) + gpt-4o (Expert, Analyst, Judge) | gpt-4o (Oracle único, via fallback de gpt-5.1) | **Ambos usam os mesmos modelos na Fase 4!** |
+| **Modelos Declarados (Fase 4)** | gpt-4o-mini + gpt-4o | gpt-5.1 | Codex: 2 modelos; Master: 1 modelo |
 
 ### Conclusão e Recomendação
 
