@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "description": "Conjunto de perfis cognitivos para simulação de estudantes SINKT",
+    "version": "1.0.0",
+    "created_at": "2025-12-14T18:19:42.820271",
+    "num_profiles": 6
+  },
+  "profiles": {
+    "balanced": {
+      "id": "balanced",
+      "nome": "Estudante Equilibrado",
+      "descricao": "Perfil médio com habilidades balanceadas em todas as dimensões. Representa o estudante típico com desenvolvimento uniforme.",
+      "mastery_init_level": 0.55,
+      "learn_rate": 0.035,
+      "slip": 0.15,
+      "guess": 0.15,
+      "logic_skill": 0.55,
+      "reading_skill": 0.55,
+      "tech_familiarity": 0.55
+    },
+    "quick_learner": {
+      "id": "quick_learner",
+      "nome": "Aprendiz Rápido",
+      "descricao": "Alta capacidade de aprendizagem e domínio inicial. Adquire conceitos rapidamente mas pode cometer erros por pressa.",
+      "mastery_init_level": 0.75,
+      "learn_rate": 0.08,
+      "slip": 0.18,
+      "guess": 0.12,
+      "logic_skill": 0.7,
+      "reading_skill": 0.65,
+      "tech_familiarity": 0.8
+    },
+    "careful": {
+      "id": "careful",
+      "nome": "Estudante Cuidadoso",
+      "descricao": "Baixa taxa de erros quando sabe o conteúdo, mas aprende de forma mais gradual. Meticuloso e detalhista.",
+      "mastery_init_level": 0.45,
+      "learn_rate": 0.025,
+      "slip": 0.08,
+      "guess": 0.1,
+      "logic_skill": 0.6,
+      "reading_skill": 0.7,
+      "tech_familiarity": 0.5
+    },
+    "struggling": {
+      "id": "struggling",
+      "nome": "Estudante com Dificuldades",
+      "descricao": "Baixo domínio inicial e lenta aprendizagem. Pode precisar de mais apoio e tempo para absorver conceitos.",
+      "mastery_init_level": 0.25,
+      "learn_rate": 0.015,
+      "slip": 0.25,
+      "guess": 0.2,
+      "logic_skill": 0.3,
+      "reading_skill": 0.35,
+      "tech_familiarity": 0.2
+    },
+    "logical": {
+      "id": "logical",
+      "nome": "Pensador Lógico",
+      "descricao": "Excelente habilidade lógica mas com dificuldades em leitura. Excelente em problemas algorítmicos e matemáticos.",
+      "mastery_init_level": 0.5,
+      "learn_rate": 0.04,
+      "slip": 0.12,
+      "guess": 0.08,
+      "logic_skill": 0.85,
+      "reading_skill": 0.3,
+      "tech_familiarity": 0.6
+    },
+    "intuitive": {
+      "id": "intuitive",
+      "nome": "Estudante Intuitivo",
+      "descricao": "Boa intuição e habilidade de leitura, mas dificuldade com formalismo lógico. Aprende por exemplo e prática.",
+      "mastery_init_level": 0.4,
+      "learn_rate": 0.045,
+      "slip": 0.16,
+      "guess": 0.18,
+      "logic_skill": 0.35,
+      "reading_skill": 0.8,
+      "tech_familiarity": 0.45
+    }
+  }
+}
