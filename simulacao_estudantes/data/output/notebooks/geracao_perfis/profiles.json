@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Conjunto de perfis cognitivos para simulação de estudantes SINKT",
     "version": "1.0.0",
-    "created_at": "2025-12-14T18:19:42.820271",
+    "created_at": "2025-12-16T15:52:40.175211",
     "num_profiles": 6
   },
   "profiles": {
@@ -16,19 +16,23 @@
       "guess": 0.15,
       "logic_skill": 0.55,
       "reading_skill": 0.55,
-      "tech_familiarity": 0.55
+      "tech_familiarity": 0.55,
+      "memory_capacity": 0.55,
+      "learning_consistency": 0.6
     },
     "quick_learner": {
       "id": "quick_learner",
       "nome": "Aprendiz Rápido",
       "descricao": "Alta capacidade de aprendizagem e domínio inicial. Adquire conceitos rapidamente mas pode cometer erros por pressa.",
-      "mastery_init_level": 0.75,
+      "mastery_init_level": 0.5,
       "learn_rate": 0.08,
       "slip": 0.18,
       "guess": 0.12,
       "logic_skill": 0.7,
       "reading_skill": 0.65,
-      "tech_familiarity": 0.8
+      "tech_familiarity": 0.8,
+      "memory_capacity": 0.8,
+      "learning_consistency": 0.85
     },
     "careful": {
       "id": "careful",
@@ -40,7 +44,9 @@
       "guess": 0.1,
       "logic_skill": 0.6,
       "reading_skill": 0.7,
-      "tech_familiarity": 0.5
+      "tech_familiarity": 0.5,
+      "memory_capacity": 0.7,
+      "learning_consistency": 0.9
     },
     "struggling": {
       "id": "struggling",
@@ -52,7 +58,9 @@
       "guess": 0.2,
       "logic_skill": 0.3,
       "reading_skill": 0.35,
-      "tech_familiarity": 0.2
+      "tech_familiarity": 0.2,
+      "memory_capacity": 0.4,
+      "learning_consistency": 0.4
     },
     "logical": {
       "id": "logical",
@@ -64,7 +72,9 @@
       "guess": 0.08,
       "logic_skill": 0.85,
       "reading_skill": 0.3,
-      "tech_familiarity": 0.6
+      "tech_familiarity": 0.6,
+      "memory_capacity": 0.6,
+      "learning_consistency": 0.75
     },
     "intuitive": {
       "id": "intuitive",
@@ -76,7 +86,9 @@
       "guess": 0.18,
       "logic_skill": 0.35,
       "reading_skill": 0.8,
-      "tech_familiarity": 0.45
+      "tech_familiarity": 0.45,
+      "memory_capacity": 0.65,
+      "learning_consistency": 0.65
     }
   }
 }

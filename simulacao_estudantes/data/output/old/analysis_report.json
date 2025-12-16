@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "description": "Relatório de análise estatística das interações SINKT",
+    "version": "2.0.0",
+    "created_at": "2025-12-16T15:30:21.141090",
+    "total_profiles": 6,
+    "total_students": 100,
+    "total_interactions": 4523
+  },
+  "general_statistics": {
+    "total_interactions": 4523,
+    "correct_interactions": 2109,
+    "incorrect_interactions": 2414,
+    "accuracy": 0.46628344019456114,
+    "time_statistics": {
+      "mean": 157.7614415211143,
+      "median": 158.0,
+      "std": 81.8009690637878,
+      "min": 15,
+      "max": 299,
+      "q25": 89.0,
+      "q75": 229.0
+    },
+    "mastery_statistics": {
+      "mean": 0.5372239442847668,
+      "median": 0.5561,
+      "std": 0.11219399330106626,
+      "min": 0.2292,
+      "max": 0.8256,
+      "q25": 0.4879,
+      "q75": 0.6125
+    },
+    "interactions_per_student": {
+      "mean": 45.23,
+      "median": 45.0,
+      "std": 9.617541265832967,
+      "min": 30,
+      "max": 60
+    }
+  },
+  "error_analysis": {
+    "total_errors": 2414,
+    "error_distribution": {
+      "misconception": {
+        "count": 503,
+        "percentage": 20.836785418392708
+      },
+      "slip": {
+        "count": 478,
+        "percentage": 19.80115990057995
+      },
+      "careless": {
+        "count": 458,
+        "percentage": 18.972659486329743
+      },
+      "misunderstanding": {
+        "count": 488,
+        "percentage": 20.215410107705054
+      },
+      "incomplete": {
+        "count": 487,
+        "percentage": 20.173985086992545
+      }
+    },
+    "error_types": [
+      "misconception",
+      "slip",
+      "careless",
+      "misunderstanding",
+      "incomplete"
+    ]
+  },
+  "profile_performance": {
+    "balanced": {
+      "num_students": 30,
+      "accuracy": {
+        "mean": 0.4936837974952359,
+        "std": 0.07541062696369588,
+        "min": 0.3055555555555556,
+        "max": 0.6511627906976745
+      },
+      "mastery": {
+        "mean": 0.589428983746538,
+        "std": 0.04015069556881955
+      },
+      "time": {
+        "mean": 158.51257518141128,
+        "std": 8.813445778455097
+      }
+    },
+    "quick_learner": {
+      "num_students": 20,
+      "accuracy": {
+        "mean": 0.4856283552641802,
+        "std": 0.09019408058544007,
+        "min": 0.28125,
+        "max": 0.6216216216216216
+      },
+      "mastery": {
+        "mean": 0.6009406074966914,
+        "std": 0.06426940387441557
+      },
+      "time": {
+        "mean": 158.20256527067522,
+        "std": 8.484390807508841
+      }
+    },
+    "careful": {
+      "num_students": 20,
+      "accuracy": {
+        "mean": 0.4786068029944805,
+        "std": 0.07389200661767817,
+        "min": 0.32142857142857145,
+        "max": 0.5714285714285714
+      },
+      "mastery": {
+        "mean": 0.5221636853110878,
+        "std": 0.0469600182055624
+      },
+      "time": {
+        "mean": 156.98447341249403,
+        "std": 11.702134366090654
+      }
+    },
+    "struggling": {
+      "num_students": 10,
+      "accuracy": {
+        "mean": 0.33061587634787565,
+        "std": 0.043470157808571074,
+        "min": 0.2542372881355932,
+        "max": 0.3939393939393939
+      },
+      "mastery": {
+        "mean": 0.3003874840596984,
+        "std": 0.027469981559625316
+      },
+      "time": {
+        "mean": 159.3453318229299,
+        "std": 3.4650201537881102
+      }
+    },
+    "logical": {
+      "num_students": 10,
+      "accuracy": {
+        "mean": 0.47215610921695184,
+        "std": 0.0692576832961915,
+        "min": 0.38095238095238093,
+        "max": 0.5714285714285714
+      },
+      "mastery": {
+        "mean": 0.5660489285434636,
+        "std": 0.046920450776802895
+      },
+      "time": {
+        "mean": 157.90854754141603,
+        "std": 6.9264074370444115
+      }
+    },
+    "intuitive": {
+      "num_students": 10,
+      "accuracy": {
+        "mean": 0.4471394889575276,
+        "std": 0.08565400888037021,
+        "min": 0.35135135135135137,
+        "max": 0.5957446808510638
+      },
+      "mastery": {
+        "mean": 0.49094032794430775,
+        "std": 0.06483756719425975
+      },
+      "time": {
+        "mean": 157.0864978019363,
+        "std": 12.110960747755046
+      }
+    }
+  },
+  "learning_patterns": {
+    "total_students_analyzed": 100,
+    "monotonic_increasing": {
+      "count": 94,
+      "percentage": 94.0
+    },
+    "monotonic_decreasing": {
+      "count": 6,
+      "percentage": 6.0
+    },
+    "fluctuating": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "parameter_correlations": {
+    "correlations": {
+      "mastery_init": {
+        "correlation_with_accuracy": 0.572,
+        "correlation_with_mastery": 0.911
+      },
+      "tech_familiarity": {
+        "correlation_with_accuracy": 0.368,
+        "correlation_with_mastery": 0.714
+      },
+      "slip": {
+        "correlation_with_accuracy": -0.327,
+        "correlation_with_mastery": -0.389
+      },
+      "logic_skill": {
+        "correlation_with_accuracy": 0.283,
+        "correlation_with_mastery": 0.557
+      },
+      "guess": {
+        "correlation_with_accuracy": -0.272,
+        "correlation_with_mastery": -0.439
+      },
+      "reading_skill": {
+        "correlation_with_accuracy": 0.251,
+        "correlation_with_mastery": 0.244
+      },
+      "learn_rate": {
+        "correlation_with_accuracy": 0.2,
+        "correlation_with_mastery": 0.499
+      }
+    },
+    "top_3_factors": [
+      "mastery_init",
+      "tech_familiarity",
+      "slip"
+    ]
+  },
+  "summary": {
+    "data_quality": "ALTA",
+    "learning_pattern_quality": "EXCELENTE",
+    "profile_differentiation": "CLARA"
+  }
+}
