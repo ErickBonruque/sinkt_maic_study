@@ -253,12 +253,11 @@ def main():
     # Caminhos absolutos
     base_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Input do arquivo questions_graph.json
-    input_path = os.path.join(base_dir, "json", "questions_graph.json")
+    # Input do arquivo questions_graph.json (voltando duas pastas para chegar na raiz)
+    input_path = os.path.join(base_dir, "..", "..", "json", "questions_graph.json")
     
-    # Output organizado em pasta de visualização
-    output_dir = os.path.join(base_dir, "output", "visualization")
-    os.makedirs(output_dir, exist_ok=True)
+    # Output na mesma pasta de visualização
+    output_dir = base_dir
     output_path = os.path.join(output_dir, "questions_graph.html")
     
     print("--- Gerador de Visualização do Grafo de Questões ---")
