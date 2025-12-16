@@ -412,29 +412,6 @@ Com Dificuldades:   35-45% ✓
 | Distribuição de Erros | Múltiplos tipos | ✓ PASSA |
 | Coerência Interna | Correlação esperada | ✓ PASSA |
 
-### Conclusão
-
-Os dados sintéticos parecem humanos porque:
-1. **Acurácia realista**: 30-90%, não extremos
-2. **Aprendizado progressivo**: Domínio aumenta com prática
-3. **Diferenciação**: Diferentes perfis têm desempenhos diferentes
-4. **Variabilidade**: Tempo e erros variam realisticamente
-5. **Múltiplas causas de erro**: Como em estudantes reais
-6. **Coerência interna**: Parâmetros correlacionam com desempenho
-
----
-
-## 📊 Resumo Executivo
-
-| Pergunta | Resposta Curta |
-|----------|---|
-| **P1**: Realismo dos perfis? | Baseados em BKT com validação de coerência |
-| **P2**: Fatores que influenciam? | learn_rate, logic_skill, memory_capacity |
-| **P3**: Modelar demográficos? | **NÃO** - Viés, discriminação, ineficácia |
-| **P4**: Acurácia sem dados reais? | Modelos teóricos + validação + calibração futura |
-| **P5**: Validar realismo? | 6 validações implementadas (acurácia, aprendizado, etc.) |
-
----
 
 ## 📚 Referências
 
@@ -445,10 +422,3 @@ Os dados sintéticos parecem humanos porque:
 3. **Swanson, H. L., & Beebe-Frankenberger, M. (2004)**. The Relationship Between Working Memory and Mathematical Problem Solving in Children at Risk and Not at Risk for Serious Math Difficulties. *Journal of Educational Psychology*, 96(3), 471-491.
 
 4. **Piaget, J. (1954)**. The Construction of Reality in the Child. Basic Books.
-
----
-
-**Documento Preparado Por**: Sistema SINKT  
-**Data**: 14 de Dezembro de 2025  
-**Versão**: 2.0.0  
-**Status**: ✅ Completo
