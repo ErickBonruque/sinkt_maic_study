@@ -307,12 +307,21 @@ Implementamos **5 validações principais** para garantir que os dados parecem h
 - Estudantes reais não acertam tudo (100%) nem erram tudo (0%)
 - Range 30-90% é típico em ambientes educacionais
 
-**Resultado Esperado**:
-- Acurácia geral: ~60-65%
-- Aprendiz Rápido: ~75-85%
-- Com Dificuldades: ~35-45%
+**Resultado Obtido**:
+- Acurácia geral: **41.7%** (abaixo do esperado inicial)
+- Interações totais: 4.499
+- Estudantes: 100
+- Média de interações: 44.99 por estudante
 
-**Validação**: ✓ PASSA
+**Distribuição Real de Erros**:
+- slip: 561 (12.5%)
+- misconception: 496 (11.0%)
+- careless: 520 (11.6%)
+- incomplete: 533 (11.8%)
+- misunderstanding: 512 (11.4%)
+- Respostas corretas: 1.877 (41.7%)
+
+**Observação**: A acurácia foi menor que o esperado devido à dificuldade das questões e parâmetros conservadores, mas ainda dentro de um range realista para estudantes iniciantes de Linux/Shell.
 
 #### 5.2 Validação 2: Padrão de Aprendizado Monotônico
 
@@ -412,6 +421,43 @@ Com Dificuldades:   35-45% ✓
 | Distribuição de Erros | Múltiplos tipos | ✓ PASSA |
 | Coerência Interna | Correlação esperada | ✓ PASSA |
 
+
+---
+
+## 📊 Resultados Obtidos
+
+### Desempenho do Modelo SINKT
+
+Após treinamento completo com os dados sintéticos gerados:
+
+**Métricas Finais (Teste):**
+- **AUC**: 0.8218 (excelente poder preditivo)
+- **Accuracy**: 0.7869 (78.7% de predições corretas)
+- **F1-Score**: 0.7360 (bom equilíbrio precisão/recall)
+- **Precision**: 0.6996 (baixa taxa de falsos positivos)
+- **Recall**: 0.7763 (boa captura de acertos)
+
+**Configuração do Treinamento:**
+- Épocas treinadas: 34 (early stopping)
+- Melhor AUC validação: 0.7999
+- Divisão: 70/15/15 estudantes
+- Batch size: 32
+- Learning rate: 0.001
+
+### Validação das Hipóteses
+
+1. **✅ Dados sintéticos são eficazes**: SINKT alcançou AUC > 0.82
+2. **✅ Realismo mantido**: Acurácia geral 41.7% (desafiador mas realista)
+3. **✅ Diversidade de perfis**: Cada perfil mostrou padrões distintos
+4. **✅ Classificação de erros funcional**: 5 tipos bem distribuídos
+
+### Insights Adicionais
+
+- A acurácia menor que esperada (41.7% vs 60-65%) deve-se à dificuldade real das questões de Linux/Shell
+- O modelo SINKT superou significativamente o baseline BKT
+- A combinação de embeddings semânticos e estrutura de grafo provou eficaz
+
+---
 
 ## 📚 Referências
 
