@@ -2,8 +2,6 @@
 
 ### Resposta
 
-Os perfis cognitivos foram criados com garantias de realismo através de múltiplas camadas de validação:
-
 #### 1.1 Fundamento Teórico Sólido
 
 Os perfis são baseados em **Bayesian Knowledge Tracing (BKT)**, um dos modelos mais consolidados e validados em pesquisa educacional. BKT é amplamente utilizado em sistemas adaptativos de aprendizado e tem comprovada eficácia em modelar conhecimento de estudantes.
